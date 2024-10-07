@@ -3,7 +3,7 @@ Contributors: XpeedStudio, Ataurr, emranio
 Tags: Social login, WordPress Social login and register, Social share,  Social counter, Social,  WooCommerce social login and register
 Requires at least: 5.0
 Tested up to: 6.6
-Stable tag: 3.0.6
+Stable tag: 3.0.7
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
@@ -162,14 +162,18 @@ Visit [wpmet](https://wpmet.com) to learn more about how to get the best of Word
 
 
 == Changelog ==
+Version 3.0.7 // 2024-10-07
+Fixed: Login with Vkontakte is not working.
+Fixed: Profile photo is re-uploading after social login.
+
 Version 3.0.6 // 2024-09-17
--Fixed: Minimum PHP required version issue
+-Fixed: Minimum PHP required version issue.
 
 Version 3.0.5 // 2024-09-15
--Updated: Hybridauth and phpseclib libraries
+-Updated: Hybridauth and phpseclib libraries.
 
 Version 3.0.4 // 2024-07-25
--Fixed: Warning notice on block editor
+-Fixed: Warning notice on block editor.
 
 Version 3.0.3 // 2024-06-23
 -Added: Option to disable promotional content.
@@ -488,7 +492,7 @@ For further details check out the following [documentation](https://help.wpmet.c
 
 Login to your WordPress dashboard,  From the left menu, click on Wp social icon to customize the Settings.
 
+= How can I report security bugs? = 
 
-
-
+You can report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team help validate, triage and handle any security vulnerabilities. [Report a security vulnerability.](https://patchstack.com/database/vdp/wp-social)
 

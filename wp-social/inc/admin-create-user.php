@@ -336,10 +336,22 @@ if(strlen($socialType) > 0) {
 
 						if(get_option('wp_social_login_sync_image_too') == 'yes') {
 							$avatar_url = $avatar_obj->get_avatar_url($getProfile, $socialType);
-							$attach     = save_image_from_url_as_attachment($avatar_url);
+							$current_avatar_url = get_user_meta($id, 'xs_social_profile_image', true);
 
-							if(empty($attach['error'])) {
-								wp_delete_attachment(get_user_meta($id, 'xs_social_profile_image_id'));
+							$attach = [];
+
+							if($current_avatar_url != $avatar_url) {
+
+								$attach = save_image_from_url_as_attachment($avatar_url);
+							}
+
+							if(!empty($attach) && empty($attach['error'])) {
+
+								$existing_attachment_id = get_user_meta($id, 'xs_social_profile_image_id', true);
+
+								if (!empty($existing_attachment_id)) {
+									wp_delete_attachment($existing_attachment_id, true);
+								}
 								update_user_meta($id, 'xs_social_profile_image', $attach['url']);
 								update_user_meta($id, 'xs_social_profile_image_id', $attach['attachment_id']);
 							}
