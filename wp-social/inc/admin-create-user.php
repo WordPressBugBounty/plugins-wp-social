@@ -168,206 +168,214 @@ if(strlen($socialType) > 0) {
 
 			if(is_object($getProfile) && !empty($getProfile)) {
 
-				/**
-				 * Variable Name : $setting_data
-				 * Variable Type : Array
-				 * @return : array() $setting_data .  Get array from social global setting data "xs_global_setting_data"
-				 *
-				 * @since : 1.0
-				 */
-				$setting_data = get_option(\WP_Social\Keys::OK_GLOBAL_SETTINGS);
-
-				/**
-				 * Resolve it before resetting the session
-				 */
-				$final_redirect = resolve_redirect_url($_SESSION, $setting_data);
-
-
-				/**
-				 * Now cleaning the session
-				 *
-				 */
-				xs_login_session_handaler();
-
-				$avatar_obj = \WP_Social\App\Avatar::instance();
-
-				$first_name = $avatar_obj->get_nice_name($getProfile, $socialType);
-				$last_name = $avatar_obj->get_last_name($getProfile, $socialType);
-				$s_user_key = $avatar_obj->get_username($getProfile, $socialType);
-				$display_nm = $avatar_obj->get_display_name($getProfile, $socialType);
-				$user_email = $getProfile->email;
-				$description = $getProfile->description;
-
-				$user_info  = $avatar_obj->get_linked_user($s_user_key, $socialType);
-				
-				$user = false;
-				if (isset($user_info['username'])) {
-					$user = get_user_by('login', $user_info['username']);
-				}
-
-				if ( !$user) {
+				$user_email = isset($getProfile->email) ? $getProfile->email : '';
+				$emailVerified = !empty($getProfile->emailVerified); 
+				if ($emailVerified || empty($user_email)) {
 
 					/**
-					 * This is a registration process
-					 * this user never? had registered with us
+					 * Variable Name : $setting_data
+					 * Variable Type : Array
+					 * @return : array() $setting_data .  Get array from social global setting data "xs_global_setting_data"
 					 *
-					 * Lets check if user's social profile email is existed in our system
-					 * If it does we just let him log in
+					 * @since : 1.0
 					 */
-					$user_id = email_exists($user_email);
+					$setting_data = get_option(\WP_Social\Keys::OK_GLOBAL_SETTINGS);
 
-					if($user_id) {
+					/**
+					 * Resolve it before resetting the session
+					 */
+					$final_redirect = resolve_redirect_url($_SESSION, $setting_data);
 
-						$user_nameD = xs_login_get_user_data_email($user_email, 'user_login');
 
-						$avatar_obj->update_linked_user($s_user_key, $socialType, ['id' => $user_id, 'usr' => $user_nameD]);
+					/**
+					 * Now cleaning the session
+					 *
+					 */
+					xs_login_session_handaler();
 
-						xs_user_login($user_nameD, $final_redirect);
+					$avatar_obj = \WP_Social\App\Avatar::instance();
 
-						die('Most unlikely error occurred in your case.');
+					$first_name = $avatar_obj->get_nice_name($getProfile, $socialType);
+					$last_name = $avatar_obj->get_last_name($getProfile, $socialType);
+					$s_user_key = $avatar_obj->get_username($getProfile, $socialType);
+					$display_nm = $avatar_obj->get_display_name($getProfile, $socialType);
+					$user_email = $getProfile->email;
+					$description = $getProfile->description;
+
+					$user_info  = $avatar_obj->get_linked_user($s_user_key, $socialType);
+					
+					$user = false;
+					if (isset($user_info['username'])) {
+						$user = get_user_by('login', $user_info['username']);
 					}
 
-					/**
-					 * It turns out this user does not used his email in our system
-					 * So lets make him a new username for login
-					 *
-					 */
-					$user_nm = $avatar_obj->get_available_username($getProfile, $socialType);
+					if ( !$user) {
 
-					/**
-					 * Grabbing the default role settings for new user
-					 * Though it is working with wp_insert_user still adding this as per Ataur bhai
-					 *
-					 */
-					$default_role = get_option('default_role', '');
-
-					$insertData                  = [];
-					$insertData['first_name']    = $first_name;
-					$insertData['last_name']     = $last_name;
-					$insertData['user_nicename'] = $user_nm;
-					$insertData['user_email']    = $user_email;
-					$insertData['display_name']  = $display_nm;
-					$insertData['description']   = $description;
-
-					/**
-					 * User does not exists with prepared username or
-					 * email from social site in our system
-					 *
-					 * Save the image from social site a attachment
-					 * lets make a random password
-					 * now create a new user
-					 *
-					 */
-					$password                 = wp_generate_password();
-					$insertData['user_login'] = $user_nm;
-					$insertData['user_pass']  = $password;
-					$insertData['role']       = $default_role;
-
-					/**
-					 * Make the avatar url
-					 * and save the image as attachment
-					 */
-					$avatar_url = $avatar_obj->get_avatar_url($getProfile, $socialType);
-					if(get_option('wp_social_login_sync_image_too') == 'yes') {
-						$attach     = save_image_from_url_as_attachment($avatar_url);
-					}else{
-						$attach['error'] = true;
-					}
-
-					//$checkUser = xs_login_create_user($insertData);
-					$checkUser = xs_social_create_user($insertData);
-
-					if($checkUser > 0) {
 						/**
-						 * User created successful
-						 * Update user meta
-						 * Notify admin a new user has been created
-						 * Notify user? [AR: a customer asked!]
+						 * This is a registration process
+						 * this user never? had registered with us
+						 *
+						 * Lets check if user's social profile email is existed in our system
+						 * If it does we just let him log in
+						 */
+						$user_id = email_exists($user_email);
+
+						if($user_id) {
+
+							$user_nameD = xs_login_get_user_data_email($user_email, 'user_login');
+
+							$avatar_obj->update_linked_user($s_user_key, $socialType, ['id' => $user_id, 'usr' => $user_nameD]);
+
+							xs_user_login($user_nameD, $final_redirect);
+
+							die('Most unlikely error occurred in your case.');
+						}
+
+						/**
+						 * It turns out this user does not used his email in our system
+						 * So lets make him a new username for login
+						 *
+						 */
+						$user_nm = $avatar_obj->get_available_username($getProfile, $socialType);
+
+						/**
+						 * Grabbing the default role settings for new user
+						 * Though it is working with wp_insert_user still adding this as per Ataur bhai
+						 *
+						 */
+						$default_role = get_option('default_role', '');
+
+						$insertData                  = [];
+						$insertData['first_name']    = $first_name;
+						$insertData['last_name']     = $last_name;
+						$insertData['user_nicename'] = $user_nm;
+						$insertData['user_email']    = $user_email;
+						$insertData['display_name']  = $display_nm;
+						$insertData['description']   = $description;
+
+						/**
+						 * User does not exists with prepared username or
+						 * email from social site in our system
+						 *
+						 * Save the image from social site a attachment
+						 * lets make a random password
+						 * now create a new user
+						 *
+						 */
+						$password                 = wp_generate_password();
+						$insertData['user_login'] = $user_nm;
+						$insertData['user_pass']  = $password;
+						$insertData['role']       = $default_role;
+
+						/**
+						 * Make the avatar url
+						 * and save the image as attachment
+						 */
+						$avatar_url = $avatar_obj->get_avatar_url($getProfile, $socialType);
+						if(get_option('wp_social_login_sync_image_too') == 'yes') {
+							$attach     = save_image_from_url_as_attachment($avatar_url);
+						}else{
+							$attach['error'] = true;
+						}
+
+						//$checkUser = xs_login_create_user($insertData);
+						$checkUser = xs_social_create_user($insertData);
+
+						if($checkUser > 0) {
+							/**
+							 * User created successful
+							 * Update user meta
+							 * Notify admin a new user has been created
+							 * Notify user? [AR: a customer asked!]
+							 *
+							 */
+
+							if(empty($attach['error'])) {
+
+								update_user_meta($checkUser, 'xs_social_register_by', $socialType);
+								update_user_meta($checkUser, 'xs_social_profile_image', $attach['url']);
+								update_user_meta($checkUser, 'xs_social_profile_image_id', $attach['attachment_id']);
+							} else {
+								update_user_meta($checkUser, 'xs_social_profile_image', '');
+								update_user_meta($checkUser, 'xs_social_profile_image_error_log', $socialType . '::' . $attach['error']);
+							}
+
+							$avatar_obj->update_linked_user($s_user_key, $socialType, ['id' => $checkUser, 'usr' => $user_nm]);
+
+							/**
+							 * As we have created the user with a random password and they are registering with social credential
+							 * so there is no use of change of password
+							 */
+							update_user_meta($checkUser, 'xs_password_changed', 'yes');
+
+							notify_new_user_to_user($insertData);
+							
+							$wp_social_login_settings = get_option('xs_global_setting_data');
+
+							if (isset($wp_social_login_settings['email_new_registered_user']['enable']) && $wp_social_login_settings['email_new_registered_user']['enable'] == 1) {
+								notify_new_user_to_admin($checkUser, $socialType);
+							}
+
+							xs_user_login($user_nm, $final_redirect);
+
+							die('Most most unlikely error occurred in your case. user registration done but login failed!!');
+						}
+
+						die('New user creation failed!');
+
+					} else {
+
+						$id = $user->data->ID;
+						
+						update_user_meta($id, 'xs_social_register_by', $socialType);
+
+						if(get_option('wp_social_login_sync') == 'yes') {
+
+
+							update_user_meta($id, 'first_name', $first_name);
+							update_user_meta($id, 'last_name', $last_name);
+							update_user_meta($id, 'display_name', $display_nm);
+							update_user_meta($id, 'description', $description);
+							
+
+							if(get_option('wp_social_login_sync_image_too') == 'yes') {
+								$avatar_url = $avatar_obj->get_avatar_url($getProfile, $socialType);
+								$current_avatar_url = get_user_meta($id, 'xs_social_profile_image', true);
+
+								$attach = [];
+
+								if($current_avatar_url != $avatar_url) {
+
+									$attach = save_image_from_url_as_attachment($avatar_url);
+								}
+
+								if(!empty($attach) && empty($attach['error'])) {
+
+									$existing_attachment_id = get_user_meta($id, 'xs_social_profile_image_id', true);
+
+									if (!empty($existing_attachment_id)) {
+										wp_delete_attachment($existing_attachment_id, true);
+									}
+									update_user_meta($id, 'xs_social_profile_image', $attach['url']);
+									update_user_meta($id, 'xs_social_profile_image_id', $attach['attachment_id']);
+								}
+							}
+						}
+
+						/**
+						 * Proceeding to login
 						 *
 						 */
 
-						if(empty($attach['error'])) {
+						$user_name = $user_info['username'];
 
-							update_user_meta($checkUser, 'xs_social_register_by', $socialType);
-							update_user_meta($checkUser, 'xs_social_profile_image', $attach['url']);
-							update_user_meta($checkUser, 'xs_social_profile_image_id', $attach['attachment_id']);
-						} else {
-							update_user_meta($checkUser, 'xs_social_profile_image', '');
-							update_user_meta($checkUser, 'xs_social_profile_image_error_log', $socialType . '::' . $attach['error']);
-						}
+						xs_user_login($user_name, $final_redirect);
 
-						$avatar_obj->update_linked_user($s_user_key, $socialType, ['id' => $checkUser, 'usr' => $user_nm]);
-
-						/**
-						 * As we have created the user with a random password and they are registering with social credential
-						 * so there is no use of change of password
-						 */
-						update_user_meta($checkUser, 'xs_password_changed', 'yes');
-
-						notify_new_user_to_user($insertData);
-						
-						$wp_social_login_settings = get_option('xs_global_setting_data');
-
-						if (isset($wp_social_login_settings['email_new_registered_user']['enable']) && $wp_social_login_settings['email_new_registered_user']['enable'] == 1) {
-							notify_new_user_to_admin($checkUser, $socialType);
-						}
-
-						xs_user_login($user_nm, $final_redirect);
-
-						die('Most most unlikely error occurred in your case. user registration done but login failed!!');
+						die('Most unlikely error occurred in your case.');
 					}
-
-					die('New user creation failed!');
-
 				} else {
-
-					$id = $user->data->ID;
-					
-					update_user_meta($id, 'xs_social_register_by', $socialType);
-
-					if(get_option('wp_social_login_sync') == 'yes') {
-
-
-						update_user_meta($id, 'first_name', $first_name);
-						update_user_meta($id, 'last_name', $last_name);
-						update_user_meta($id, 'display_name', $display_nm);
-						update_user_meta($id, 'description', $description);
-						
-
-						if(get_option('wp_social_login_sync_image_too') == 'yes') {
-							$avatar_url = $avatar_obj->get_avatar_url($getProfile, $socialType);
-							$current_avatar_url = get_user_meta($id, 'xs_social_profile_image', true);
-
-							$attach = [];
-
-							if($current_avatar_url != $avatar_url) {
-
-								$attach = save_image_from_url_as_attachment($avatar_url);
-							}
-
-							if(!empty($attach) && empty($attach['error'])) {
-
-								$existing_attachment_id = get_user_meta($id, 'xs_social_profile_image_id', true);
-
-								if (!empty($existing_attachment_id)) {
-									wp_delete_attachment($existing_attachment_id, true);
-								}
-								update_user_meta($id, 'xs_social_profile_image', $attach['url']);
-								update_user_meta($id, 'xs_social_profile_image_id', $attach['attachment_id']);
-							}
-						}
-					}
-
-					/**
-					 * Proceeding to login
-					 *
-					 */
-
-					$user_name = $user_info['username'];
-
-					xs_user_login($user_name, $final_redirect);
-
-					die('Most unlikely error occurred in your case.');
+					// Email not verified or not provided
+					die('Email address is not verified or not provided by the social provider.');
 				}
 
 			} else {

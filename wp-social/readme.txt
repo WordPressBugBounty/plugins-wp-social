@@ -3,7 +3,7 @@ Contributors: XpeedStudio, Ataurr, emranio
 Tags: Social login, WordPress Social login and register, Social share,  Social counter, Social,  WooCommerce social login and register
 Requires at least: 5.0
 Tested up to: 6.6
-Stable tag: 3.0.7
+Stable tag: 3.0.8
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
@@ -162,6 +162,9 @@ Visit [wpmet](https://wpmet.com) to learn more about how to get the best of Word
 
 
 == Changelog ==
+Version 3.0.8 // 2024-10-20
+Improved: Social login security.
+
 Version 3.0.7 // 2024-10-07
 Fixed: Login with Vkontakte is not working.
 Fixed: Profile photo is re-uploading after social login.
