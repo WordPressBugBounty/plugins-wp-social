@@ -69,34 +69,36 @@ class Twitter_Counter extends Counter {
 
 			try {
 
-				$token = get_option('xs_counter_twitter_token', '');
+				add_filter('https_ssl_verify', '__return_false');
 
+				$token = get_option('xs_counter_twitter_token', '');
+				$api_url = "https://api.twitter.com/2/users/by/username/{$username}?user.fields=public_metrics,created_at";
 				$args = array(
-					'httpversion' => '1.1',
 					'blocking'    => true,
 					'timeout'     => 10,
-					'headers'     => array(
-						'Authorization'   => "Bearer $token",
+					'headers' => array(
+						'Authorization' => 'Bearer '.$token,
 						'Accept-Language' => 'en',
 					),
 				);
-	
-				add_filter('https_ssl_verify', '__return_false');
-				$api_url  = 'https://api.twitter.com/1.1/users/show.json?screen_name='.$username;
-				$response = xsc_remote_get($api_url, true, $args);
-	
-				/**
-				 * We will show actual count always if user gives the access token
-				 * even if it is 0!
-				 */
-				if(isset($response['followers_count'])) {
-					$result = intval($response['followers_count']);
+
+				$response = wp_remote_get( $api_url, $args );
+
+				if ( is_wp_error( $response ) ) {
+
+					$error_message = $response->get_error_message();
+					echo "Error: $error_message";
+
+				} else {
+
+					$body = wp_remote_retrieve_body( $response );
+					$data = json_decode( $body, true );
 				}
 
+				$result = intval(isset($data['data']['public_metrics']['followers_count']) ? $data['data']['public_metrics']['followers_count'] : 0);
 				$expiration_time = empty($global_cache_time) ? 43200: intval($global_cache_time);
 
 				set_transient($tran_key, $result, $expiration_time);				
-
 				update_option(self::get_last_cache_key(), time());
 
 			} catch(\Exception $ex) {

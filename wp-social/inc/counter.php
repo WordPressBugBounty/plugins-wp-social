@@ -229,10 +229,8 @@ class Counter {
 					update_option('xs_counter_' . $getType . '_token', $keys->access_token);
 					update_option('xs_counter_' . $getType . '_app_id', $app_id);
 					update_option('xs_counter_' . $getType . '_app_secret', $app_secret);
-					$redirect_url = admin_url() . "admin.php?page=wslu_counter_setting&tab=wslu_providers&xs_access=$getType";
-					?> 
-					<script type='text/javascript'>window.location='<?php echo esc_url($redirect_url); ?>'</script>
-					<?php
+					$redirect_url = admin_url() . "admin.php?page=wslu_counter_setting&tab=wslu_providers&code=true&xs_access=" . $getType . '';
+					header("Location: $redirect_url");
 					exit;
 				}
 			} elseif($getType == 'instagram') {
@@ -345,7 +343,7 @@ class Counter {
 			],
 			'youtube'   => [
 				'label' => 'YouTube',
-				'data'  => ['text' => __('Subscribers', 'wp-social'), 'url' => 'http://youtube.com/%s/%s'],
+				'data'  => ['text' => __('Subscribers', 'wp-social'), 'url' => 'http://youtube.com/%s'],
 			],
 			'mailchimp' => ['label' => 'Mailchimp', 'data' => ['text' => __('Subscribers', 'wp-social')]],
 			'comments'  => ['label' => 'Comments', 'data' => ['text' => __('Count', 'wp-social')]],

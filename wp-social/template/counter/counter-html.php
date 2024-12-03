@@ -47,7 +47,13 @@ if(!empty($enabled_providers)) : ?>
 					$getUrl = isset($core_provider[$key]['data']['url']) ? $core_provider[$key]['data']['url'] : '#';
 
 					if($key == 'youtube') {
-						$url = sprintf($getUrl, strtolower($type), $id);
+						if ($type === 'Channel') {
+							$getUrl = 'http://youtube.com/%s/%s';
+							$url = sprintf($getUrl, strtolower($type), $id);
+						}	else {
+							
+							$url = sprintf($getUrl, $id);
+						}
 
 					} elseif($key == 'linkedin') {
 

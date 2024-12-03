@@ -204,7 +204,7 @@ defined('ABSPATH') || exit;
                                                     <input name="xs_counter[social][<?php echo esc_attr($k); ?>][<?php echo esc_attr($fk); ?>]"
                                                            style="<?php echo esc_attr(($type == 'access') ? 'cursor: no-drop; opacity: .4;' : ''); ?>"
                                                            type="text" id="xs_<?php echo esc_attr($k); ?>_<?php echo esc_attr($fk); ?>"
-                                                           value="<?php echo esc_html($setId); ?>"
+                                                           value="<?php echo ($k === 'twitter' && $fk === 'api') ?  esc_html(get_option('xs_counter_twitter_token', '')) :  esc_html($setId); ?>"
                                                            class="wslu-global-input">
 
 													<?php

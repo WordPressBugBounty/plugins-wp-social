@@ -399,7 +399,7 @@ class Providers {
 
 			'youtube' => [
 				'label' => 'YouTube',
-				'data'  => ['text' => __('Subscribers', 'wp-social'), 'url' => 'http://youtube.com/%s/%s'],
+				'data'  => ['text' => __('Subscribers', 'wp-social'), 'url' => 'http://youtube.com/%s'],
 				'form'  => [
 					'type' => [
 						'type'  => 'normal',
