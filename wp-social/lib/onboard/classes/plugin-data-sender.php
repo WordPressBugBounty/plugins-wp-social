@@ -89,7 +89,7 @@ class Plugin_Data_Sender {
 	public function get_data() {
 		return [
 			'environment_id'	  => Onboard::ENVIRONMENT_ID,
-			"domain"              => get_site_url(),
+			"domain"              => get_home_url(),
 			"total_user"          => count_users()['total_users'],
 			"themes"              => $this->themes,
 			"plugins"             => $this->installedPlugins,
@@ -100,5 +100,6 @@ class Plugin_Data_Sender {
 			"php_memory_size"     => ini_get( 'memory_limit' ),
 			"language"            => get_locale()
 		];
+
 	}
 }

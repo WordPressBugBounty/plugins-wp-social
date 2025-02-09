@@ -23,7 +23,7 @@ class Line_App {
     }
 
     public function get_id_token($code) {
-        $redirect_uri = get_site_url() . '/wp-json/wslu-social-login/type/lineapp';
+        $redirect_uri = get_home_url() . '/wp-json/wslu-social-login/type/lineapp';
 
         $response = wp_remote_post(
             'https://api.line.me/oauth2/v2.1/token',

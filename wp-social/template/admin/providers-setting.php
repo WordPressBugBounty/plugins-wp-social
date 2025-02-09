@@ -117,7 +117,7 @@ defined('ABSPATH') || exit;
                                                 <li>
 													<?php
 													esc_html_e('Must add the following URL to the "Valid OAuth redirect URIs" field: ', 'wp-social');
-													echo wp_kses(' <strong>' . esc_url(get_site_url() . '/wp-json/wslu-social-login/type/' . $keyTypeAll) . '</strong>', \WP_Social\Helper\Helper::get_kses_array() );
+													echo wp_kses(' <strong>' . esc_url(get_home_url() . '/wp-json/wslu-social-login/type/' . $keyTypeAll) . '</strong>', \WP_Social\Helper\Helper::get_kses_array() );
 													echo wp_kses('<br>', \WP_Social\Helper\Helper::get_kses_array()).esc_html($api_ins['local_ins']);
 													?>
                                                 </li>
@@ -228,7 +228,7 @@ defined('ABSPATH') || exit;
                                             </div>
 
                                             <ul>
-                                                <li><?php echo esc_html('<a rel="nofollow" href="' . esc_url(get_site_url() . '/wp-json/wslu-social-login/type/' . $keyTypeAll) . '"> '.esc_html__('Login with', 'wp-social').'' . esc_html($valueTypeAll) . ' </a>'); ?></li>
+                                                <li><?php echo esc_html('<a rel="nofollow" href="' . esc_url(get_home_url() . '/wp-json/wslu-social-login/type/' . $keyTypeAll) . '"> '.esc_html__('Login with', 'wp-social').'' . esc_html($valueTypeAll) . ' </a>'); ?></li>
                                             </ul>
                                         </div>
                                     </div> <!-- ./End Popup Data -->

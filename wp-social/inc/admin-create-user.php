@@ -33,7 +33,7 @@ if(!empty($_GET['redirect_to'])) {
  *
  * @since : 1.0
  */
-$currentURL = isset($_SESSION['xs_social_login_ref_url']) ? sanitize_url($_SESSION['xs_social_login_ref_url']) : get_site_url();
+$currentURL = isset($_SESSION['xs_social_login_ref_url']) ? sanitize_url($_SESSION['xs_social_login_ref_url']) : get_home_url();
 
 /**
  * Wp Function: is_user_logged_in();
@@ -77,8 +77,8 @@ if(!empty($typeSocial)) {
 	 *
 	 * @since : 1.0
 	 */
-	$callBackUrl = get_site_url() . '/wp-json/wslu-social-login/type/' . $typeSocial;
-
+	$callBackUrl = get_home_url() . '/wp-json/wslu-social-login/type/' . $typeSocial;
+	
 	/**
 	 * Variable Name : $serviceType
 	 * Variable Type : Array
@@ -772,7 +772,7 @@ function create_line_app_user($code, $socialType) {
 
 	$login_settings_obj = new Login_Settings();
 	$login_global_settings    = $login_settings_obj->get_global_settings();
-	$final_redirect = (isset( $login_global_settings['custom_login_url'] ) && isset( $login_global_settings['custom_login_url']['enable'] ) && isset( $login_global_settings['custom_login_url']['data'] )) ? $login_global_settings['custom_login_url']['data'] : get_site_url() . '/wp-admin';
+	$final_redirect = (isset( $login_global_settings['custom_login_url'] ) && isset( $login_global_settings['custom_login_url']['enable'] ) && isset( $login_global_settings['custom_login_url']['data'] )) ? $login_global_settings['custom_login_url']['data'] : get_home_url() . '/wp-admin';
 	
 	$old_user = get_user_by('email', $user->email);
 

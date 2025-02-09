@@ -52,7 +52,7 @@ defined( 'ABSPATH') || exit;
 						<input class="social_switch_button" type="checkbox" id="wp_login_page_enable" name="xs_global[wp_login_page][enable]" value="1" <?php echo esc_attr((isset($return_data['wp_login_page']['enable']) && $return_data['wp_login_page']['enable'] == 1) ? 'checked' : ''); ?> >
 						<label for="wp_login_page_enable" onclick="<?php echo esc_js( 'xs_show_hide(2);' ); ?>"  class="social_switch_button_label"></label>
 
-						<div id="xs_data_tr__2" class="wslu-input-list deactive_tr  <?php echo esc_attr(isset($return_data['wp_login_page']['enable']) ? 'active_tr' : '');?>">
+						<div id="xs_data_tr__2" class="wslu-input-list deactive_tr  <?php echo esc_attr((isset($return_data['wp_login_page']['enable'])  && $return_data['wp_login_page']['enable'] == 1) ? 'active_tr' : '');?>">
 								<label class="xs_label_wp_login" for="wp_login_page_data__login_form">
 									<input class="wslu-global-radio-input" type="radio" id="wp_login_page_data__login_form" name="xs_global[wp_login_page][data]" value="login_form" <?php echo esc_attr((isset($return_data['wp_login_page']['data']) && $return_data['wp_login_page']['data'] == 'login_form') ? 'checked' : 'checked'); ?>>
 									<?php echo esc_html__('wp login form middle ', 'wp-social')?>

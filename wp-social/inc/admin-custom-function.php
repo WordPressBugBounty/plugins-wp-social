@@ -33,7 +33,7 @@ if(isset($_GET['loggedout']) && isset($_GET['XScurrentPageLog'])) {
 if(!function_exists('xs_current_url_custom')) {
 	function xs_current_url_custom() {
 		$current_url = (isset($_SERVER['HTTPS']) && sanitize_text_field($_SERVER['HTTPS']) === 'on' ? 'https' : 'http') . '://' . sanitize_text_field($_SERVER['HTTP_HOST']) . sanitize_url($_SERVER['REQUEST_URI']);
-		if(get_site_url() . '/' === $current_url) {
+		if(get_home_url() . '/' === $current_url) {
 			$current_url = '';
 		}
 

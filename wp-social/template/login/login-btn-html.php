@@ -62,10 +62,10 @@ $className = 'xs-login xs-login--' . $currentStyle;
 
 						if($valueType == 'LineApp') {
 							$line = new Line_App();
-							$args['url'] = $line->get_auth_url(get_site_url() . '/wp-json/wslu-social-login/type/' . $keyType);
+							$args['url'] = $line->get_auth_url(get_home_url() . '/wp-json/wslu-social-login/type/' . $keyType);
 
 						} else {
-							$args['url'] = get_site_url() . '/wp-json/wslu-social-login/type/' . $keyType . '' . $url_params;
+							$args['url'] = get_home_url() . '/wp-json/wslu-social-login/type/' . $keyType . '' . $url_params;
 						}
 
 						/*
