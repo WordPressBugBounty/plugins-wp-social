@@ -188,6 +188,10 @@ class Counter {
 
 	public function counter_access_key_setup() {
 
+		if( !isset( $_POST['xs_provider_submit_form_access_counter_nonce'] ) || ! wp_verify_nonce( $_POST['xs_provider_submit_form_access_counter_nonce'], 'xs_provider_submit_form_access_counter_nonce' ) || ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
 		if(isset($_POST['xs_provider_submit_form_access_counter'])) {
 
 			$getpage = isset($_GET['page']) ? Admin_Settings::sanitize($_GET['page']) : '';

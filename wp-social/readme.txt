@@ -3,7 +3,7 @@ Contributors: XpeedStudio, Ataurr, emranio
 Tags: Social login, WordPress Social login and register, Social share,  Social counter, Social,  WooCommerce social login and register
 Requires at least: 5.0
 Tested up to: 6.7
-Stable tag: 3.1.0
+Stable tag: 3.1.1
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
@@ -162,6 +162,9 @@ Visit [wpmet](https://wpmet.com) to learn more about how to get the best of Word
 
 
 == Changelog ==
+Version 3.1.1 // 2025-02-24
+Fixed: XSS vulnerability in the Social Counter.
+
 Version 3.1.0 // 2025-02-09
 Fixed: Rest api base url issue.
 Fixed: Show button to wp-login page switch enable/disable issue.

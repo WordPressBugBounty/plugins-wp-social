@@ -2,9 +2,9 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Wp Social 3.1.0\n"
+"Project-Id-Version: Wp Social 3.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-social\n"
-"POT-Creation-Date: 2025-02-09 10:39:43+00:00\n"
+"POT-Creation-Date: 2025-02-25 05:29:22+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -129,28 +129,28 @@ msgid ""
 "according to your LineApp."
 msgstr ""
 
-#: app/providers.php:343 inc/counter.php:325
+#: app/providers.php:343 inc/counter.php:329
 msgid "Fans"
 msgstr ""
 
 #: app/providers.php:351 app/providers.php:365 app/providers.php:377
-#: app/providers.php:390 inc/counter.php:329 inc/counter.php:334
-#: inc/counter.php:338 inc/counter.php:342
+#: app/providers.php:390 inc/counter.php:333 inc/counter.php:338
+#: inc/counter.php:342 inc/counter.php:346
 msgid "Followers"
 msgstr ""
 
-#: app/providers.php:356 app/providers.php:381 inc/counter.php:371
-#: inc/counter.php:415 inc/counter.php:441
+#: app/providers.php:356 app/providers.php:381 inc/counter.php:375
+#: inc/counter.php:419 inc/counter.php:445
 msgid "Access Token Key"
 msgstr ""
 
-#: app/providers.php:402 app/providers.php:417 inc/counter.php:346
-#: inc/counter.php:348
+#: app/providers.php:402 app/providers.php:417 inc/counter.php:350
+#: inc/counter.php:352
 msgid "Subscribers"
 msgstr ""
 
-#: app/providers.php:426 app/providers.php:431 inc/counter.php:349
-#: inc/counter.php:350
+#: app/providers.php:426 app/providers.php:431 inc/counter.php:353
+#: inc/counter.php:354
 msgid "Count"
 msgstr ""
 
@@ -402,7 +402,7 @@ msgstr ""
 msgid "Custom Class :"
 msgstr ""
 
-#: inc/counter.php:387
+#: inc/counter.php:391
 msgid "Get access token "
 msgstr ""
 
@@ -1084,25 +1084,25 @@ msgstr ""
 msgid "Cached : "
 msgstr ""
 
-#: template/admin/counter/providers-counter.php:521
-#: template/admin/counter/providers-counter.php:530
-#: template/admin/counter/providers-counter.php:539
-msgid "Go to APP Settings and Set Callback URL"
-msgstr ""
-
 #: template/admin/counter/providers-counter.php:522
 #: template/admin/counter/providers-counter.php:531
 #: template/admin/counter/providers-counter.php:540
+msgid "Go to APP Settings and Set Callback URL"
+msgstr ""
+
+#: template/admin/counter/providers-counter.php:523
+#: template/admin/counter/providers-counter.php:532
+#: template/admin/counter/providers-counter.php:541
 msgid "App Settings "
 msgstr ""
 
-#: template/admin/counter/providers-counter.php:524
-#: template/admin/counter/providers-counter.php:533
-#: template/admin/counter/providers-counter.php:542
+#: template/admin/counter/providers-counter.php:525
+#: template/admin/counter/providers-counter.php:534
+#: template/admin/counter/providers-counter.php:543
 msgid "Add the following URL to the \"Valid OAuth redirect URIs\" field:"
 msgstr ""
 
-#: template/admin/counter/providers-counter.php:549
+#: template/admin/counter/providers-counter.php:550
 msgid "Generate Key"
 msgstr ""
 

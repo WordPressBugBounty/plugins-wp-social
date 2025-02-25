@@ -512,6 +512,7 @@ defined('ABSPATH') || exit;
 												}
 											}
 											?>
+                                            <input type="hidden" name="xs_provider_submit_form_access_counter_nonce" value="<?php echo wp_create_nonce('xs_provider_submit_form_access_counter_nonce'); ?>">
                                         </div>
                                     </div>
 									<?php
