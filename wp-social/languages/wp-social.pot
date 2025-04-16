@@ -2,9 +2,9 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Wp Social 3.1.1\n"
+"Project-Id-Version: Wp Social 3.1.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-social\n"
-"POT-Creation-Date: 2025-02-25 05:29:22+00:00\n"
+"POT-Creation-Date: 2025-04-16 08:33:05+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -344,7 +344,7 @@ msgid "WP Social Login Ultimate"
 msgstr ""
 
 #: inc/admin-settings.php:336 lib/onboard/views/onboard-steps/step-05.php:5
-#: wp-social.php:160
+#: wp-social.php:162
 msgid "WP Social"
 msgstr ""
 
@@ -699,12 +699,12 @@ msgstr ""
 msgid "No-Code Email Customizer for WordPress"
 msgstr ""
 
-#: lib/onboard/views/onboard-steps/step-03.php:69 wp-social.php:178
+#: lib/onboard/views/onboard-steps/step-03.php:69 wp-social.php:180
 msgid "Most flexible drag-and-drop form builder"
 msgstr ""
 
 #: lib/onboard/views/onboard-steps/step-03.php:79
-#: lib/onboard/views/onboard-steps/step-03.php:89 wp-social.php:186
+#: lib/onboard/views/onboard-steps/step-03.php:89 wp-social.php:188
 msgid "Integrate various styled review system in your website"
 msgstr ""
 
@@ -831,7 +831,7 @@ msgstr ""
 msgid "Get started"
 msgstr ""
 
-#: lib/onboard/views/settings-sections/dashboard.php:26 wp-social.php:123
+#: lib/onboard/views/settings-sections/dashboard.php:26 wp-social.php:125
 msgid "Video Tutorials"
 msgstr ""
 
@@ -1473,177 +1473,177 @@ msgstr ""
 msgid "Shares"
 msgstr ""
 
-#: wp-social.php:117
+#: wp-social.php:119
 msgid "Join the Community"
 msgstr ""
 
-#: wp-social.php:119
+#: wp-social.php:121
 msgid ""
 "Join our Facebook group to get 20% discount coupon on premium products. "
 "Follow us to get more exciting offers."
 msgstr ""
 
-#: wp-social.php:125
+#: wp-social.php:127
 msgid ""
 "Learn the step by step process for developing your site easily from video "
 "tutorials."
 msgstr ""
 
-#: wp-social.php:130
+#: wp-social.php:132
 msgid "Request a feature"
 msgstr ""
 
-#: wp-social.php:132
+#: wp-social.php:134
 msgid "Have any special feature in mind? Let us know through the feature request."
 msgstr ""
 
-#: wp-social.php:137
+#: wp-social.php:139
 msgid "Documentation"
 msgstr ""
 
-#: wp-social.php:139
+#: wp-social.php:141
 msgid ""
 "Detailed documentation to help you understand the functionality of each "
 "feature."
 msgstr ""
 
-#: wp-social.php:144
+#: wp-social.php:146
 msgid "Public Roadmap"
 msgstr ""
 
-#: wp-social.php:146
+#: wp-social.php:148
 msgid "Check our upcoming new features, detailed development stories and tasks"
 msgstr ""
 
-#: wp-social.php:152 wp-social.php:228
+#: wp-social.php:154 wp-social.php:230
 msgid "GetGenie"
 msgstr ""
 
-#: wp-social.php:154
+#: wp-social.php:156
 msgid "Your AI-Powered Content & SEO Assistant for WordPress"
 msgstr ""
 
-#: wp-social.php:162
+#: wp-social.php:164
 msgid "All-in-One drag and drop Addons for Elementor"
 msgstr ""
 
-#: wp-social.php:168
+#: wp-social.php:170
 msgid "ShopEngine"
 msgstr ""
 
-#: wp-social.php:170
+#: wp-social.php:172
 msgid "Complete WooCommerce Solution for Elementor"
 msgstr ""
 
-#: wp-social.php:176 wp-social.php:250
+#: wp-social.php:178 wp-social.php:252
 msgid "MetForm"
 msgstr ""
 
-#: wp-social.php:184
+#: wp-social.php:186
 msgid "Ultimate Review"
 msgstr ""
 
-#: wp-social.php:192
+#: wp-social.php:194
 msgid "Fundraising & Donation Platform"
 msgstr ""
 
-#: wp-social.php:194
+#: wp-social.php:196
 msgid "Enable donation system in your website"
 msgstr ""
 
-#: wp-social.php:220
+#: wp-social.php:222
 msgid "ElementsKit"
 msgstr ""
 
-#: wp-social.php:223
+#: wp-social.php:225
 msgid ""
 "All-in-one Elementor addon trusted by 1 Million+ users, makes your website "
 "builder process easier with ultimate freedom.\n"
-"\t\t\t\t\t"
+"\t\t\t\t\t\t"
 msgstr ""
 
-#: wp-social.php:231
+#: wp-social.php:233
 msgid ""
 "Your personal AI assistant for content and SEO. Write content that ranks on "
 "Google with NLP keywords and SERP analysis data."
 msgstr ""
 
-#: wp-social.php:235
+#: wp-social.php:237
 msgid "GutenKit"
 msgstr ""
 
-#: wp-social.php:238
+#: wp-social.php:240
 msgid ""
 "Gutenberg blocks, patterns, and templates that extend the page-building "
 "experience using the WordPress block editor."
 msgstr ""
 
-#: wp-social.php:242
+#: wp-social.php:244
 msgid "Shopengine"
 msgstr ""
 
-#: wp-social.php:245
+#: wp-social.php:247
 msgid ""
 "Complete WooCommerce solution for Elementor to fully customize any pages "
 "including cart, checkout, shop page, and so on.\n"
-"\t\t\t\t\t"
+"\t\t\t\t\t\t"
 msgstr ""
 
-#: wp-social.php:253
+#: wp-social.php:255
 msgid ""
 "Drag & drop form builder for Elementor to create contact forms, multi-step "
 "forms, and more — smoother, faster, and better!\n"
-"\t\t\t\t\t"
+"\t\t\t\t\t\t"
 msgstr ""
 
-#: wp-social.php:258
+#: wp-social.php:260
 msgid "EmailKit"
 msgstr ""
 
-#: wp-social.php:261
+#: wp-social.php:263
 msgid ""
 "Advanced email customizer for WooCommerce and WordPress. Build, customize, "
 "and send emails from WordPress to boost your sales!"
 msgstr ""
 
-#: wp-social.php:265
+#: wp-social.php:267
 msgid "WP Ultimate Review"
 msgstr ""
 
-#: wp-social.php:268
+#: wp-social.php:270
 msgid ""
 "Collect and showcase reviews on your website to build brand credibility and "
 "social proof with the easiest solution.\n"
-"\t\t\t\t\t"
+"\t\t\t\t\t\t"
 msgstr ""
 
-#: wp-social.php:273
+#: wp-social.php:275
 msgid "FundEngine"
 msgstr ""
 
-#: wp-social.php:276
+#: wp-social.php:278
 msgid ""
 "Create fundraising, crowdfunding, and donation websites with PayPal and "
 "Stripe payment gateway integration.\n"
-"\t\t\t\t\t"
+"\t\t\t\t\t\t"
 msgstr ""
 
-#: wp-social.php:281
+#: wp-social.php:283
 msgid "Blocks for ShopEngine"
 msgstr ""
 
-#: wp-social.php:284
+#: wp-social.php:286
 msgid ""
 "All in one WooCommerce solution for Gutenberg! Build your WooCommerce pages "
 "in a block editor with full customization.\n"
-"\t\t\t\t\t"
+"\t\t\t\t\t\t"
 msgstr ""
 
-#: wp-social.php:289
+#: wp-social.php:291
 msgid "Genie Image"
 msgstr ""
 
-#: wp-social.php:292
+#: wp-social.php:294
 msgid ""
 "AI-powered text-to-image generator for WordPress with OpenAI’s DALL-E 2 "
 "technology to generate high-quality images in one click."
