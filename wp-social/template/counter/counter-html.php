@@ -27,6 +27,11 @@ if(!empty($enabled_providers)) : ?>
                         continue;
                     }
 
+					// TikTok requires wp-social-pro plugin to be active
+					if($key === 'tiktok' && !\WP_Social::is_pro_active()) {
+						continue;
+					}
+
 					$p_obj = $factory->make($key);
 					//$follower_count = $p_obj->get_cached_count($cache_time);
 

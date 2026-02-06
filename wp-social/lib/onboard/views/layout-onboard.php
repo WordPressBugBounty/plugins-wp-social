@@ -40,7 +40,7 @@ $onboard_steps = [
         'icon'      => esc_attr('xs-onboard-user')
     ],
     'step-03' => [
-        'title'     => esc_html__('Website Powerup', 'wp-social'),
+        'title'     => esc_html__('Upgrade Your Site', 'wp-social'),
         'sub-title' => esc_html__('Website Powerup info', 'wp-social'),
         'icon'      => esc_attr('xs-onboard-layout')
     ],

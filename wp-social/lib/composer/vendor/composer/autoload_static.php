@@ -19,6 +19,10 @@ class ComposerStaticInit87e68119d7b7bf7656fc071e8325076c
         array (
             'ParagonIE\\ConstantTime\\' => 23,
         ),
+        'T' => 
+        array (
+            'TikTok\\' => 7,
+        ),
         'H' => 
         array (
             'Hybridauth\\' => 11,
@@ -29,6 +33,10 @@ class ComposerStaticInit87e68119d7b7bf7656fc071e8325076c
         'phpseclib3\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib',
+        ),
+        'TikTok\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jstolpe/tiktok-api-php-sdk/src/TikTok',
         ),
         'ParagonIE\\ConstantTime\\' => 
         array (

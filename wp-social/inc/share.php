@@ -457,6 +457,7 @@ class Share {
 		$link['reddit'] = ['label' => 'Reddit', 'url' => 'http://reddit.com/submit', 'params' => ['url' => '[%url%]', 'title' => '[%title%]']];
 		$link['digg'] = ['label' => 'Digg', 'url' => 'http://digg.com/submit', 'params' => ['url' => '[%url%]', 'title' => '[%title%]', 'phase' => 2]];
 		$link['stumbleupon'] = ['label' => 'StumbleUpon', 'url' => 'http://www.stumbleupon.com/submit', 'params' => ['url' => '[%url%]', 'title' => '[%title%]']];
+		$link['lineapps'] = ['label' => 'LineApp', 'url' => 'https://lineit.line.me/share/ui', 'params' => ['url' => '[%url%]', 'text' => '[%title%] [%url%]']];
 
 		return $link;
 	}

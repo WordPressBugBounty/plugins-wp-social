@@ -23,7 +23,7 @@
 
 <div class="wslu-onboard-pagination">
     <a class="wslu-onboard-btn wslu-onboard-pagi-btn prev" href="#"><i class="icon xs-onboard-arrow-left"></i><?php echo esc_html__('Back', 'wp-social'); ?></a>
-    <a class="wslu-onboard-btn wslu-onboard-pagi-btn next" href="#"><?php echo esc_html__('Next Step', 'wp-social'); ?></a>
+    <a class="wslu-onboard-btn wslu-onboard-pagi-btn next" href="#"><?php echo esc_html__('Complete Setup', 'wp-social'); ?></a>
 </div>
 
 <div class="wslu-onboard-shapes">

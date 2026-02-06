@@ -1,9 +1,9 @@
 === Wp Social Login and Register Social Counter ===
-Contributors: XpeedStudio, Ataurr, emranio
+Contributors: Roxnor, Ataurr
 Tags: Social login, WordPress Social login and register, Social share,  Social counter, Social,  WooCommerce social login and register
 Requires at least: 5.0
-Tested up to: 6.8
-Stable tag: 3.1.2
+Tested up to: 6.9
+Stable tag: 3.1.6
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
@@ -162,6 +162,20 @@ Visit [wpmet](https://wpmet.com) to learn more about how to get the best of Word
 
 
 == Changelog ==
+Version 3.1.6 // 2026-01-07
+Improved: Users can now set the same page as the redirect destination after social login.
+
+Version 3.1.5 // 2025-12-24
+Fixed: Linkdin empty profile image error issue fixed.
+
+Version 3.1.4 // 2025-11-24
+Added: Tiktok counter provider.
+Added: Lineapp share provider.
+Fixed: Missing authorization in Cache REST endpoints allowing Social Counter data changes.
+
+Version 3.1.3 // 2025-10-01
+Fixed: Instagram counter not working.
+
 Version 3.1.2 // 2025-04-16
 Fixed: Compatibility issue with WordPress 6.8.
 

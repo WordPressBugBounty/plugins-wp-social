@@ -29,12 +29,16 @@ defined('ABSPATH') || exit;
 				foreach($core_provider as $k => $val):
 
 					$label = empty($saved_settings['social'][$k]['data']['label']) ? $val['label'] : $saved_settings['social'][$k]['data']['label'];
+                    $plugin_active = in_array('wp-social-pro/wp-social-pro.php', apply_filters('active_plugins', get_option('active_plugins')));
+                    $is_lineapp = ($k === 'lineapp'); // Check if current provider is LineApp
+
+                    // Apply class 'lineapp-disabled' if wp-social-pro is deactivated and current provider is LineApp
+                    $lineapp_provider_class = (!$plugin_active && $is_lineapp) ? 'lineapp-disabled' : '';
 					?>
 
                     <li data-provider="<?php echo esc_attr($k)?>">
-                        <div class="xs-single-social-block <?php echo esc_attr($k); ?>">
-                            <div class="xs-block-header" data-type="modal-trigger"
-                                 data-target="example-modal-<?php echo esc_attr($k); ?>">
+                        <div class="xs-single-social-block <?php echo esc_attr($k . ' ' . $lineapp_provider_class); ?>">
+                            <div class="xs-block-header" data-type="modal-trigger" data-target="example-modal-<?php echo esc_attr($k); ?>">
                                 <span class="drag-icon"></span>
                                 <div class="xs-social-icon">
                                     <span class="met-social met-social-<?php echo esc_attr($k); ?>"></span>
@@ -67,8 +71,19 @@ defined('ABSPATH') || exit;
                                             data-target="example-modal-<?php echo esc_attr($k); ?>">
 										<?php echo esc_attr(empty($enabled_providers[$k]['enable']) ? esc_html__('Getting Started', 'wp-social') : esc_html__('Settings', 'wp-social')); ?>
                                     </a>
+                                    <?php if($is_lineapp && !$plugin_active) : ?>
+                                    <div class="wslu-pro-only-container">
+                                        <a href="javascript:void(0)" onclick="window.open('https://wpmet.com/plugin/wp-social/pricing/', '_blank')" class="wslu-buy-now-btn2"><?php esc_html_e('Buy Pro', 'wp-social'); ?></a>
+                                    </div>
+                                <?php endif; ?>
                                 </div>
                             </div>
+                            <?php if ($is_lineapp && !$plugin_active): ?>
+                                <div class="lineapp-overlay">
+                                    <div class="xs-single-social-block <?php echo esc_attr($k . ' ' . $lineapp_provider_class); ?>">
+                                    </div>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </li>
 				<?php

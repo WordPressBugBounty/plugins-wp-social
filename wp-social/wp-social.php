@@ -4,7 +4,7 @@
  * Plugin URI: https://wpmet.com/
  * Description: Wp Social Login / Social Sharing / Social Counter System for Facebook, Google, Twitter, Linkedin, Dribble, Pinterest, Wordpress, Instagram, GitHub, Vkontakte, Reddit and more providers.
  * Author: Wpmet
- * Version: 3.1.2
+ * Version: 3.1.6
  * Author URI: https://wpmet.com/
  * Text Domain: wp-social
  * Domain Path: /languages/
@@ -15,8 +15,8 @@
 
 defined('ABSPATH') || exit;
 
-define('WSLU_VERSION', '3.1.2');
-define('WSLU_VERSION_PREVIOUS_STABLE_VERSION', '3.1.1');
+define('WSLU_VERSION', '3.1.6');
+define('WSLU_VERSION_PREVIOUS_STABLE_VERSION', '3.1.5');
 
 define("WSLU_LOGIN_PLUGIN", plugin_dir_path(__FILE__));
 define("WSLU_LOGIN_PLUGIN_URL", plugin_dir_url(__FILE__));
@@ -46,8 +46,40 @@ if(!function_exists('xs_social_plugin_activate')) :
 	}
 endif;
 
+/**
+ * Clean up problematic provider data to prevent errors in older plugin versions
+ * Removes TikTok from counter data and LineApp from provider orders
+ * 
+ * @since 3.0.1
+ */
+function xs_social_cleanup_tiktok_data() {
+	// Clean up TikTok from counter providers
+	$counter_data = get_option('xs_counter_providers_data', []);
+	if (isset($counter_data['social']['tiktok'])) {
+		unset($counter_data['social']['tiktok']);
+		update_option('xs_counter_providers_data', $counter_data);
+	}
+	
+	// Clean up LineApp from provider orders
+	$provider_order = get_option('xs_share_providers_order', []);
+	if (is_array($provider_order) && in_array('lineapp', $provider_order)) {
+		$provider_order = array_values(array_filter($provider_order, function($provider) {
+			return $provider !== 'lineapp';
+		}));
+		update_option('xs_share_providers_order', $provider_order);
+	}
+	
+	// Clean up LineApp from share provider data
+	$share_data = get_option('xs_share_providers_data', []);
+	if (isset($share_data['lineapp'])) {
+		unset($share_data['lineapp']);
+		update_option('xs_share_providers_data', $share_data);
+	}
+}
 
 function xs_social_plugin_deactivate() {
+	// Clean up TikTok and newer providers data to prevent function not found errors in older versions
+	xs_social_cleanup_tiktok_data();
 }
 
 register_activation_hook(__FILE__, 'xs_social_plugin_activate');
@@ -452,5 +484,6 @@ if(!class_exists('\WP_Social')) {
 		}
 	}
 }
+
 
 new \WP_Social();

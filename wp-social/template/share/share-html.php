@@ -43,7 +43,16 @@ if(!empty($wanted_providers) && is_array($wanted_providers)) :
 			<?php
 			$content = isset($styles[$selected_share_style]['content']) ? $styles[$selected_share_style]['content'] : '';
 
+            // Check if the wp-social-pro plugin is active
+            $is_wp_social_pro_active = in_array('wp-social-pro/wp-social-pro.php', apply_filters('active_plugins', get_option('active_plugins')));
+
+
 			foreach($wanted_providers as $key) {
+
+                // Skip rendering Line app if wp-social-pro plugin is inactive
+                if ($key === 'lineapp' && !$is_wp_social_pro_active) {
+                    continue;
+                }
 
 				if(!empty($enabled_providers[$key]['enable'])) {
 

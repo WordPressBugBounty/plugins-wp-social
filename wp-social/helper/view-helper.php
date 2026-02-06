@@ -40,7 +40,7 @@ class View_Helper {
         for page or post select2 dropdown list
         -------------------------------------
     */ 
-    public static function get_select2_dropdown( $post_type = 'page', $status = 'publish', $default = '', $name = '' ) {
+    public static function get_select2_dropdown( $post_type = 'page', $status = 'publish', $default = '', $name = '', $include_same_page = false ) {
 
         $args = array(
             'sort_order'    => 'asc',
@@ -52,6 +52,9 @@ class View_Helper {
         ?> 
         <div class="wp-social-select-2-dropdown--wrapper">
             <select name="<?php echo esc_attr($name) ?>" class="wp-social-select-2-dropdown"> 
+                <?php if( $include_same_page ): ?>
+                    <option <?php echo esc_attr($default == 'same_page' ? 'selected' : '') ?> value="same_page"><?php echo esc_html__('Same Page', 'wp-social') ?></option>
+                <?php endif; ?>
                 <?php foreach( get_pages($args) as $page ): ?>
                     <option <?php echo esc_attr($page->guid == $default ? 'selected' : '')  ?>  value="<?php echo esc_url( $page->guid ) ?>"> <?php echo esc_html( $page->post_title ) ?> </option>
                 <?php endforeach; ?>

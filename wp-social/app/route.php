@@ -15,6 +15,12 @@ class Route extends Api {
 
 	public function post_clear_counter_cache() {
 
+		// Verify nonce
+		if (!wp_verify_nonce($this->request->get_header('X-WP-Nonce'), 'wp_rest') 
+			|| !current_user_can('manage_options')) {
+			return new \WP_Error('rest_forbidden', 'Access Denied', array('status' => 403));
+		}
+
 		$data = $this->request->get_params();
 
 		if(!empty($data['provider'])) {

@@ -6,6 +6,7 @@ use WP_Social\Lib\Provider\Counter\Comments_Counter;
 use WP_Social\Lib\Provider\Counter\Dribbble_Counter;
 use WP_Social\Lib\Provider\Counter\Facebook_Counter;
 use WP_Social\Lib\Provider\Counter\Instagram_Counter;
+use WP_Social\Lib\Provider\Counter\Tiktok_Counter;
 use WP_Social\Lib\Provider\Counter\No_Provider_Counter;
 use WP_Social\Lib\Provider\Counter\Pinterest_Counter;
 use WP_Social\Lib\Provider\Counter\Posts_Counter;
@@ -36,6 +37,10 @@ class Counter_Factory {
 
 			case 'instagram' :
 				$this->factory = new Instagram_Counter();
+				break;
+
+			case 'tiktok' :
+				$this->factory = new Tiktok_Counter();
 				break;
 
 //			case 'mailchimp' :

@@ -46,6 +46,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'jstolpe/tiktok-api-php-sdk' => array(
+            'pretty_version' => 'v1.0.3',
+            'version' => '1.0.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../jstolpe/tiktok-api-php-sdk',
+            'aliases' => array(),
+            'reference' => 'dda26c6ef27026ae139fb6abf4fb33193ee77d8d',
+            'dev_requirement' => false,
+        ),
         'phpseclib/phpseclib' => array(
             'pretty_version' => '3.0.41',
             'version' => '3.0.41.0',

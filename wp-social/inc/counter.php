@@ -4,8 +4,10 @@ namespace WP_Social\Inc;
 
 defined('ABSPATH') || exit;
 
+require_once( WSLU_LOGIN_PLUGIN . 'lib/composer/vendor/autoload.php' );
 use WP_Social\App\Providers;
 use WP_Social\Lib\Provider\Counter_Factory;
+use TikTok\Authentication\Authentication;
 
 /**
  * Class Name : XS_Social_Counter;
@@ -73,7 +75,6 @@ class Counter {
 
 			$factory = new Counter_Factory();
 
-
 			foreach($counter_provider as $key => $conf) {
 
 				if(!empty($enabled_providers[$key]['enable'])) {
@@ -83,7 +84,7 @@ class Counter {
 					if($obj->need_to_call_legacy_function()) {
 
 						$function = 'xsc_' . $key . '_count';
-						$return['data'][$key] = $function($cache_time);
+						$return['data'][$key] = function_exists( $function ) ? $function( $cache_time ) : 0;
 						$xsc_transient[$key] = $return['data'][$key];
 
 					} else {
@@ -317,6 +318,16 @@ class Counter {
 				set_transient('xs_counter_' . $getType . '_client_secret', $app_secret, 60 * 60);
 
 				header("Location: $url");
+			} elseif ($getType == 'tiktok') {
+				
+				$tiktok_login_url = $this->get_tiktok_login_url( $app_id, $app_secret );
+
+				update_option( 'xs_counter_tiktok_app_id', $app_id) ;
+				update_option( 'xs_counter_tiktok_app_secret', $app_secret) ;
+
+				wp_redirect($tiktok_login_url);
+
+				exit;
 			}
 		}
 	}
@@ -344,6 +355,10 @@ class Counter {
 			'instagram' => [
 				'label' => 'Instagram',
 				'data'  => ['text' => __('Followers', 'wp-social'), 'url' => 'http://instagram.com/%s'],
+			],
+			'tiktok' => [
+				'label' => 'TikTok',
+				'data'  => ['text' => __('Followers', 'wp-social'), 'url' => 'http://tiktok.com/%s'],
 			],
 			'youtube'   => [
 				'label' => 'YouTube',
@@ -388,9 +403,9 @@ class Counter {
 
 				'get_token' => [
 					'type'  => 'link',
-					'label' => esc_html__('Get access token ', 'wp-social'),
+					'label' => esc_html__('Documentation to get access token & account ID.', 'wp-social'),
 					'input' => 'link',
-					'url' => 'https://token.wpmet.com/social_token.php?provider=instagram',
+					'url' => 'https://wpmet.com/doc/social-counter-instagram/',
 					'class' => 'wslu-btn wslu-target-link',
 				],
 
@@ -401,8 +416,17 @@ class Counter {
 				],
 				'user_id' => [
 					'type'  => 'normal',
-					'label' => 'User ID',
+					'label' => 'Account ID',
 					'input' => 'text',
+				],
+			],
+
+			'tiktok'  => [
+				'api' => [
+					'type'  => 'access',
+					'label' => __('Access Token', 'wp-social'),
+					'input' => 'text',
+					'filed' => ['app_id' => 'Client ID', 'app_secret' => 'Client Secret'],
 				],
 			],
 
@@ -454,6 +478,31 @@ class Counter {
 		];
 	}
 
+	/**
+	 * Get tiktok login url
+	 * 
+	 * @param string $client_id
+	 * @param string $client_secret
+	 * 
+	 * @return string
+	 */
+	public function get_tiktok_login_url( $client_id, $client_secret ) {
+
+		$authentication = new Authentication( array(
+			'client_key' => $client_id, 
+			'client_secret' => $client_secret
+		));
+		
+		$redirect_url =  site_url() . '/wp-json/wslu-social-counter/type/tiktok';
+		
+		$scopes = array( 
+			'user.info.stats'
+		);
+		
+		$authentication_url= $authentication->getAuthenticationUrl( $redirect_url, $scopes );
+		
+		return $authentication_url;
+	}
 
 	public function xs_counter_defalut_providers() {
 		if(!get_option('xs_counter_active')) {

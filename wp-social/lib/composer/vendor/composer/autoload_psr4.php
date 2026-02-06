@@ -6,6 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'TikTok\\' => array($vendorDir . '/jstolpe/tiktok-api-php-sdk/src/TikTok'),
     'phpseclib3\\' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
     'ParagonIE\\ConstantTime\\' => array($vendorDir . '/paragonie/constant_time_encoding/src'),
     'Hybridauth\\' => array($vendorDir . '/hybridauth/hybridauth/src'),

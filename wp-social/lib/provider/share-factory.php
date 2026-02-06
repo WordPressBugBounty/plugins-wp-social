@@ -18,6 +18,7 @@ use WP_Social\Lib\Provider\Share\Trello_Sharer;
 use WP_Social\Lib\Provider\Share\Twitter_Sharer;
 use WP_Social\Lib\Provider\Share\Viber_Sharer;
 use WP_Social\Lib\Provider\Share\Whatsapp_Sharer;
+use WP_Social\Lib\Provider\Share\Lineapp_Sharer;
 
 defined('ABSPATH') || exit;
 
@@ -99,6 +100,10 @@ class Share_Factory {
 
 			case 'stumbleupon' :
 				$this->factory = new Stumbleupon_Sharer($this->post_id, $type);
+				break;
+
+			case 'lineapp' :
+				$this->factory = new Lineapp_Sharer($this->post_id, $type);
 				break;
 
 			default:

@@ -64,6 +64,15 @@ class API_Routes {
 		}
 		
 		$social_key = $request['key'];
+		
+		// TikTok requires wp-social-pro plugin to be active
+		if($social_key === 'tiktok' && !\WP_Social::is_pro_active()) {
+			return array(
+				'msg'     => 'TikTok requires WP Social Pro plugin to be active',
+				'success' => false,
+			);
+		}
+		
 		$providers = \WP_Social\App\Settings::get_enabled_provider_conf_counter();
 		$parameters = $request->get_params();
 

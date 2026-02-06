@@ -2,6 +2,12 @@
 
 defined('ABSPATH') || exit;
 
+require_once( WSLU_LOGIN_PLUGIN . 'lib/composer/vendor/autoload.php' );
+require_once( WSLU_LOGIN_PLUGIN . 'helper/helper.php' );
+
+use TikTok\Authentication\Authentication;
+use WP_Social\Helper\Helper;
+
 /**
  * Function Name : xs_return_call_back_login_function();
  * Function Details : WP Rest API.
@@ -61,10 +67,52 @@ add_action('rest_api_init', function() {
 			'permission_callback' => '__return_true',
 		)
 	);
+
+	register_rest_route('wslu-social-counter', '/type/(?P<data>\w+)/',
+		array(
+			'methods'  => 'GET',
+			'callback' => 'xs_return_call_back_counter_function',
+			'permission_callback' => '__return_true',
+		)
+	);
 });
 
 
+if( !function_exists('xs_return_call_back_counter_function') ) {
+	function xs_return_call_back_counter_function( WP_REST_Request $request ) {
+		
+		$data = $request->get_params();
+		$client_key = get_option( 'xs_counter_tiktok_app_id' );
+		$client_secret = get_option( 'xs_counter_tiktok_app_secret' );
+		
+		$authentication = new Authentication( array( 
+			'client_key' => $client_key, 
+			'client_secret' => $client_secret
+		));
+		
+		$redirect_url =  site_url() . '/wp-json/wslu-social-counter/type/tiktok';
+		$code = isset( $data['code'] ) ? $data['code'] : '';
+		$token_from_code = $authentication->getAccessTokenFromCode( $code, $redirect_url );
+		$user_token = isset( $token_from_code['access_token'] ) ? $token_from_code['access_token'] : '';
+
+		// Set proper content type
+		header('Content-Type: text/html; charset=UTF-8');
+		
+		if( $user_token ) {
+			Helper::tiktok_access_token_display_page_success_message( $user_token );
+		} else {
+			Helper::tiktok_access_token_display_page_error_message();
+		}
+		die();
+	}
+}
+
+
 function post_save_instagram_counter_cache(WP_REST_Request $request) {
+
+	if (!current_user_can('manage_options')) {
+		return new \WP_Error('rest_forbidden', esc_html__('You do not have permission to perform this action.', 'wp-social'), array('status' => 401));
+	}
 
 	$data = $request->get_params();
 
@@ -81,6 +129,10 @@ function post_save_instagram_counter_cache(WP_REST_Request $request) {
 
 
 function post_check_counter_cache(WP_REST_Request $request) {
+
+	if (!current_user_can('manage_options')) {
+		return new \WP_Error('rest_forbidden', esc_html__('You do not have permission to perform this action.', 'wp-social'), array('status' => 401));
+	}
 
 	$data = $request->get_params();
 

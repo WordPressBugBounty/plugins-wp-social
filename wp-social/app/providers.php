@@ -229,6 +229,20 @@ class Providers {
 					'label' => 'StumbleUpon',
 				],
 			],
+
+			'lineapp' => [
+				'label'  => 'LineApp',
+				'url'    => 'https://lineit.line.me/share/ui',
+				'params' => [
+					'url'   => '[%url%]',
+					'title' => '[%title%]',
+				],
+				'data'   => [
+					'value' => 0,
+					'text'  => 'Share',
+					'label' => 'LineApp',
+				],
+			],
 		];
 
 		$providers_order = get_option(self::ORDER_LIST_PROVIDER_SHARE);
@@ -388,6 +402,18 @@ class Providers {
 			'instagram' => [
 				'label' => 'Instagram',
 				'data'  => ['text' => __('Followers', 'wp-social'), 'url' => 'http://instagram.com/%s'],
+				'form'  => [
+					'id' => [
+						'type'  => 'normal',
+						'label' => 'Username',
+						'input' => 'text',
+					],
+				],
+			],
+
+			'tiktok' => [
+				'label' => 'TikTok',
+				'data'  => ['text' => __('Followers', 'wp-social'), 'url' => 'http://www.tiktok.com/%s'],
 				'form'  => [
 					'id' => [
 						'type'  => 'normal',

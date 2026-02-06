@@ -272,7 +272,7 @@ if(strlen($socialType) > 0) {
 						 * and save the image as attachment
 						 */
 						$avatar_url = $avatar_obj->get_avatar_url($getProfile, $socialType);
-						if(get_option('wp_social_login_sync_image_too') == 'yes') {
+						if(get_option('wp_social_login_sync_image_too') == 'yes' && !empty($avatar_url)) {
 							$attach     = save_image_from_url_as_attachment($avatar_url);
 						}else{
 							$attach['error'] = true;
@@ -344,7 +344,7 @@ if(strlen($socialType) > 0) {
 
 								$attach = [];
 
-								if($current_avatar_url != $avatar_url) {
+								if(!empty($current_avatar_url) && !empty($avatar_url) && $current_avatar_url != $avatar_url) {
 
 									$attach = save_image_from_url_as_attachment($avatar_url);
 								}
@@ -685,8 +685,8 @@ function resolve_redirect_url($session, $setting) {
 
 	/**
 	 * First priority to wordpress default redirect_to param
-	 * Second priority to custom login settings url
-	 * Third priority to XScurrentPage param [AR : not sure where it is used though!]
+	 * Second priority to custom login settings url (including 'same page' option)
+	 * Third priority to XScurrentPage param
 	 * And lastly site home page
 	 *
 	 */
@@ -697,7 +697,24 @@ function resolve_redirect_url($session, $setting) {
 
 	} elseif(!empty($setting['custom_login_url']['enable']) && !empty($setting['custom_login_url']['data'])) {
 
-		$final_redirect = $setting['custom_login_url']['data'];
+		// Custom login redirect is enabled
+		if($setting['custom_login_url']['data'] == 'same_page') {
+			// Same page option - redirect to referrer or fallback based on origin
+			if(!empty($session['xs_social']['login_ref_url'])) {
+				$final_redirect = $session['xs_social']['login_ref_url'];
+			} else {
+				// Check if user came from wp-login or admin area
+				$referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
+				if(strpos($referer, 'wp-login') !== false || strpos($referer, 'wp-admin') !== false) {
+					$final_redirect = user_admin_url();
+				} else {
+					$final_redirect = get_home_url();
+				}
+			}
+		} else {
+			// Specific page URL selected
+			$final_redirect = $setting['custom_login_url']['data'];
+		}
 
 	} elseif(!empty($session['xs_social']['login_ref_url'])) {
 

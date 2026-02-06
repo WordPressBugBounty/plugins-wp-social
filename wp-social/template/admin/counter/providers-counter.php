@@ -43,10 +43,16 @@ defined('ABSPATH') || exit;
 					$name = isset($v['label']) ? $v['label'] : ucfirst($k);
 
 					$js_target_id = 'open_counter__' . $k . '__' . $m;
+					
+					$plugin_active = in_array('wp-social-pro/wp-social-pro.php', apply_filters('active_plugins', get_option('active_plugins')));
+					$is_tiktok = ($k === 'tiktok'); // Check if current provider is TikTok
+
+					// Apply class 'tiktok-disabled' if wp-social-pro is deactivated and current provider is TikTok
+					$tiktok_provider_class = (!$plugin_active && $is_tiktok) ? 'tiktok-disabled' : '';
 
 					?>
                     <li data-provider="<?php echo esc_attr($k) ?>">
-                        <div class="xs-single-social-block <?php echo esc_attr($k); ?>">
+                        <div class="xs-single-social-block <?php echo esc_attr($k . ' ' . $tiktok_provider_class); ?>">
 
                             <div class="xs-block-header"
                                  onclick="xs_counter_open(this);"
@@ -94,8 +100,19 @@ defined('ABSPATH') || exit;
 
 										?>
                                     </a>
+                                    <?php if($is_tiktok && !$plugin_active) : ?>
+                                    <div class="wslu-pro-only-container">
+                                        <a href="javascript:void(0)" onclick="window.open('https://wpmet.com/plugin/wp-social/pricing/', '_blank')" class="wslu-buy-now-btn2"><?php esc_html_e('Buy Pro', 'wp-social'); ?></a>
+                                    </div>
+                                <?php endif; ?>
                                 </div>
                             </div>
+                            <?php if ($is_tiktok && !$plugin_active): ?>
+                                <div class="tiktok-overlay">
+                                    <div class="xs-single-social-block <?php echo esc_attr($k . ' ' . $tiktok_provider_class); ?>">
+                                    </div>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </li>
 					<?php
@@ -115,7 +132,7 @@ defined('ABSPATH') || exit;
 
 				$js_target_id = 'open_counter__' . $k . '__' . $m;
 
-				$v = $counter_provider[$k]; // why this bujruki!? cause i do not have time :P
+                $v = isset($counter_provider[$k]) ? $counter_provider[$k] : $val;
 
 				$obj = $factory->make($k);
 
@@ -541,6 +558,16 @@ defined('ABSPATH') || exit;
                                             <a href="<?php echo esc_url('https://dribbble.com/account/applications/'); ?>"> <?php echo esc_html__('App Settings ', 'wp-social'); ?></a>
                                         </p>
                                         <div class="document"><?php echo esc_html__('Add the following URL to the "Valid OAuth redirect URIs" field:', 'wp-social'); ?>
+                                            <pre style="width: 500px; overflow:scroll; font-weight:bold; padding:10px 10px 10px 0; color:brown"><?php echo esc_url($cur_page); ?></pre>
+                                        </div>
+									<?php }
+                                    if($fk == 'tiktok') {
+										$cur_page = site_url() . '/wp-json/wslu-social-counter/type/tiktok';
+										?>
+                                        <p class="document"><?php echo esc_html__('Go to APP Settings and Set Callback URL', 'wp-social'); ?>
+                                            <a target="_blank" href="<?php echo esc_url('https://developers.tiktok.com/apps/'); ?>"> <?php echo esc_html__('App Settings ', 'wp-social'); ?></a>
+                                        </p>
+                                        <div class="document"><?php echo esc_html__('Add the following URL to the "Redirect URI" field:', 'wp-social'); ?>
                                             <pre style="width: 500px; overflow:scroll; font-weight:bold; padding:10px 10px 10px 0; color:brown"><?php echo esc_url($cur_page); ?></pre>
                                         </div>
 									<?php } ?>

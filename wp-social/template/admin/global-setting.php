@@ -29,11 +29,12 @@ defined( 'ABSPATH') || exit;
 						<label for="custom_login_url_enable" onclick="<?php echo esc_js( 'xs_show_hide(1);' ); ?>" class="social_switch_button_label"></label>
 
 						<div id="xs_data_tr__1" class="wslu-input-list deactive_tr  <?php echo esc_attr(isset($return_data['custom_login_url']['enable']) ? 'active_tr' : '');?>">
+							<!-- Existing: Select a specific page or same page -->
 							<div class="wp-social-dropdown-select">
 								<?php
 								 	$default_select2_value = isset($return_data['custom_login_url']['data']) ? $return_data['custom_login_url']['data'] : '';
-									 // get_select2_dropdown accepts : post type , status, default value, input name attribute
-									\WP_Social\Helper\View_Helper::get_select2_dropdown('page', 'publish', $default_select2_value, 'xs_global[custom_login_url][data]')  
+									 // get_select2_dropdown accepts : post type , status, default value, input name attribute, include same page option
+									\WP_Social\Helper\View_Helper::get_select2_dropdown('page', 'publish', $default_select2_value, 'xs_global[custom_login_url][data]', true)  
 								?>
 							</div>
 							
