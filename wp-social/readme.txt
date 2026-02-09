@@ -3,7 +3,7 @@ Contributors: Roxnor, Ataurr
 Tags: Social login, WordPress Social login and register, Social share,  Social counter, Social,  WooCommerce social login and register
 Requires at least: 5.0
 Tested up to: 6.9
-Stable tag: 3.1.6
+Stable tag: 3.1.7
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
@@ -162,6 +162,9 @@ Visit [wpmet](https://wpmet.com) to learn more about how to get the best of Word
 
 
 == Changelog ==
+Version 3.1.7 // 2026-02-09
+Added: Integrated social login/register with ElementsKit login and register form widgets.
+
 Version 3.1.6 // 2026-01-07
 Improved: Users can now set the same page as the redirect destination after social login.
 

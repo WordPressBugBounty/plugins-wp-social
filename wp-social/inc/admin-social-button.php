@@ -268,6 +268,127 @@ class xs_button_in_login_page {
 
 	}
 
+	/**
+	 * Method Name : xs_add_elementskit_login_button
+	 * Method Details : Callback for ElementsKit login form render action
+	 *
+	 * @params : array $settings ElementsKit widget settings
+	 * @params : string $widget_id ElementsKit widget ID
+	 * @return : void
+	 *
+	 * @since : 4.0
+	 */
+	public static function xs_add_elementskit_login_button($settings, $widget_id) {
+		// Check if social login is enabled in widget settings
+		if ( isset( $settings['ekit_login_wp_social_login'] ) && 'yes' === $settings['ekit_login_wp_social_login'] ) {
+			// Render social login buttons for ElementsKit
+			self::xs_render_elementskit_social_buttons();
+		}
+	}
+
+	/**
+	 * Method Name : xs_add_elementskit_register_button
+	 * Method Details : Callback for ElementsKit register form render action
+	 *
+	 * @params : array $settings ElementsKit widget settings
+	 * @params : string $widget_id ElementsKit widget ID
+	 * @return : void
+	 *
+	 * @since : 4.0
+	 */
+	public static function xs_add_elementskit_register_button($settings, $widget_id) {
+		// Check if social login is enabled in widget settings
+		if ( isset( $settings['ekit_register_wp_social_login'] ) && 'yes' === $settings['ekit_register_wp_social_login'] ) {
+			// Render social login buttons for ElementsKit
+			self::xs_render_elementskit_social_buttons();
+		}
+	}
+
+	/**
+	 * Method Name : xs_render_elementskit_social_buttons
+	 * Method Details : Render social buttons for ElementsKit forms (bypass login/logout checks)
+	 *
+	 * @params : void
+	 * @return : void
+	 *
+	 * @since : 4.0
+	 */
+	public static function xs_render_elementskit_social_buttons() {
+		
+		$provider_data = \WP_Social\App\Settings::get_login_settings_data();
+		$style_data = get_option('xs_style_setting_data', []);
+		$currentStyle = isset($style_data['login_button_style']) ? $style_data['login_button_style'] : 'style-1';
+		$className = 'xs-login xs-login--' . $currentStyle;
+		
+		$core_provider = \WP_Social\App\Providers::get_core_providers_login();
+		$enabled_providers = \WP_Social\App\Settings::get_enabled_provider_conf_login();
+		
+		?>
+		<div id="xs-social-login-container">
+			<div class="<?php echo esc_attr($className); ?>">
+				<?php
+				// Loop through all providers and show only enabled ones
+				foreach($core_provider AS $keyType => $valueType):
+					if(!empty($enabled_providers[$keyType]['enable'])):
+						$args = [
+							'label'    => isset($provider_data[$keyType]['login_label']) ? $provider_data[$keyType]['login_label'] : 'Login with <b>' . $valueType . '</b>',
+							'icon'     => '<i class="met-social met-social-' . $keyType . '"></i>',
+							'clrClass' => 'wslu-color-scheme--' . $keyType,
+							'url'      => get_home_url() . '/wp-json/wslu-social-login/type/' . $keyType,
+						];
+						
+						$style_file_path = WSLU_LOGIN_PLUGIN . '/template/login/screens/default.php';
+						if(file_exists($style_file_path)) {
+							require($style_file_path);
+						}
+					endif;
+				endforeach;
+				?>
+			</div>
+		</div>
+		<?php
+	}
+
+	/**
+	 * Method Name : xs_login_form_elementskit
+	 * Method Details : For added social button in ElementsKit login form widget
+	 *
+	 * @params : void
+	 * @return : void
+	 *
+	 * @since : 4.0
+	 */
+	public static function xs_login_form_elementskit() {
+
+		if (!function_exists('is_plugin_active')) {
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		}
+
+		if (is_plugin_active('elementskit/elementskit.php')) {
+			add_action('elementskit/login_form/render', 'xs_button_in_login_page::xs_add_elementskit_login_button', 10, 2);
+		}
+	}
+
+	/**
+	 * Method Name : xs_register_form_elementskit
+	 * Method Details : For added social button in ElementsKit register form widget
+	 *
+	 * @params : void
+	 * @return : void
+	 *
+	 * @since : 4.0
+	 */
+	public static function xs_register_form_elementskit() {
+
+		if (!function_exists('is_plugin_active')) {
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		}
+
+		if (is_plugin_active('elementskit/elementskit.php')) {
+			add_action('elementskit/register_form/render', 'xs_button_in_login_page::xs_add_elementskit_register_button', 10, 2);
+		}
+	}
+
 
 }
 
@@ -331,6 +452,9 @@ if(class_exists('xs_button_in_login_page')) {
 	if($enable_wp_login) {
 		$enable_wp_login_type = isset($xs_login_admin_page['wp_login_page']['data']) ? $xs_login_admin_page['wp_login_page']['data'] : 'login_form';
 		xs_button_in_login_page::xs_login_form_login_wp($enable_wp_login_type);
+		
+		// Enable ElementsKit login form integration
+		xs_button_in_login_page::xs_login_form_elementskit();
 	}
 
 	/**
@@ -345,6 +469,9 @@ if(class_exists('xs_button_in_login_page')) {
 		//xs_button_in_login_page::$showFilter = 'hide';
 		$enable_wp_register_type = isset($xs_login_admin_page['wp_register_page']['data']) ? $xs_login_admin_page['wp_register_page']['data'] : 'register_form';
 		xs_button_in_login_page::xs_login_form_register_wp($enable_wp_register_type);
+		
+		// Enable ElementsKit register form integration
+		xs_button_in_login_page::xs_register_form_elementskit();
 	}
 
 	/**
