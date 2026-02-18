@@ -84,9 +84,9 @@ if(!empty($wanted_providers) && is_array($wanted_providers)) :
 					?>
                     <li class="xs-share-li <?php echo esc_attr($key); ?>
                         <?php echo esc_attr(Settings::get_extra_data_class($selected_share_style, $styles)) ?>">
-                        <a href="javascript:void(0);"
+                        <a href="#"
+                           class="xs-share-link"
                            id="xs_feed_<?php echo esc_attr($key) ?>"
-                           onclick="xs_social_sharer(this);"
                            data-pid="<?php echo esc_attr($postId) ?>"
                            data-uri_hash="<?php echo esc_attr($uri_hash) ?>"
                            data-key="<?php echo esc_attr($key); ?>"

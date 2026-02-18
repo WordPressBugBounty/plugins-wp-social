@@ -122,7 +122,38 @@ class Login_Settings {
 //			],
 		];
 
-		return array_merge($free_styles, $pro_only);
+		$all_styles = array_merge($free_styles, $pro_only);
+
+		/**
+		 * Hook: wp_social_login_styles_list
+		 * 
+		 * Allows other plugins to access the list of login designs 
+		 * and their package information (free/pro).
+		 * 
+		 * @param array $all_styles Complete array of all login styles
+		 * @param array $free_styles Array of free login styles only
+		 * @param array $pro_only Array of pro login styles only
+		 * 
+		 * @since 3.5.0
+		 * 
+		 * Example usage in another plugin:
+		 * 
+		 * add_action('wp_social_login_styles_list', function($all_styles, $free_styles, $pro_styles) {
+		 *     // Access all styles
+		 *     foreach($all_styles as $style_key => $style_data) {
+		 *         error_log("Style: {$style_key}, Package: {$style_data['package']}");
+		 *     }
+		 *     
+		 *     // Get only free styles
+		 *     $free_style_keys = array_keys($free_styles);
+		 *     
+		 *     // Get only pro styles
+		 *     $pro_style_keys = array_keys($pro_styles);
+		 * }, 10, 3);
+		 */
+		do_action('wp_social_login_styles_list', $all_styles, $free_styles, $pro_only);
+
+		return $all_styles;
 	}
 
 

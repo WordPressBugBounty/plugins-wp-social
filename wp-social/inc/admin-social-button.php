@@ -452,9 +452,6 @@ if(class_exists('xs_button_in_login_page')) {
 	if($enable_wp_login) {
 		$enable_wp_login_type = isset($xs_login_admin_page['wp_login_page']['data']) ? $xs_login_admin_page['wp_login_page']['data'] : 'login_form';
 		xs_button_in_login_page::xs_login_form_login_wp($enable_wp_login_type);
-		
-		// Enable ElementsKit login form integration
-		xs_button_in_login_page::xs_login_form_elementskit();
 	}
 
 	/**
@@ -469,9 +466,6 @@ if(class_exists('xs_button_in_login_page')) {
 		//xs_button_in_login_page::$showFilter = 'hide';
 		$enable_wp_register_type = isset($xs_login_admin_page['wp_register_page']['data']) ? $xs_login_admin_page['wp_register_page']['data'] : 'register_form';
 		xs_button_in_login_page::xs_login_form_register_wp($enable_wp_register_type);
-		
-		// Enable ElementsKit register form integration
-		xs_button_in_login_page::xs_register_form_elementskit();
 	}
 
 	/**
@@ -513,5 +507,9 @@ if(class_exists('xs_button_in_login_page')) {
 		$enable_buddyPress_register_type = isset($xs_login_admin_page['buddypress_page']['data']) ? $xs_login_admin_page['buddypress_page']['data'] : 'bp_before_register_page';
 		xs_button_in_login_page::xs_login_form_login_buddy($enable_buddyPress_register_type);
 	}
+
+	// Enable ElementsKit integrations (independent of wp-login/register settings)
+	xs_button_in_login_page::xs_login_form_elementskit();
+	xs_button_in_login_page::xs_register_form_elementskit();
 
 }
