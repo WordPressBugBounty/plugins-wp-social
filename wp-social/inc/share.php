@@ -403,7 +403,14 @@ class Share {
 		$enabled_providers = Settings::instance()->get_enabled_providers_share();
 		$share_counting = [];
 
-		$currentUrl = (isset($_SERVER['HTTPS']) && sanitize_text_field($_SERVER['HTTPS']) === 'on' ? 'https' : 'http') . '://' . sanitize_text_field($_SERVER['HTTP_HOST']) . sanitize_url($_SERVER['REQUEST_URI']);
+		if ($postId && get_permalink($postId)) {
+
+			$currentUrl = get_permalink($postId);
+
+		} else {
+			
+			$currentUrl = (isset($_SERVER['HTTPS']) && sanitize_text_field($_SERVER['HTTPS']) === 'on' ? 'https' : 'http') . '://' . sanitize_text_field($_SERVER['HTTP_HOST']) . sanitize_url($_SERVER['REQUEST_URI']);
+		}
 
 		$share_counting = Share_Settings::instance()->get_share_count($post, $enabled_providers);
 

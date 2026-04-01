@@ -2,8 +2,8 @@
 Contributors: Roxnor, Ataurr
 Tags: Social login, WordPress Social login and register, Social share,  Social counter, Social,  WooCommerce social login and register
 Requires at least: 5.0
-Tested up to: 6.9
-Stable tag: 3.1.8
+Tested up to: 6.9.4
+Stable tag: 3.1.9
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
@@ -162,6 +162,10 @@ Visit [wpmet](https://wpmet.com) to learn more about how to get the best of Word
 
 
 == Changelog ==
+Version 3.1.9 // 2026-04-01
+Improved: Compatibility with WordPress 7.0
+Fixed: Incorrect share URL generation when shortcode is used inside post/product loops.
+
 Version 3.1.8 // 2026-02-18
 Fixed: Routing conflict caused by inline onclick handlers in share buttons.
 
