@@ -70,6 +70,40 @@ switch($currentStyle) {
         </a>
 		<?php break;
 
+case 'style-15': ?>
+        <a rel="nofollow" class="xs-login__item <?php echo esc_attr($args['clrClass']) ?>" href="javascript:void(0)" onclick="javascript:location.href='<?php echo esc_url($args['url']) ?>'">
+            <span class="xs-login__item--icon"> <?php echo wp_kses(($args['icon']), \WP_Social\Helper\Helper::get_kses_array()) ?> </span>
+        </a>
+		<?php break;
+
+
+case 'style-16': ?>
+        <a rel="nofollow" class="xs-login__item <?php echo esc_attr($args['clrClass']) ?>" href="javascript:void(0)" onclick="javascript:location.href='<?php echo esc_url($args['url']) ?>'">
+            <span class="xs-login__item--icon"> <?php echo wp_kses(($args['icon']), \WP_Social\Helper\Helper::get_kses_array()) ?> </span>
+        </a>
+		<?php break;
+
+
+case 'style-20': ?>
+        <a rel="nofollow" class="xs-login__item <?php echo esc_attr($args['clrClass']) ?>" href="javascript:void(0)" onclick="javascript:location.href='<?php echo esc_url($args['url']) ?>'">
+            <span class="xs-login__item--icon"> <?php echo wp_kses(($args['icon']), \WP_Social\Helper\Helper::get_kses_array()) ?> </span>
+        </a>
+		<?php break;
+
+
+case 'style-22': ?>
+        <a rel="nofollow" class="xs-login__item <?php echo esc_attr($args['clrClass']) ?>" href="javascript:void(0)" onclick="javascript:location.href='<?php echo esc_url($args['url']) ?>'">
+            <span class="xs-login__item--icon"> <?php echo wp_kses(($args['icon']), \WP_Social\Helper\Helper::get_kses_array()) ?> </span>
+        </a>
+		<?php break;
+
+
+case 'style-18': ?>
+        <a rel="nofollow" class="xs-login__item <?php echo esc_attr($args['clrClass']) ?>" href="javascript:void(0)" onclick="javascript:location.href='<?php echo esc_url($args['url']) ?>'">
+            <span class="xs-login__item--icon"> <?php echo wp_kses(($args['icon']), \WP_Social\Helper\Helper::get_kses_array()) ?> </span>
+        </a>
+		<?php break;
+
 
 	/* -------------------
 	   Style No : default

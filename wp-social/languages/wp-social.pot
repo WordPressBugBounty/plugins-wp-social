@@ -1,17 +1,151 @@
-# Copyright (C) 2026 Wpmet
-# This file is distributed under the GPLv3.
+# Copyright (C) 2022 Wpmet
+# This file is distributed under the GPL2+.
 msgid ""
 msgstr ""
-"Project-Id-Version: Wp Social 3.1.9\n"
+"Project-Id-Version: Wp Social 2.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-social\n"
-"POT-Creation-Date: 2026-04-01 14:41:58+00:00\n"
+"POT-Creation-Date: 2022-11-16 14:12:59+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2026-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
+
+#: app/providers.php:274
+msgid ""
+"To allow your visitors to log in with their Facebook account, first you "
+"must create a Facebook App. The following guide will help you through the "
+"Facebook App creation process. After you have created your Facebook App, "
+"head over to \"Settings\" and configure the given \"App ID\" and \"App "
+"Secret\" according to your Facebook App."
+msgstr ""
+
+#: app/providers.php:276
+msgid "For local development environment you do not need to add the redirect URI."
+msgstr ""
+
+#: app/providers.php:280
+msgid ""
+"To allow your visitors to log in with their Google account, first you must "
+"create a Google Project. The following guide will help you through the "
+"Google project creation process. After you have created your Google "
+"project, head over to \"Settings\" and configure the given \"App ID\" and "
+"\"App Secret\" according to your Google App."
+msgstr ""
+
+#: app/providers.php:286
+msgid ""
+"To connect your Auth0 app to LinkedIn, you will need to generate a Client "
+"ID and Client Secret in a LinkedIn app, copy these keys into your Auth0 "
+"settings, and enable the connection"
+msgstr ""
+
+#: app/providers.php:292
+msgid ""
+"To allow your visitors to log in with their Twitter account, first you must "
+"create a Twitter App. The following guide will help you through the Twitter "
+"App creation process. After you have created your Twitter App, head over to "
+"\"Settings\" and configure the given \"Consumer Key\" and \"Consumer "
+"Secret\" according to your Twitter App."
+msgstr ""
+
+#: app/providers.php:298
+msgid ""
+"To allow your visitors to log in with their Dribbble account, first you "
+"must create a Dribbble App. The following guide will help you through the "
+"Dribbble App creation process. After you have created your Dribbble App, "
+"head over to \"Settings\" and configure the given \"App ID\" and \"App "
+"Secret\" according to your Dribbble App."
+msgstr ""
+
+#: app/providers.php:304
+msgid ""
+"To allow your visitors to log in with their GitHub account, first you must "
+"create a GitHub App. The following guide will help you through the GitHub "
+"App creation process. After you have created your GitHub App, head over to "
+"\"Settings\" and configure the given \"App ID\" and \"App Secret\" "
+"according to your GitHub App."
+msgstr ""
+
+#: app/providers.php:310
+msgid ""
+"To allow your visitors to log in with their WordPress account, first you "
+"must create a WordPress App. The following guide will help you through the "
+"WordPress App creation process. After you have created your WordPress App, "
+"head over to \"Settings\" and configure the given \"App ID\" and \"App "
+"Secret\" according to your WordPress App."
+msgstr ""
+
+#: app/providers.php:316
+msgid ""
+"To allow your visitors to log in with their Reddit account, first you must "
+"create a Reddit App. The following guide will help you through the Reddit "
+"App creation process. After you have created your Reddit App, head over to "
+"\"Settings\" and configure the given \"App ID\" and \"App Secret\" "
+"according to your Reddit App."
+msgstr ""
+
+#: app/providers.php:322
+msgid ""
+"To allow your visitors to log in with their Vkontakte account, first you "
+"must create a Vkontakte App. The following guide will help you through the "
+"Vkontakte App creation process. After you have created your Vkontakte App, "
+"head over to \"Settings\" and configure the given \"App ID\" and \"App "
+"Secret\" according to your Vkontakte App."
+msgstr ""
+
+#: app/providers.php:328
+msgid ""
+"To allow your visitors to log in with their LineApp account, first you must "
+"create a LineApp. The following guide will help you through the LineApp "
+"creation process. After you have created your LineApp, head over to "
+"\"Settings\" and configure the given \"App ID\" and \"App Secret\" "
+"according to your LineApp."
+msgstr ""
+
+#: app/providers.php:343 inc/counter.php:318
+msgid "Fans"
+msgstr ""
+
+#: inc/counter.php:364
+#: inc/counter.php:408
+#: inc/counter.php:434
+#: app/providers.php:356
+#: app/providers.php:381
+msgid "Access Token Key"
+msgstr ""
+
+
+
+#: app/providers.php:351 app/providers.php:365 app/providers.php:377
+#: app/providers.php:390 inc/counter.php:322 inc/counter.php:327
+#: inc/counter.php:331 inc/counter.php:335
+msgid "Followers"
+msgstr ""
+
+#: app/providers.php:402 app/providers.php:417 inc/counter.php:339
+#: inc/counter.php:341
+msgid "Subscribers"
+msgstr ""
+
+#: app/providers.php:426 app/providers.php:431 inc/counter.php:342
+#: inc/counter.php:343
+msgid "Count"
+msgstr ""
+
+#: app/route.php:29
+msgid "Cache cleared successfully!"
+msgstr ""
+
+#: app/route.php:35
+msgid "No cache found."
+msgstr ""
+
+#: app/route.php:41
+msgid "Invalid data."
+msgstr ""
 
 #: app/login-settings.php:38
 msgid "Icon with providers label"
@@ -37,134 +171,73 @@ msgstr ""
 msgid "Circle Blow"
 msgstr ""
 
-#: app/providers.php:288
-msgid ""
-"To allow your visitors to log in with their Facebook account, first you "
-"must create a Facebook App. The following guide will help you through the "
-"Facebook App creation process. After you have created your Facebook App, "
-"head over to \"Settings\" and configure the given \"App ID\" and \"App "
-"Secret\" according to your Facebook App."
+
+#: wp-social.php:113
+msgid "Join the Community"
 msgstr ""
 
-#: app/providers.php:290
-msgid "For local development environment you do not need to add the redirect URI."
+#: wp-social.php:115
+msgid "Join our Facebook group to get 20% discount coupon on premium products. Follow us to get more exciting offers."
 msgstr ""
 
-#: app/providers.php:294
-msgid ""
-"To allow your visitors to log in with their Google account, first you must "
-"create a Google Project. The following guide will help you through the "
-"Google project creation process. After you have created your Google "
-"project, head over to \"Settings\" and configure the given \"App ID\" and "
-"\"App Secret\" according to your Google App."
+#: wp-social.php:121
+msgid "Learn the step by step process for developing your site easily from video tutorials."
 msgstr ""
 
-#: app/providers.php:300
-msgid ""
-"To connect your Auth0 app to LinkedIn, you will need to generate a Client "
-"ID and Client Secret in a LinkedIn app, copy these keys into your Auth0 "
-"settings, and enable the connection"
+#: wp-social.php:126
+msgid "Request a feature"
 msgstr ""
 
-#: app/providers.php:306
-msgid ""
-"To allow your visitors to log in with their Twitter account, first you must "
-"create a Twitter App. The following guide will help you through the Twitter "
-"App creation process. After you have created your Twitter App, head over to "
-"\"Settings\" and configure the given \"Consumer Key\" and \"Consumer "
-"Secret\" according to your Twitter App."
+#: wp-social.php:128
+msgid "Have any special feature in mind? Let us know through the feature request."
 msgstr ""
 
-#: app/providers.php:312
-msgid ""
-"To allow your visitors to log in with their Dribbble account, first you "
-"must create a Dribbble App. The following guide will help you through the "
-"Dribbble App creation process. After you have created your Dribbble App, "
-"head over to \"Settings\" and configure the given \"App ID\" and \"App "
-"Secret\" according to your Dribbble App."
+#: wp-social.php:133
+msgid "Documentation"
 msgstr ""
 
-#: app/providers.php:318
-msgid ""
-"To allow your visitors to log in with their GitHub account, first you must "
-"create a GitHub App. The following guide will help you through the GitHub "
-"App creation process. After you have created your GitHub App, head over to "
-"\"Settings\" and configure the given \"App ID\" and \"App Secret\" "
-"according to your GitHub App."
+#: wp-social.php:135
+msgid "Detailed documentation to help you understand the functionality of each feature."
 msgstr ""
 
-#: app/providers.php:324
-msgid ""
-"To allow your visitors to log in with their WordPress account, first you "
-"must create a WordPress App. The following guide will help you through the "
-"WordPress App creation process. After you have created your WordPress App, "
-"head over to \"Settings\" and configure the given \"App ID\" and \"App "
-"Secret\" according to your WordPress App."
+#: wp-social.php:140
+msgid "Public Roadmap"
 msgstr ""
 
-#: app/providers.php:330
-msgid ""
-"To allow your visitors to log in with their Reddit account, first you must "
-"create a Reddit App. The following guide will help you through the Reddit "
-"App creation process. After you have created your Reddit App, head over to "
-"\"Settings\" and configure the given \"App ID\" and \"App Secret\" "
-"according to your Reddit App."
+#: wp-social.php:148
+msgid "GetGenie"
 msgstr ""
 
-#: app/providers.php:336
-msgid ""
-"To allow your visitors to log in with their Vkontakte account, first you "
-"must create a Vkontakte App. The following guide will help you through the "
-"Vkontakte App creation process. After you have created your Vkontakte App, "
-"head over to \"Settings\" and configure the given \"App ID\" and \"App "
-"Secret\" according to your Vkontakte App."
+#: wp-social.php:150
+msgid "Your AI-Powered Content & SEO Assistant for WordPress"
 msgstr ""
 
-#: app/providers.php:342
-msgid ""
-"To allow your visitors to log in with their LineApp account, first you must "
-"create a LineApp. The following guide will help you through the LineApp "
-"creation process. After you have created your LineApp, head over to "
-"\"Settings\" and configure the given \"App ID\" and \"App Secret\" "
-"according to your LineApp."
+#: wp-social.php:164
+msgid "ShopEngine"
 msgstr ""
 
-#: app/providers.php:357 inc/counter.php:340
-msgid "Fans"
+#: wp-social.php:166
+msgid "Complete WooCommerce Solution for Elementor"
 msgstr ""
 
-#: app/providers.php:365 app/providers.php:379 app/providers.php:391
-#: app/providers.php:404 app/providers.php:416 inc/counter.php:344
-#: inc/counter.php:349 inc/counter.php:353 inc/counter.php:357
-#: inc/counter.php:361
-msgid "Followers"
+#: wp-social.php:172
+msgid "MetForm"
 msgstr ""
 
-#: app/providers.php:370 app/providers.php:395 inc/counter.php:390
-#: inc/counter.php:443 inc/counter.php:469
-msgid "Access Token Key"
+#: wp-social.php:180
+msgid "Ultimate Review"
 msgstr ""
 
-#: app/providers.php:428 app/providers.php:443 inc/counter.php:365
-#: inc/counter.php:367
-msgid "Subscribers"
+#: wp-social.php:188
+msgid "Fundraising & Donation Platform"
 msgstr ""
 
-#: app/providers.php:452 app/providers.php:457 inc/counter.php:368
-#: inc/counter.php:369
-msgid "Count"
+#: wp-social.php:190
+msgid "Enable donation system in your website"
 msgstr ""
 
-#: app/route.php:35
-msgid "Cache cleared successfully!"
-msgstr ""
-
-#: app/route.php:41
-msgid "No cache found."
-msgstr ""
-
-#: app/route.php:47
-msgid "Invalid data."
+#: wp-social.php:133
+msgid "Documentation"
 msgstr ""
 
 #: helper/share-style-settings.php:24 template/admin/share/style-setting.php:44
@@ -196,187 +269,6 @@ msgstr ""
 msgid "WP Social Share Style Settings"
 msgstr ""
 
-#: helper/view-helper.php:56
-msgid "Same Page"
-msgstr ""
-
-#: inc/admin-rest-api.php:114 inc/admin-rest-api.php:134
-msgid "You do not have permission to perform this action."
-msgstr ""
-
-#: inc/admin-settings.php:73
-msgid "Icon with fill color"
-msgstr ""
-
-#: inc/admin-settings.php:79
-msgid "Icon with fill color and space"
-msgstr ""
-
-#: inc/admin-settings.php:85
-msgid "Icon with hover fill color and space"
-msgstr ""
-
-#: inc/admin-settings.php:99
-msgid "Icon with text"
-msgstr ""
-
-#: inc/admin-settings.php:105
-msgid "Icon with text & slightly rounded"
-msgstr ""
-
-#: inc/admin-settings.php:111
-msgid "Circled Icon with fill color"
-msgstr ""
-
-#: inc/admin-settings.php:117
-msgid "Circled Icon with hover fill color"
-msgstr ""
-
-#: inc/admin-settings.php:123
-msgid "Icon with colored border"
-msgstr ""
-
-#: inc/admin-settings.php:129
-msgid "Icon with hover colored border"
-msgstr ""
-
-#: inc/admin-settings.php:135
-msgid "Icon with colored rounded border"
-msgstr ""
-
-#: inc/admin-settings.php:141
-msgid "Icon with hover colored rounded border"
-msgstr ""
-
-#: inc/admin-settings.php:147
-msgid "Icon with hover fill color border"
-msgstr ""
-
-#: inc/admin-settings.php:153
-msgid "Slightly rounded icon with fill color"
-msgstr ""
-
-#: inc/admin-settings.php:159
-msgid "Icon with follower count"
-msgstr ""
-
-#: inc/admin-settings.php:165
-msgid "Rounded filled icon with text"
-msgstr ""
-
-#: inc/admin-settings.php:171
-msgid "Semi-rounded icon with fill color"
-msgstr ""
-
-#: inc/admin-settings.php:177
-msgid "Semi-rounded icon and border color"
-msgstr ""
-
-#: inc/admin-settings.php:183
-msgid "Icon with text and follower count"
-msgstr ""
-
-#: inc/admin-settings.php:203
-msgid "Flat style with fill color"
-msgstr ""
-
-#: inc/admin-settings.php:210
-msgid "Line style with fill color"
-msgstr ""
-
-#: inc/admin-settings.php:217
-msgid "Line slightly rounded style with fill color"
-msgstr ""
-
-#: inc/admin-settings.php:231
-msgid "Flat style with hover fill color"
-msgstr ""
-
-#: inc/admin-settings.php:237
-msgid "Metro style with fill color"
-msgstr ""
-
-#: inc/admin-settings.php:243
-msgid "Flat style with hover icon color"
-msgstr ""
-
-#: inc/admin-settings.php:249
-msgid "Flat style with icon color"
-msgstr ""
-
-#: inc/admin-settings.php:255
-msgid "Flat style with icon fill color"
-msgstr ""
-
-#: inc/admin-settings.php:261
-msgid "Flat style with fill color & rounded icon"
-msgstr ""
-
-#: inc/admin-settings.php:267
-msgid "Vertical line style with icon color"
-msgstr ""
-
-#: inc/admin-settings.php:273
-msgid "Vertical line style with icon fill color"
-msgstr ""
-
-#: inc/admin-settings.php:279
-msgid "Vertical line style with fill color & rounded icon"
-msgstr ""
-
-#: inc/admin-settings.php:285
-msgid "Rounded icon style with fill color"
-msgstr ""
-
-#: inc/admin-settings.php:291
-msgid "Rounded icon style with hover fill color"
-msgstr ""
-
-#: inc/admin-settings.php:297
-msgid "Slightly Rounded icon style with fill color"
-msgstr ""
-
-#: inc/admin-settings.php:303
-msgid "Slightly Rounded icon style with hover fill color"
-msgstr ""
-
-#: inc/admin-settings.php:309
-msgid "Metro style with hover fill color"
-msgstr ""
-
-#: inc/admin-settings.php:315
-msgid "Line style with hover fill color"
-msgstr ""
-
-#: inc/admin-settings.php:336
-msgid "WP Social Login Ultimate"
-msgstr ""
-
-#: inc/admin-settings.php:336 lib/onboard/views/onboard-steps/step-05.php:5
-#: wp-social.php:194
-msgid "WP Social"
-msgstr ""
-
-#: inc/admin-settings.php:337 inc/elementor/elements.php:47
-#: inc/login-widget.php:63
-msgid "Social Login"
-msgstr ""
-
-#: inc/admin-settings.php:338
-msgid "Social Share"
-msgstr ""
-
-#: inc/admin-settings.php:339
-msgid "Social Counter"
-msgstr ""
-
-#: inc/admin-settings.php:340 template/admin/counter/providers-counter.php:96
-#: template/admin/providers-setting.php:53
-#: template/admin/providers-setting.php:86
-#: template/admin/share/share-providers.php:72
-msgid "Settings"
-msgstr ""
-
 #: inc/counter-widget.php:29
 msgid ""
 "Wp Social Login System for Facebook, Twitter, Linkedin, Dribble, Pinterest, "
@@ -403,20 +295,22 @@ msgstr ""
 msgid "Style :"
 msgstr ""
 
-#: inc/counter-widget.php:143 inc/share-widget.php:131
+#: inc/counter-widget.php:135 inc/share-widget.php:122
 msgid "Hover effect :"
 msgstr ""
 
-#: inc/counter-widget.php:159 inc/share-widget.php:158
+#: inc/counter-widget.php:151 inc/share-widget.php:149
 msgid "Custom Class :"
 msgstr ""
 
-#: inc/counter.php:406
-msgid "Documentation to get access token & account ID."
+#: inc/counter.php:380
+#: template/admin/counter/providers-counter.php:213
+msgid "Get access token "
 msgstr ""
 
-#: inc/counter.php:427
-msgid "Access Token"
+#: inc/elementor/elements.php:47 inc/login-widget.php:63
+#: inc/admin-settings.php:336
+msgid "Social Login"
 msgstr ""
 
 #: inc/elementor/widgets/share.php:22
@@ -441,7 +335,7 @@ msgstr ""
 msgid "Show Share Count"
 msgstr ""
 
-#: inc/elementor/widgets/share.php:91 inc/share-widget.php:151
+#: inc/elementor/widgets/share.php:91 inc/share-widget.php:142
 #: template/admin/counter/counter-setting.php:45
 #: template/admin/share/share-setting.php:33
 #: template/admin/share/style-setting.php:73
@@ -449,7 +343,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: inc/elementor/widgets/share.php:92 inc/share-widget.php:150
+#: inc/elementor/widgets/share.php:92 inc/share-widget.php:141
 #: template/admin/counter/counter-setting.php:51
 #: template/admin/share/share-setting.php:39
 #: template/admin/share/style-setting.php:79
@@ -498,6 +392,14 @@ msgid ""
 "providers."
 msgstr ""
 
+#: inc/admin-settings.php:337
+msgid "Social Share"
+msgstr ""
+
+#: inc/admin-settings.php:338
+msgid "Social Counter"
+msgstr ""
+
 #: inc/share-widget.php:75
 msgid "SOCIAL SHARE"
 msgstr ""
@@ -510,8 +412,152 @@ msgstr ""
 msgid "Layout:"
 msgstr ""
 
-#: inc/share-widget.php:147
+#: inc/share-widget.php:138
 msgid "Show total count :"
+msgstr ""
+
+#: inc/admin-settings.php:72
+msgid "Icon with fill color"
+msgstr ""
+
+#: inc/admin-settings.php:78
+msgid "Icon with fill color and space"
+msgstr ""
+
+#: inc/admin-settings.php:84
+msgid "Icon with hover fill color and space"
+msgstr ""
+
+#: inc/admin-settings.php:98
+msgid "Icon with text"
+msgstr ""
+
+#: inc/admin-settings.php:104
+msgid "Icon with text & slightly rounded"
+msgstr ""
+
+#: inc/admin-settings.php:110
+msgid "Circled Icon with fill color"
+msgstr ""
+
+#: inc/admin-settings.php:116
+msgid "Circled Icon with hover fill color"
+msgstr ""
+
+#: inc/admin-settings.php:122
+msgid "Icon with colored border"
+msgstr ""
+
+#: inc/admin-settings.php:128
+msgid "Icon with hover colored border"
+msgstr ""
+
+#: inc/admin-settings.php:134
+msgid "Icon with colored rounded border"
+msgstr ""
+
+#: inc/admin-settings.php:140
+msgid "Icon with hover colored rounded border"
+msgstr ""
+
+#: inc/admin-settings.php:146
+msgid "Icon with hover fill color border"
+msgstr ""
+
+#: inc/admin-settings.php:152
+msgid "Slightly rounded icon with fill color"
+msgstr ""
+
+#: inc/admin-settings.php:158
+msgid "Icon with follower count"
+msgstr ""
+
+#: inc/admin-settings.php:164
+msgid "Rounded filled icon with text"
+msgstr ""
+
+#: inc/admin-settings.php:170
+msgid "Semi-rounded icon with fill color"
+msgstr ""
+
+#: inc/admin-settings.php:176
+msgid "Semi-rounded icon and border color"
+msgstr ""
+
+#: inc/admin-settings.php:182
+msgid "Icon with text and follower count"
+msgstr ""
+
+#: inc/admin-settings.php:202
+msgid "Flat style with fill color"
+msgstr ""
+
+#: inc/admin-settings.php:209
+msgid "Line style with fill color"
+msgstr ""
+
+#: inc/admin-settings.php:216
+msgid "Line slightly rounded style with fill color"
+msgstr ""
+
+#: inc/admin-settings.php:230
+msgid "Flat style with hover fill color"
+msgstr ""
+
+#: inc/admin-settings.php:236
+msgid "Metro style with fill color"
+msgstr ""
+
+#: inc/admin-settings.php:242
+msgid "Flat style with hover icon color"
+msgstr ""
+
+#: inc/admin-settings.php:248
+msgid "Flat style with icon color"
+msgstr ""
+
+#: inc/admin-settings.php:254
+msgid "Flat style with icon fill color"
+msgstr ""
+
+#: inc/admin-settings.php:260
+msgid "Flat style with fill color & rounded icon"
+msgstr ""
+
+#: inc/admin-settings.php:266
+msgid "Vertical line style with icon color"
+msgstr ""
+
+#: inc/admin-settings.php:272
+msgid "Vertical line style with icon fill color"
+msgstr ""
+
+#: inc/admin-settings.php:278
+msgid "Vertical line style with fill color & rounded icon"
+msgstr ""
+
+#: inc/admin-settings.php:284
+msgid "Rounded icon style with fill color"
+msgstr ""
+
+#: inc/admin-settings.php:290
+msgid "Rounded icon style with hover fill color"
+msgstr ""
+
+#: inc/admin-settings.php:296
+msgid "Slightly Rounded icon style with fill color"
+msgstr ""
+
+#: inc/admin-settings.php:302
+msgid "Slightly Rounded icon style with hover fill color"
+msgstr ""
+
+#: inc/admin-settings.php:308
+msgid "Metro style with hover fill color"
+msgstr ""
+
+#: inc/admin-settings.php:314
+msgid "Line style with hover fill color"
 msgstr ""
 
 #: lib/announcements/init.php:257 lib/stories/stories.php:255
@@ -530,87 +576,16 @@ msgstr ""
 msgid "Facebook Community"
 msgstr ""
 
-#: lib/onboard/classes/ajax.php:89
-msgid "Setup Configurations"
-msgstr ""
-
-#: lib/onboard/classes/ajax.php:90
-msgid "Page Builder Elements Activated"
-msgstr ""
-
-#: lib/onboard/classes/ajax.php:91
-msgid "AI Content & SEO Tool Activated"
-msgstr ""
-
-#: lib/onboard/classes/ajax.php:92
-msgid "WooCommerce Builder Activated"
-msgstr ""
-
-#: lib/onboard/classes/ajax.php:93
-msgid "Form Builder Activated"
-msgstr ""
-
-#: lib/onboard/classes/ajax.php:94
-msgid "Email Customizer Activated"
-msgstr ""
-
-#: lib/onboard/classes/ajax.php:95
-msgid "Social Integration Activated"
-msgstr ""
-
-#: lib/onboard/classes/ajax.php:96
-msgid "Review Management Activated"
-msgstr ""
-
-#: lib/onboard/classes/ajax.php:97
-msgid "Fundraising & Donations"
-msgstr ""
-
-#: lib/onboard/classes/ajax.php:98
-msgid "Page Builder Blocks Activated"
-msgstr ""
-
-#: lib/onboard/classes/ajax.php:99
-msgid "Popup Builder Activated"
-msgstr ""
-
-#: lib/onboard/classes/ajax.php:100
-msgid "Table Builder Activated"
-msgstr ""
-
-#: lib/onboard/classes/ajax.php:106
-msgid "Plugin Activated"
-msgstr ""
-
-#: lib/onboard/classes/plugin-status.php:57 lib/plugins/plugins.php:371
+#: lib/onboard/classes/plugin-status.php:57
 msgid "Activated"
 msgstr ""
 
-#: lib/onboard/classes/plugin-status.php:60 lib/plugins/plugins.php:374
+#: lib/onboard/classes/plugin-status.php:60
 msgid "Activate Now"
 msgstr ""
 
-#: lib/onboard/classes/plugin-status.php:65 lib/plugins/plugins.php:379
+#: lib/onboard/classes/plugin-status.php:65
 msgid "Install Now"
-msgstr ""
-
-#: lib/onboard/onboard.php:190
-msgid "Show button to wp-login page"
-msgstr ""
-
-#: lib/onboard/onboard.php:194 template/admin/global-setting.php:333
-msgid "Email login credentials to a newly-registered user"
-msgstr ""
-
-#: lib/onboard/onboard.php:200 lib/onboard/onboard.php:210
-#: template/admin/counter/counter-setting.php:37
-#: template/admin/share/share-setting.php:25
-msgid "Use theme default font family"
-msgstr ""
-
-#: lib/onboard/onboard.php:204 template/admin/share/style-setting.php:65
-#: template/admin/share/style-setting.php:168
-msgid "Show total count"
 msgstr ""
 
 #: lib/onboard/views/layout-onboard.php:6
@@ -663,7 +638,7 @@ msgid "Sign Up info"
 msgstr ""
 
 #: lib/onboard/views/layout-onboard.php:43
-msgid "Upgrade Your Site"
+msgid "Website Powerup"
 msgstr ""
 
 #: lib/onboard/views/layout-onboard.php:44
@@ -696,7 +671,7 @@ msgstr ""
 
 #: lib/onboard/views/onboard-steps/step-01.php:11
 #: lib/onboard/views/onboard-steps/step-02.php:34
-#: lib/onboard/views/onboard-steps/step-03.php:178
+#: lib/onboard/views/onboard-steps/step-03.php:78
 #: lib/onboard/views/onboard-steps/step-04.php:32
 #: lib/onboard/views/onboard-steps/step-05.php:25
 msgid "Back"
@@ -704,7 +679,9 @@ msgstr ""
 
 #: lib/onboard/views/onboard-steps/step-01.php:12
 #: lib/onboard/views/onboard-steps/step-02.php:35
+#: lib/onboard/views/onboard-steps/step-03.php:79
 #: lib/onboard/views/onboard-steps/step-04.php:33
+#: lib/onboard/views/onboard-steps/step-05.php:26
 msgid "Next Step"
 msgstr ""
 
@@ -727,53 +704,56 @@ msgid "Submit Your Best Email"
 msgstr ""
 
 #: lib/onboard/views/onboard-steps/step-03.php:4
+#: lib/pro-awareness/pro-awareness.php:250
 msgid "Take your website to the next level"
 msgstr ""
 
+#: lib/pro-awareness/pro-awareness.php:18
+msgid "Support Center"
+msgstr ""
+
+#: lib/pro-awareness/pro-awareness.php:20
+msgid "Our experienced support team is ready to resolve your issues any time."
+msgstr ""
+
+#: lib/pro-awareness/pro-awareness.php:38
+msgid "Get Help"
+msgstr ""
+
 #: lib/onboard/views/onboard-steps/step-03.php:5
-msgid "A fleet of plugins with all types of features you will need for WordPress."
+#: lib/pro-awareness/pro-awareness.php:251
+msgid "We have some plugins you can install to get most from Wordpress."
 msgstr ""
 
-#: lib/onboard/views/onboard-steps/step-03.php:43
-msgid "Find top keywords, create winning content & track SEO results with AI."
+#: lib/onboard/views/onboard-steps/step-03.php:6
+msgid "These are absolute FREE to use."
 msgstr ""
 
-#: lib/onboard/views/onboard-steps/step-03.php:61
-msgid "Best companion for Elementor with top widgets and templates."
+#: lib/onboard/views/onboard-steps/step-03.php:19
+msgid "Get FREE 2500 AI words, SEO Keyword, and Competitor Analysis credits"
 msgstr ""
 
-#: lib/onboard/views/onboard-steps/step-03.php:79
-msgid "Most flexible drag-and-drop form builder for WordPress."
+#: lib/onboard/views/onboard-steps/step-03.php:19
+msgid "on your personal AI assistant for Content & SEO right inside WordPress!"
 msgstr ""
 
-#: lib/onboard/views/onboard-steps/step-03.php:97
-msgid "The ultimate solution to build a complete WooCommerce site in Elementor."
+#: lib/onboard/views/onboard-steps/step-03.php:29
+msgid "Completely customize your  WooCommerce WordPress"
 msgstr ""
 
-#: lib/onboard/views/onboard-steps/step-03.php:115
-msgid "Drag-and-drop email builder for WooCommerce & WordPress."
+#: lib/onboard/views/onboard-steps/step-03.php:39
+msgid "All-in-One Addons for Elementor"
 msgstr ""
 
-#: lib/onboard/views/onboard-steps/step-03.php:133
-msgid "Design popups that convert, right in your WordPress dashboard."
+#: lib/onboard/views/onboard-steps/step-03.php:49
+#: wp-social.php:174
+msgid "Most flexible drag-and-drop form builder"
 msgstr ""
 
-#: lib/onboard/views/onboard-steps/step-03.php:151
-msgid "Build credibility for your business with the all-in-one review plugin."
-msgstr ""
-
-#: lib/onboard/views/onboard-steps/step-03.php:169
-msgid ""
-"Enhance block capability with page builder features & templates for "
-"Gutenberg."
-msgstr ""
-
-#: lib/onboard/views/onboard-steps/step-03.php:181
-msgid "Continue"
-msgstr ""
-
-#: lib/onboard/views/onboard-steps/step-03.php:182
-msgid "Unlock All & Continue"
+#: lib/onboard/views/onboard-steps/step-03.php:59
+#: lib/onboard/views/onboard-steps/step-03.php:69
+#: wp-social.php:182
+msgid "Integrate various styled review system in your website"
 msgstr ""
 
 #: lib/onboard/views/onboard-steps/step-04.php:4
@@ -802,8 +782,13 @@ msgstr ""
 
 #: lib/onboard/views/onboard-steps/step-05.php:2
 msgid ""
-"Exclusive <strong>20% Discount</strong> Only for <br/> Next <strong>2 "
+"Exclusive <strong>40% Discount</strong> Only for <br/> Next <strong>2 "
 "Hours</strong> - Grab It Now"
+msgstr ""
+
+#: lib/onboard/views/onboard-steps/step-05.php:5
+#: inc/admin-settings.php:335
+msgid "WP Social"
 msgstr ""
 
 #: lib/onboard/views/onboard-steps/step-05.php:5
@@ -850,20 +835,28 @@ msgstr ""
 msgid "Explore PRO"
 msgstr ""
 
-#: lib/onboard/views/onboard-steps/step-05.php:26
-msgid "Complete Setup"
+#: lib/onboard/views/onboard-steps/step-06.php:3
+msgid "Congratulations!"
 msgstr ""
 
-#: lib/onboard/views/onboard-steps/step-06.php:2
-msgid "Great! You are All Set!"
+#: lib/onboard/views/onboard-steps/step-06.php:4
+msgid ""
+"Let’s dive into developing your website with the world’s best social plugin "
+"for Wordpress."
 msgstr ""
 
 #: lib/onboard/views/onboard-steps/step-06.php:5
-msgid "Here is an overview of everything that is setup."
-msgstr ""
-
-#: lib/onboard/views/onboard-steps/step-06.php:18
-msgid "Go to WP Dashboard"
+#: template/admin/counter/counter-setting.php:67
+#: template/admin/counter/providers-counter.php:448
+#: template/admin/counter/style-setting.php:120
+#: template/admin/global-setting.php:348
+#: template/admin/providers-setting.php:244 template/admin/settings.php:72
+#: template/admin/share/share-providers.php:165
+#: template/admin/share/share-setting.php:52
+#: template/admin/share/share-setting.php:127
+#: template/admin/share/style-setting.php:393
+#: template/admin/style-setting.php:63
+msgid "Save Changes"
 msgstr ""
 
 #: lib/onboard/views/settings-sections/dashboard.php:8
@@ -891,7 +884,8 @@ msgstr ""
 msgid "Get started"
 msgstr ""
 
-#: lib/onboard/views/settings-sections/dashboard.php:26 wp-social.php:157
+#: lib/onboard/views/settings-sections/dashboard.php:26
+#: wp-social.php:119
 msgid "Video Tutorials"
 msgstr ""
 
@@ -1022,25 +1016,13 @@ msgid ""
 "speed."
 msgstr ""
 
-#: lib/plugins/plugins.php:424
-msgid "Activate"
-msgstr ""
-
-#: lib/plugins/plugins.php:441
-msgid "Read Docs"
-msgstr ""
-
-#: lib/pro-awareness/pro-awareness.php:37
-msgid "Get Help"
-msgstr ""
-
-#: lib/pro-awareness/pro-awareness.php:165
-#: lib/pro-awareness/pro-awareness.php:180
+#: lib/pro-awareness/pro-awareness.php:155
+#: lib/pro-awareness/pro-awareness.php:170
 msgid "Default Title"
 msgstr ""
 
 #: lib/provider/counter/counter.php:23
-#: template/admin/counter/providers-counter.php:429
+#: template/admin/counter/providers-counter.php:412
 msgid "No cache found"
 msgstr ""
 
@@ -1064,12 +1046,6 @@ msgstr ""
 msgid "No, not good enough"
 msgstr ""
 
-#: lib/user-consent-banner/consent-check-view.php:42
-msgid ""
-"Show update & fix related important messages, essential tutorials and "
-"promotional images on WP Dashboard"
-msgstr ""
-
 #: template/admin/counter/counter-setting.php:10
 #: template/admin/global-setting.php:10
 #: template/admin/share/share-setting.php:10
@@ -1091,6 +1067,13 @@ msgstr ""
 msgid "Cache (hours)"
 msgstr ""
 
+#: template/admin/counter/counter-setting.php:37
+#: template/admin/share/share-setting.php:25
+#: lib/onboard/onboard.php:211
+#: lib/onboard/onboard.php:201
+msgid "Use theme default font family"
+msgstr ""
+
 #: template/admin/counter/counter-setting.php:55
 #: template/admin/share/share-setting.php:43
 msgid ""
@@ -1098,21 +1081,8 @@ msgid ""
 "installed on your website."
 msgstr ""
 
-#: template/admin/counter/counter-setting.php:67
-#: template/admin/counter/providers-counter.php:465
-#: template/admin/counter/style-setting.php:120
-#: template/admin/global-setting.php:349
-#: template/admin/providers-setting.php:244 template/admin/settings.php:72
-#: template/admin/share/share-providers.php:180
-#: template/admin/share/share-setting.php:52
-#: template/admin/share/share-setting.php:127
-#: template/admin/share/style-setting.php:394
-#: template/admin/style-setting.php:63
-msgid "Save Changes"
-msgstr ""
-
 #: template/admin/counter/counter-setting.php:74
-#: template/admin/global-setting.php:356
+#: template/admin/global-setting.php:355
 #: template/admin/share/share-setting.php:133
 #: template/admin/share/share-setting.php:154
 msgid "Shortcode "
@@ -1124,69 +1094,62 @@ msgstr ""
 msgid "Providers data have been updated."
 msgstr ""
 
-#: template/admin/counter/providers-counter.php:98
+#: template/admin/counter/providers-counter.php:90
+#: template/admin/providers-setting.php:53
+#: template/admin/providers-setting.php:86
+#: template/admin/share/share-providers.php:68
+#: inc/admin-settings.php:339
+msgid "Settings"
+msgstr ""
+
+#: template/admin/counter/providers-counter.php:92
 #: template/admin/providers-setting.php:55
 #: template/admin/providers-setting.php:85
-#: template/admin/share/share-providers.php:72
+#: template/admin/share/share-providers.php:68
 msgid "Getting Started"
 msgstr ""
 
-#: template/admin/counter/providers-counter.php:105
-#: template/admin/share/share-providers.php:76
-msgid "Buy Pro"
-msgstr ""
-
-#: template/admin/counter/providers-counter.php:230
-msgid "Get Access Token"
-msgstr ""
-
-#: template/admin/counter/providers-counter.php:391
-#: template/admin/share/share-providers.php:146
+#: template/admin/counter/providers-counter.php:374
+#: template/admin/share/share-providers.php:131
 msgid "Text Below The Number"
 msgstr ""
 
-#: template/admin/counter/providers-counter.php:403
-#: template/admin/share/share-providers.php:158
+#: template/admin/counter/providers-counter.php:386
+#: template/admin/share/share-providers.php:143
 msgid "Label Name"
 msgstr ""
 
-#: template/admin/counter/providers-counter.php:429
+#: template/admin/counter/providers-counter.php:412
 msgid "ago"
 msgstr ""
 
-#: template/admin/counter/providers-counter.php:437
+#: template/admin/counter/providers-counter.php:424
+msgid "Cached"
+msgstr ""
+
+#: template/admin/counter/providers-counter.php:420
 msgid "Clear"
 msgstr ""
 
-#: template/admin/counter/providers-counter.php:441
-msgid "Cached : "
-msgstr ""
-
+#: template/admin/counter/providers-counter.php:521
+#: template/admin/counter/providers-counter.php:530
 #: template/admin/counter/providers-counter.php:539
-#: template/admin/counter/providers-counter.php:548
-#: template/admin/counter/providers-counter.php:557
-#: template/admin/counter/providers-counter.php:567
 msgid "Go to APP Settings and Set Callback URL"
 msgstr ""
 
+#: template/admin/counter/providers-counter.php:522
+#: template/admin/counter/providers-counter.php:531
 #: template/admin/counter/providers-counter.php:540
-#: template/admin/counter/providers-counter.php:549
-#: template/admin/counter/providers-counter.php:558
-#: template/admin/counter/providers-counter.php:568
 msgid "App Settings "
 msgstr ""
 
+#: template/admin/counter/providers-counter.php:524
+#: template/admin/counter/providers-counter.php:533
 #: template/admin/counter/providers-counter.php:542
-#: template/admin/counter/providers-counter.php:551
-#: template/admin/counter/providers-counter.php:560
 msgid "Add the following URL to the \"Valid OAuth redirect URIs\" field:"
 msgstr ""
 
-#: template/admin/counter/providers-counter.php:570
-msgid "Add the following URL to the \"Redirect URI\" field:"
-msgstr ""
-
-#: template/admin/counter/providers-counter.php:577
+#: template/admin/counter/providers-counter.php:549
 msgid "Generate Key"
 msgstr ""
 
@@ -1197,7 +1160,7 @@ msgid "Styles data have been updated."
 msgstr ""
 
 #: template/admin/counter/style-setting.php:38
-#: template/admin/share/style-setting.php:304
+#: template/admin/share/style-setting.php:303
 msgid "Select Hover Effects"
 msgstr ""
 
@@ -1206,7 +1169,7 @@ msgid "Select Counter Style"
 msgstr ""
 
 #: template/admin/counter/style-setting.php:87
-#: template/admin/share/style-setting.php:351
+#: template/admin/share/style-setting.php:350
 msgid "Buy Now"
 msgstr ""
 
@@ -1227,152 +1190,158 @@ msgstr ""
 msgid "Custom login redirect "
 msgstr ""
 
-#: template/admin/global-setting.php:49
+#: template/admin/global-setting.php:48
+#: lib/onboard/onboard.php:191
 msgid "Show button to wp-login page "
 msgstr ""
 
-#: template/admin/global-setting.php:59
+#: template/admin/global-setting.php:58
 msgid "wp login form middle "
 msgstr ""
 
-#: template/admin/global-setting.php:64
+#: template/admin/global-setting.php:63
 msgid "wp login form head"
 msgstr ""
 
-#: template/admin/global-setting.php:70
+#: template/admin/global-setting.php:69
 msgid "wp login footer "
 msgstr ""
 
-#: template/admin/global-setting.php:75
+#: template/admin/global-setting.php:74
 msgid "wp login message section "
 msgstr ""
 
-#: template/admin/global-setting.php:86
+#: template/admin/global-setting.php:85
 msgid "Show button to wp-register page "
 msgstr ""
 
-#: template/admin/global-setting.php:98
+#: template/admin/global-setting.php:97
 msgid "wp register form middle "
 msgstr ""
 
-#: template/admin/global-setting.php:103
+#: template/admin/global-setting.php:102
 msgid "wp register form head "
 msgstr ""
 
-#: template/admin/global-setting.php:108
+#: template/admin/global-setting.php:107
 msgid "wp register footer "
 msgstr ""
 
-#: template/admin/global-setting.php:120
+#: template/admin/global-setting.php:119
 msgid "Show button to Wp-fundraising login page"
 msgstr ""
 
-#: template/admin/global-setting.php:131
+#: template/admin/global-setting.php:130
 msgid "Wp-fundraising login form outer before "
 msgstr ""
 
-#: template/admin/global-setting.php:136
+#: template/admin/global-setting.php:135
 msgid "Wp-fundraising login form outer after "
 msgstr ""
 
-#: template/admin/global-setting.php:141
+#: template/admin/global-setting.php:140
 msgid "Wp-fundraising login form inner before "
 msgstr ""
 
-#: template/admin/global-setting.php:146
+#: template/admin/global-setting.php:145
 msgid "Wp-fundraising login form inner after "
 msgstr ""
 
-#: template/admin/global-setting.php:151
+#: template/admin/global-setting.php:150
 msgid "Wp-fundraising login form start "
 msgstr ""
 
-#: template/admin/global-setting.php:156
+#: template/admin/global-setting.php:155
 msgid "Wp-fundraising login form end "
 msgstr ""
 
-#: template/admin/global-setting.php:161
+#: template/admin/global-setting.php:160
 msgid "Wp-fundraising login form button before "
 msgstr ""
 
-#: template/admin/global-setting.php:166
+#: template/admin/global-setting.php:165
 msgid "Wp-fundraising login form button after "
 msgstr ""
 
-#: template/admin/global-setting.php:171
+#: template/admin/global-setting.php:170
 msgid "Wp-fundraising login form message "
 msgstr ""
 
-#: template/admin/global-setting.php:183
+#: template/admin/global-setting.php:182
 msgid "Show button in wp-comment page "
 msgstr ""
 
-#: template/admin/global-setting.php:194
+#: template/admin/global-setting.php:193
 msgid "wp comment form top "
 msgstr ""
 
-#: template/admin/global-setting.php:199
+#: template/admin/global-setting.php:198
 msgid "wp comment form after login"
 msgstr ""
 
-#: template/admin/global-setting.php:210
+#: template/admin/global-setting.php:209
 msgid "Show button to WooCommerce login page "
 msgstr ""
 
-#: template/admin/global-setting.php:221
+#: template/admin/global-setting.php:220
 msgid "WooCommerce login form start "
 msgstr ""
 
-#: template/admin/global-setting.php:227
+#: template/admin/global-setting.php:226
 msgid "WooCommerce login form middle "
 msgstr ""
 
-#: template/admin/global-setting.php:232
+#: template/admin/global-setting.php:231
 msgid "WooCommerce login form end "
 msgstr ""
 
-#: template/admin/global-setting.php:243
+#: template/admin/global-setting.php:242
 msgid "Show button to WooCommerce register page "
 msgstr ""
 
-#: template/admin/global-setting.php:255
+#: template/admin/global-setting.php:254
 msgid "WooCommerce registration form start "
 msgstr ""
 
-#: template/admin/global-setting.php:260
+#: template/admin/global-setting.php:259
 msgid "WooCommerce registration form middle "
 msgstr ""
 
-#: template/admin/global-setting.php:265
+#: template/admin/global-setting.php:264
 msgid "WooCommerce registration form end "
 msgstr ""
 
-#: template/admin/global-setting.php:276
+#: template/admin/global-setting.php:275
 msgid "Show button to WooCommerce billing page "
 msgstr ""
 
-#: template/admin/global-setting.php:287
+#: template/admin/global-setting.php:286
 msgid "WooCommerce before checkout billing form "
 msgstr ""
 
-#: template/admin/global-setting.php:292
+#: template/admin/global-setting.php:291
 msgid "WooCommerce after checkout billing form "
 msgstr ""
 
-#: template/admin/global-setting.php:303
+#: template/admin/global-setting.php:302
 msgid "Show button to BuddyPress "
 msgstr ""
 
-#: template/admin/global-setting.php:314
+#: template/admin/global-setting.php:313
 msgid "BuddyPress before register form "
 msgstr ""
 
-#: template/admin/global-setting.php:319
+#: template/admin/global-setting.php:318
 msgid "BuddyPress account details fields "
 msgstr ""
 
-#: template/admin/global-setting.php:324
+#: template/admin/global-setting.php:323
 msgid "BuddyPress after register form "
+msgstr ""
+
+#: template/admin/global-setting.php:332
+#: lib/onboard/onboard.php:195
+msgid "Email login credentials to a newly-registered user"
 msgstr ""
 
 #: template/admin/providers-setting.php:87
@@ -1401,19 +1370,6 @@ msgstr ""
 msgid "Click on \"Save Changes\""
 msgstr ""
 
-#: template/admin/providers-setting.php:142
-msgid "App ID - "
-msgstr ""
-
-#: template/admin/providers-setting.php:142
-#: template/admin/providers-setting.php:156
-msgid "(Required)"
-msgstr ""
-
-#: template/admin/providers-setting.php:156
-msgid "App Secret - "
-msgstr ""
-
 #: template/admin/providers-setting.php:175
 msgid "Login Label Text "
 msgstr ""
@@ -1432,6 +1388,19 @@ msgstr ""
 
 #: template/admin/providers-setting.php:231
 msgid "Login with"
+msgstr ""
+
+#: template/admin/providers-setting.php:156
+msgid "App Secret - "
+msgstr ""
+
+#: template/admin/providers-setting.php:142
+msgid "App ID - "
+msgstr ""
+
+#: template/admin/providers-setting.php:142
+#: template/admin/providers-setting.php:156
+msgid "(Required)"
 msgstr ""
 
 #: template/admin/settings.php:14
@@ -1475,13 +1444,19 @@ msgstr ""
 msgid "Fixed Display "
 msgstr ""
 
+#: template/admin/share/style-setting.php:65
+#: template/admin/share/style-setting.php:168
+#: lib/onboard/onboard.php:205
+msgid "Show total count"
+msgstr ""
+
 #: template/admin/share/style-setting.php:94
-#: template/admin/share/style-setting.php:388
+#: template/admin/share/style-setting.php:387
 msgid "Fixed Display"
 msgstr ""
 
 #: template/admin/share/style-setting.php:105
-#: template/admin/share/style-setting.php:245
+#: template/admin/share/style-setting.php:244
 msgid "Disable "
 msgstr ""
 
@@ -1513,23 +1488,23 @@ msgstr ""
 msgid "Vertical"
 msgstr ""
 
-#: template/admin/share/style-setting.php:257
+#: template/admin/share/style-setting.php:256
 msgid "After Content "
 msgstr ""
 
-#: template/admin/share/style-setting.php:270
+#: template/admin/share/style-setting.php:269
 msgid "Before Content "
 msgstr ""
 
-#: template/admin/share/style-setting.php:282
+#: template/admin/share/style-setting.php:281
 msgid "Both"
 msgstr ""
 
-#: template/admin/share/style-setting.php:336
+#: template/admin/share/style-setting.php:335
 msgid "Select Share Style"
 msgstr ""
 
-#: template/admin/share/style-setting.php:384
+#: template/admin/share/style-setting.php:383
 msgid "Main Content"
 msgstr ""
 
@@ -1553,192 +1528,8 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: template/share/primary_content.php:37 template/share/share-html.php:37
+#: template/share/primary_content.php:37 template/share/share-html.php:36
 msgid "Shares"
-msgstr ""
-
-#: wp-social.php:151
-msgid "Join the Community"
-msgstr ""
-
-#: wp-social.php:153
-msgid ""
-"Join our Facebook group to get 20% discount coupon on premium products. "
-"Follow us to get more exciting offers."
-msgstr ""
-
-#: wp-social.php:159
-msgid ""
-"Learn the step by step process for developing your site easily from video "
-"tutorials."
-msgstr ""
-
-#: wp-social.php:164
-msgid "Request a feature"
-msgstr ""
-
-#: wp-social.php:166
-msgid "Have any special feature in mind? Let us know through the feature request."
-msgstr ""
-
-#: wp-social.php:171
-msgid "Documentation"
-msgstr ""
-
-#: wp-social.php:173
-msgid ""
-"Detailed documentation to help you understand the functionality of each "
-"feature."
-msgstr ""
-
-#: wp-social.php:178
-msgid "Public Roadmap"
-msgstr ""
-
-#: wp-social.php:180
-msgid "Check our upcoming new features, detailed development stories and tasks"
-msgstr ""
-
-#: wp-social.php:186 wp-social.php:262
-msgid "GetGenie"
-msgstr ""
-
-#: wp-social.php:188
-msgid "Your AI-Powered Content & SEO Assistant for WordPress"
-msgstr ""
-
-#: wp-social.php:196
-msgid "All-in-One drag and drop Addons for Elementor"
-msgstr ""
-
-#: wp-social.php:202
-msgid "ShopEngine"
-msgstr ""
-
-#: wp-social.php:204
-msgid "Complete WooCommerce Solution for Elementor"
-msgstr ""
-
-#: wp-social.php:210 wp-social.php:284
-msgid "MetForm"
-msgstr ""
-
-#: wp-social.php:212
-msgid "Most flexible drag-and-drop form builder"
-msgstr ""
-
-#: wp-social.php:218
-msgid "Ultimate Review"
-msgstr ""
-
-#: wp-social.php:220
-msgid "Integrate various styled review system in your website"
-msgstr ""
-
-#: wp-social.php:226
-msgid "Fundraising & Donation Platform"
-msgstr ""
-
-#: wp-social.php:228
-msgid "Enable donation system in your website"
-msgstr ""
-
-#: wp-social.php:254
-msgid "ElementsKit"
-msgstr ""
-
-#: wp-social.php:257
-msgid ""
-"All-in-one Elementor addon trusted by 1 Million+ users, makes your website "
-"builder process easier with ultimate freedom.\n"
-"\t\t\t\t\t\t"
-msgstr ""
-
-#: wp-social.php:265
-msgid ""
-"Your personal AI assistant for content and SEO. Write content that ranks on "
-"Google with NLP keywords and SERP analysis data."
-msgstr ""
-
-#: wp-social.php:269
-msgid "GutenKit"
-msgstr ""
-
-#: wp-social.php:272
-msgid ""
-"Gutenberg blocks, patterns, and templates that extend the page-building "
-"experience using the WordPress block editor."
-msgstr ""
-
-#: wp-social.php:276
-msgid "Shopengine"
-msgstr ""
-
-#: wp-social.php:279
-msgid ""
-"Complete WooCommerce solution for Elementor to fully customize any pages "
-"including cart, checkout, shop page, and so on.\n"
-"\t\t\t\t\t\t"
-msgstr ""
-
-#: wp-social.php:287
-msgid ""
-"Drag & drop form builder for Elementor to create contact forms, multi-step "
-"forms, and more — smoother, faster, and better!\n"
-"\t\t\t\t\t\t"
-msgstr ""
-
-#: wp-social.php:292
-msgid "EmailKit"
-msgstr ""
-
-#: wp-social.php:295
-msgid ""
-"Advanced email customizer for WooCommerce and WordPress. Build, customize, "
-"and send emails from WordPress to boost your sales!"
-msgstr ""
-
-#: wp-social.php:299
-msgid "WP Ultimate Review"
-msgstr ""
-
-#: wp-social.php:302
-msgid ""
-"Collect and showcase reviews on your website to build brand credibility and "
-"social proof with the easiest solution.\n"
-"\t\t\t\t\t\t"
-msgstr ""
-
-#: wp-social.php:307
-msgid "FundEngine"
-msgstr ""
-
-#: wp-social.php:310
-msgid ""
-"Create fundraising, crowdfunding, and donation websites with PayPal and "
-"Stripe payment gateway integration.\n"
-"\t\t\t\t\t\t"
-msgstr ""
-
-#: wp-social.php:315
-msgid "Blocks for ShopEngine"
-msgstr ""
-
-#: wp-social.php:318
-msgid ""
-"All in one WooCommerce solution for Gutenberg! Build your WooCommerce pages "
-"in a block editor with full customization.\n"
-"\t\t\t\t\t\t"
-msgstr ""
-
-#: wp-social.php:323
-msgid "Genie Image"
-msgstr ""
-
-#: wp-social.php:326
-msgid ""
-"AI-powered text-to-image generator for WordPress with OpenAI’s DALL-E 2 "
-"technology to generate high-quality images in one click."
 msgstr ""
 
 #. Plugin Name of the plugin/theme

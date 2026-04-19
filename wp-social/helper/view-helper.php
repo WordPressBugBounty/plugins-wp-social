@@ -86,7 +86,11 @@ class View_Helper {
                         <img 
                             src="<?php echo esc_url( $image ); ?>" 
                             alt="<?php echo esc_attr( $title) ?>">
+                           
                     </div>
+                    <?php if ( $package == 'pro' ) : ?>
+                        <a href="https://wpmet.com/plugin/wp-social/pricing/" class="wslu-buy-now-btn" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"><?php esc_html_e( 'Buy Now', 'wp-social' ); ?></a>
+                    <?php endif; ?>
 
                     <div class="wslu-style-card__label__input">
                         <input <?php echo esc_attr( $is_checked ) ?>
@@ -100,6 +104,7 @@ class View_Helper {
                         <?php 
                             echo esc_html__($title, 'wp-social');
                             if( $package == 'pro' ) echo wp_kses('<strong >(Pro Only)</strong>' , \WP_Social\Helper\Helper::get_kses_array());
+                           
                         ?>
                     </div>
 

@@ -54,7 +54,7 @@ $className = 'xs-login xs-login--' . $currentStyle;
 							----------------------------------------
 						*/
 						$args = [
-							'label'    => isset($provider_data[$keyType]['login_label']) ? $provider_data[$keyType]['login_label'] : 'Login with <b>' . $valueType . '</b>',
+							'label'    => isset($provider_data[$keyType]['login_label']) ? $provider_data[$keyType]['login_label'] : 'Login with ' . $valueType,
 							'icon'     => '<i class="met-social met-social-' . $keyType . '"></i>',
 							'clrClass' => 'wslu-color-scheme--' . $keyType,
 						];
