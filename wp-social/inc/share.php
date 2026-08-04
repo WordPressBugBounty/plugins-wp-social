@@ -259,7 +259,7 @@ class Share {
 
 		$hoverStyles = [
 			'none-none' => [
-				'name'  => 'None',
+				'name'  => __('None', 'wp-social'),
 				'class' => 'wslu-none',
 			],
 		];
@@ -460,7 +460,7 @@ class Share {
 		$link['viber'] = ['label' => 'Viber', 'url' => 'viber://forward', 'params' => ['text' => '[%title%] [%url%]']];
 		$link['whatsapp'] = ['label' => 'WhatsApp', 'url' => 'whatsapp://send', 'params' => ['text' => '[%title%] [%url%]']];
 		$link['telegram'] = ['label' => 'Telegram', 'url' => 'https://telegram.me/share/url', 'params' => ['url' => '[%url%]', 'text' => '[%title%]']];
-		$link['email'] = ['label' => 'Email', 'url' => 'mailto:', 'params' => ['body' => 'Title: [%title%] \n\n URL: [%url%]', 'subject' => '[%title%]']];
+		$link['email'] = ['label' => __('Email', 'wp-social'), 'url' => 'mailto:', 'params' => ['body' => 'Title: [%title%] \n\n URL: [%url%]', 'subject' => '[%title%]']];
 		$link['reddit'] = ['label' => 'Reddit', 'url' => 'http://reddit.com/submit', 'params' => ['url' => '[%url%]', 'title' => '[%title%]']];
 		$link['digg'] = ['label' => 'Digg', 'url' => 'http://digg.com/submit', 'params' => ['url' => '[%url%]', 'title' => '[%title%]', 'phase' => 2]];
 		$link['stumbleupon'] = ['label' => 'StumbleUpon', 'url' => 'http://www.stumbleupon.com/submit', 'params' => ['url' => '[%url%]', 'title' => '[%title%]']];

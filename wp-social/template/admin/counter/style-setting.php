@@ -99,7 +99,7 @@ defined( 'ABSPATH') || exit;
 
                                 <?php 
                                     echo esc_html__($styleValue['name'], 'wp-social');
-                                    echo wp_kses((!did_action('wslu_social_pro/plugin_loaded')) && ($styleValue['package'] == 'pro') ? '<span class="wslu-go-pro-text">(' . esc_html('Pro Only', 'elementskit') . ')</span>' : '', \WP_Social\Helper\Helper::get_kses_array());
+                                    echo wp_kses((!did_action('wslu_social_pro/plugin_loaded')) && ($styleValue['package'] == 'pro') ? '<span class="wslu-go-pro-text">(' . esc_html__('Pro Only', 'wp-social') . ')</span>' : '', \WP_Social\Helper\Helper::get_kses_array());
                                 ?>
 
                             </label>

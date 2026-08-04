@@ -355,7 +355,7 @@ $share_layout_alignment = empty($return_data['layout']) ?
                                 <input class="social_radio_button  wslu-global-radio-input share-input-name" type="radio" id="_login_button_style__<?php echo esc_attr($k); ?>" name="xs_style[login_button_style][main]" value="<?php echo esc_attr($k); ?>" <?php echo esc_attr( ( (!did_action('wslu_social_pro/plugin_loaded')) && ($v['package'] == 'pro') ) ? 'disabled="disabled"': '' ); ?>>
                                 <?php 
                                     echo esc_html__($v['name'], 'wp-social');
-                                    echo wp_kses(((!did_action('wslu_social_pro/plugin_loaded')) && ($v['package'] == 'pro') ? '<span class="wslu-go-pro-text">(' . esc_html('Pro Only', 'elementskit') . ')</span>' : ''), \WP_Social\Helper\Helper::get_kses_array());
+                                    echo wp_kses(((!did_action('wslu_social_pro/plugin_loaded')) && ($v['package'] == 'pro') ? '<span class="wslu-go-pro-text">(' . esc_html__('Pro Only', 'wp-social') . ')</span>' : ''), \WP_Social\Helper\Helper::get_kses_array());
                                 ?>
 
                                 <?php

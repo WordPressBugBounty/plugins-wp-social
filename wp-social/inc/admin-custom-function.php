@@ -130,6 +130,10 @@ if(!function_exists('xs_my_global_stylesheet')) {
 		$data['rest_url'] = get_rest_url();
 		$data['nonce'] = wp_create_nonce('wp_rest');
 		$data['insta_enabled'] = Settings::instance()->load()->is_instagram_counter_enabled();
+		$data['i18n'] = [
+			'shareThisWith' => __('Share this with:', 'wp-social'),
+			'share'         => __('Share', 'wp-social'),
+		];
 
 		wp_localize_script('xs_front_main_js', 'rest_config', $data);
 	}

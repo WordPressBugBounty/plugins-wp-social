@@ -15,9 +15,9 @@ if(!class_exists('\Wpmet\Libs\Pro_Awareness')) :
 		private $parent_menu_slug;
 		private $menu_slug = '_get_help';
 		private $default_grid_link  = 'https://help.wpmet.com/';
-		private $default_grid_title = 'Support Center';
+		private $default_grid_title;
 		private $default_grid_thumbnail = '';
-		private $default_grid_desc  = 'Our experienced support team is ready to resolve your issues any time.';
+		private $default_grid_desc;
 		private $pro_link_conf      = [];
 
 		private $grids = [];
@@ -35,7 +35,9 @@ if(!class_exists('\Wpmet\Libs\Pro_Awareness')) :
 		public function __construct() {
 
 			$this->parent_menu_text = __('Get Help', 'wp-social');
-			
+			$this->default_grid_title = __('Support Center', 'wp-social');
+			$this->default_grid_desc = __('Our experienced support team is ready to resolve your issues any time.', 'wp-social');
+
 		}
 
 		/**
@@ -146,7 +148,7 @@ if(!class_exists('\Wpmet\Libs\Pro_Awareness')) :
 
 			$this->pro_link_conf[] = [
 				'url'        => $url,
-				'anchor'     => empty($conf['anchor']) ? '<span style="color: #FCB214;" class="pro_aware pro">Upgrade To Premium</span>' : $conf['anchor'],
+				'anchor'     => empty($conf['anchor']) ? '<span style="color: #FCB214;" class="pro_aware pro">' . esc_html__('Upgrade To Premium', 'wp-social') . '</span>' : $conf['anchor'],
 				'permission' => empty($conf['permission']) ? 'manage_options' : $conf['permission'],
 			];
 

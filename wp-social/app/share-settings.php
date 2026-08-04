@@ -89,7 +89,7 @@ class Share_Settings {
 
 		$hover_styles = [
 			'none-none' => [
-				'name'  => 'None',
+				'name'  => __('None', 'wp-social'),
 				'class' => 'wslu-none',
 			],
 		];

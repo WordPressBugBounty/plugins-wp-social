@@ -1,9 +1,9 @@
 === Wp Social Login and Register Social Counter ===
 Contributors: Roxnor, Ataurr
 Tags: Social login, WordPress Social login and register, Social share,  Social counter, Social,  WooCommerce social login and register
-Requires at least: 5.0
-Tested up to: 6.9.4
-Stable tag: 3.2.0
+Requires at least: 6.0
+Tested up to: 7.0
+Stable tag: 3.2.1
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
@@ -162,6 +162,9 @@ Visit [wpmet](https://wpmet.com) to learn more about how to get the best of Word
 
 
 == Changelog ==
+Version 3.2.1 // 2026-08-04
+Fixed: Replaced hard-coded strings with translatable text.
+
 Version 3.2.0 // 2026-04-19
 Improved: Pre-built templates for login styles.
 

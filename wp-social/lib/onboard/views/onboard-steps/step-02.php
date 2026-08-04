@@ -17,13 +17,13 @@
         
         <div class="wslu-onboard-signup">
             <label for="signup"><i class="icon xs-onboard-mail"></i></label>
-            <input name="settings[newsletter_email]" id="signup" type="email" placeholder="Enter your email address">
+            <input name="settings[newsletter_email]" id="signup" type="email" placeholder="<?php echo esc_attr__('Enter your email address', 'wp-social'); ?>">
         </div>
 
         <p class="wslu-onboard-signup--helptext">
             <?php echo esc_html__('Submit Your Best Email', 'wp-social'); ?> 
             <span>
-                <?php echo esc_html('(We Never Spam)', 'elementskit-lite'); ?>
+                <?php echo esc_html__('(We Never Spam)', 'wp-social'); ?>
             </span>
         </p>
         

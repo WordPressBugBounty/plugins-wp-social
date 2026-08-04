@@ -54,7 +54,7 @@ $className = 'xs-login xs-login--' . $currentStyle;
 							----------------------------------------
 						*/
 						$args = [
-							'label'    => isset($provider_data[$keyType]['login_label']) ? $provider_data[$keyType]['login_label'] : 'Login with ' . $valueType,
+							'label'    => isset($provider_data[$keyType]['login_label']) ? $provider_data[$keyType]['login_label'] : sprintf(__('Login with %s', 'wp-social'), $valueType),
 							'icon'     => '<i class="met-social met-social-' . $keyType . '"></i>',
 							'clrClass' => 'wslu-color-scheme--' . $keyType,
 						];

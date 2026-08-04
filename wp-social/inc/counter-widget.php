@@ -118,7 +118,9 @@ class Counter_Widget extends \WP_Widget {
                     <option value="<?php echo esc_attr((!did_action('wslu_social_pro/plugin_loaded')) && ($v['package'] == 'pro') ? 'wslu-pro-only' : $k); ?>" <?php echo esc_attr(($instance['layout'] == $k) ? 'selected' : ''); ?>>
 						<?php
 						echo esc_html($v['name']);
-						esc_html_e((!did_action('wslu_social_pro/plugin_loaded')) && ($v['package'] == 'pro') ? '(Pro Only)' : '', 'wp-social');
+						if((!did_action('wslu_social_pro/plugin_loaded')) && ($v['package'] == 'pro')) {
+							esc_html_e('(Pro Only)', 'wp-social');
+						}
 						?>
                     </option>
 				<?php endforeach; ?>

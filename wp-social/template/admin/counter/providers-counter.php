@@ -56,7 +56,8 @@ defined('ABSPATH') || exit;
 
                             <div class="xs-block-header"
                                  onclick="xs_counter_open(this);"
-                                 xs-target-id="<?php echo esc_attr($js_target_id); ?>">
+                                 xs-target-id="<?php echo esc_attr($js_target_id); ?>"
+                                 data-drag-label="<?php echo esc_attr__('Drag to Reorder', 'wp-social'); ?>">
                                 <div class="xs-social-icon">
                                     <span class="met-social met-social-<?php echo esc_attr($k); ?>"></span>
                                 </div>
@@ -236,7 +237,7 @@ defined('ABSPATH') || exit;
 													$div_id = 'asd_' . time();
 
 
-													echo wp_kses('<div id="' . $div_id . '" style="padding:5px; color:green">Access token grabbed successfully, please save the changes.</div>', \WP_Social\Helper\Helper::get_kses_array());
+													echo wp_kses('<div id="' . $div_id . '" style="padding:5px; color:green">' . esc_html__('Access token grabbed successfully, please save the changes.', 'wp-social') . '</div>', \WP_Social\Helper\Helper::get_kses_array());
 
 
 													?> <script>
@@ -374,7 +375,7 @@ defined('ABSPATH') || exit;
                                             <div class="setting-label-wraper">
                                                 <label class="setting-label wslu-sec-title"
                                                        for="xs_<?php echo esc_attr($k); ?>_text">
-													<?php echo esc_html__('Default ' . $setLabel . ' ' . $belowText, 'wp-social'); ?>
+													<?php echo esc_html(sprintf(__('Default %1$s %2$s', 'wp-social'), $setLabel, $belowText)); ?>
                                                 </label>
                                             </div>
 

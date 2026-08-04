@@ -140,7 +140,7 @@ class Counter {
 
 		$hoverStyles = [
 			'none-none' => [
-				'name'  => 'None',
+				'name'  => __('None', 'wp-social'),
 				'class' => 'wslu-none',
 			],
 		];
@@ -382,14 +382,14 @@ class Counter {
 		// todo - alamin : make all label as translatable
 
 		return [
-			'facebook' => ['id' => ['type' => 'normal', 'label' => 'Page ID/Name', 'input' => 'text'],],
+			'facebook' => ['id' => ['type' => 'normal', 'label' => __('Page ID/Name', 'wp-social'), 'input' => 'text'],],
 			'twitter'  => [
-				'id'  => ['type' => 'normal', 'label' => 'Username', 'input' => 'text'],
+				'id'  => ['type' => 'normal', 'label' => __('Username', 'wp-social'), 'input' => 'text'],
 				'api' => [
 					'type'  => 'access',
 					'label' => __('Access Token Key', 'wp-social'),
 					'input' => 'text',
-					'filed' => ['app_id' => 'Consumer key', 'app_secret' => 'Consumer secret'],
+					'filed' => ['app_id' => __('Consumer key', 'wp-social'), 'app_secret' => __('Consumer secret', 'wp-social')],
 				],
 			],
 
@@ -397,7 +397,7 @@ class Counter {
 
 				'user_name' => [
 					'type'  => 'normal',
-					'label' => 'Username',
+					'label' => __('Username', 'wp-social'),
 					'input' => 'text',
 				],
 
@@ -411,12 +411,12 @@ class Counter {
 
 				'access_token' => [
 					'type'  => 'normal',
-					'label' => 'Access token',
+					'label' => __('Access token', 'wp-social'),
 					'input' => 'text',
 				],
 				'user_id' => [
 					'type'  => 'normal',
-					'label' => 'Account ID',
+					'label' => __('Account ID', 'wp-social'),
 					'input' => 'text',
 				],
 			],
@@ -426,29 +426,29 @@ class Counter {
 					'type'  => 'access',
 					'label' => __('Access Token', 'wp-social'),
 					'input' => 'text',
-					'filed' => ['app_id' => 'Client ID', 'app_secret' => 'Client Secret'],
+					'filed' => ['app_id' => __('Client ID', 'wp-social'), 'app_secret' => __('Client Secret', 'wp-social')],
 				],
 			],
 
 			'linkedin'  => [
 				'type' => [
 					'type'  => 'normal',
-					'label' => 'Account Type',
+					'label' => __('Account Type', 'wp-social'),
 					'input' => 'select',
 					'data'  => ['Company' => 'Company', 'Profile' => 'Profile'],
 				],
-				'id'   => ['type' => 'normal', 'label' => 'Your ID', 'input' => 'text'],
+				'id'   => ['type' => 'normal', 'label' => __('Your ID', 'wp-social'), 'input' => 'text'],
 				'api'  => [
 					'type'  => 'access',
 					'label' => __('Access Token Key', 'wp-social'),
 					'input' => 'text',
-					'filed' => ['app_id' => 'API Key', 'app_secret' => 'Secret Key'],
+					'filed' => ['app_id' => __('API Key', 'wp-social'), 'app_secret' => __('Secret Key', 'wp-social')],
 				],
 			],
 			'pinterest' => [
 				'username' => [
 					'type'  => 'normal',
-					'label' => 'Username',
+					'label' => __('Username', 'wp-social'),
 					'input' => 'text',
 				],
 			],
@@ -456,24 +456,24 @@ class Counter {
 			'youtube'   => [
 				'type' => [
 					'type'  => 'normal',
-					'label' => 'Account Type',
+					'label' => __('Account Type', 'wp-social'),
 					'input' => 'select',
 					'data'  => ['Channel' => 'Channel', 'User' => 'User'],
 				],
-				'id'   => ['type' => 'normal', 'label' => 'Username or Channel ID', 'input' => 'text'],
-				'key'  => ['type' => 'normal', 'label' => 'YouTube API Key', 'input' => 'text'],
+				'id'   => ['type' => 'normal', 'label' => __('Username or Channel ID', 'wp-social'), 'input' => 'text'],
+				'key'  => ['type' => 'normal', 'label' => __('YouTube API Key', 'wp-social'), 'input' => 'text'],
 			],
 			'dribbble'  => [
 				'api' => [
 					'type'  => 'access',
 					'label' => __('Access Token Key', 'wp-social'),
 					'input' => 'text',
-					'filed' => ['app_id' => 'Client ID', 'app_secret' => 'Client Secret'],
+					'filed' => ['app_id' => __('Client ID', 'wp-social'), 'app_secret' => __('Client Secret', 'wp-social')],
 				],
 			],
 			'mailchimp' => [
-				'id'  => ['type' => 'normal', 'label' => 'List ID (Optional)', 'input' => 'text'],
-				'api' => ['type' => 'normal', 'label' => 'API Key', 'input' => 'text'],
+				'id'  => ['type' => 'normal', 'label' => __('List ID (Optional)', 'wp-social'), 'input' => 'text'],
+				'api' => ['type' => 'normal', 'label' => __('API Key', 'wp-social'), 'input' => 'text'],
 			],
 		];
 	}

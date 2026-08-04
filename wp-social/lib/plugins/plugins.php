@@ -21,22 +21,35 @@ if( !class_exists('\WP_Social\Wpmet\Libs\Plugins') ) {
         private $text_domain;
         private $parent_menu_slug;
         private $menu_slug = '_wpmet_plugins';
-        private $submenu_name = 'Our Plugins';
+        private $submenu_name;
         private $plugins = [];
         public $items_per_row = 4;
-        private $section_title = 'Take your website to the next level';
-        private $section_description = 'We have some plugins you can install to get most from Wordpress. These are absolute FREE to use.';
+        private $section_title;
+        private $section_description;
         private $installed_plugins = [];
         private $activated_plugins = [];
+
+        /**
+         * Sets the translatable default strings.
+         *
+         * @since 1.0.0
+         */
+        public function __construct() {
+
+            $this->submenu_name = __('Our Plugins', 'wp-social');
+            $this->section_title = __('Take your website to the next level', 'wp-social');
+            $this->section_description = __('We have some plugins you can install to get most from WordPress. These are absolute FREE to use.', 'wp-social');
+        }
+
         /**
          * Creates and returns an instance of the class.
          *
          * @return self
-         * 
+         *
          * @since 1.0.0
          */
         public static function instance() {
-            
+
             if ( !self::$instance ) {
                 self::$instance = new self();
             }

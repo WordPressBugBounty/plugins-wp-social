@@ -103,7 +103,7 @@ class View_Helper {
                         
                         <?php 
                             echo esc_html__($title, 'wp-social');
-                            if( $package == 'pro' ) echo wp_kses('<strong >(Pro Only)</strong>' , \WP_Social\Helper\Helper::get_kses_array());
+                            if( $package == 'pro' ) echo wp_kses('<strong >(' . esc_html__('Pro Only', 'wp-social') . ')</strong>' , \WP_Social\Helper\Helper::get_kses_array());
                            
                         ?>
                     </div>

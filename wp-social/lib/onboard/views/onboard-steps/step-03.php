@@ -32,7 +32,7 @@ echo esc_html__('Take your website to the next level', 'wp-social'); ?></strong>
             <div class="wslu-onboard-single-plugin <?php echo $getgenie['status'] == 'activated' ? 'activated' : ''; ?>">
                 <label>
                     <div class="wslu-onboard-single-plugin--header">
-                        <h3>AI Content & SEO Tool</h3>
+                        <h3><?php echo esc_html__('AI Content & SEO Tool', 'wp-social'); ?></h3>
                     </div>
                     <?php if($getgenie['status'] !== 'activated') : ?>
                         <div class="wslu-onboard-single-plugin--checkbox-wrapper">
@@ -50,7 +50,7 @@ echo esc_html__('Take your website to the next level', 'wp-social'); ?></strong>
             <div class="wslu-onboard-single-plugin <?php echo $elementskit['status'] == 'activated' ? 'activated' : ''; ?>">
                 <label>
                     <div class="wslu-onboard-single-plugin--header">
-                        <h3>Page Builder Elements</h3>
+                        <h3><?php echo esc_html__('Page Builder Elements', 'wp-social'); ?></h3>
                     </div>
                     <?php if($elementskit['status'] !== 'activated') : ?>
                         <div class="wslu-onboard-single-plugin--checkbox-wrapper">
@@ -68,7 +68,7 @@ echo esc_html__('Take your website to the next level', 'wp-social'); ?></strong>
             <div class="wslu-onboard-single-plugin <?php echo $metform['status'] == 'activated' ? 'activated' : ''; ?>">
                 <label>
                     <div class="wslu-onboard-single-plugin--header">
-                        <h3>Form Builder</h3>
+                        <h3><?php echo esc_html__('Form Builder', 'wp-social'); ?></h3>
                     </div>
                     <?php if($metform['status'] !== 'activated') : ?>
                         <div class="wslu-onboard-single-plugin--checkbox-wrapper">
@@ -86,7 +86,7 @@ echo esc_html__('Take your website to the next level', 'wp-social'); ?></strong>
             <div class="wslu-onboard-single-plugin <?php echo $shopengine['status'] == 'activated' ? 'activated' : ''; ?>">
                 <label>
                     <div class="wslu-onboard-single-plugin--header">
-                        <h3>WooCommerce Builder</h3>
+                        <h3><?php echo esc_html__('WooCommerce Builder', 'wp-social'); ?></h3>
                     </div>
                     <?php if($shopengine['status'] !== 'activated') : ?>
                         <div class="wslu-onboard-single-plugin--checkbox-wrapper">
@@ -104,7 +104,7 @@ echo esc_html__('Take your website to the next level', 'wp-social'); ?></strong>
             <div class="wslu-onboard-single-plugin <?php echo $emailkit['status'] == 'activated' ? 'activated' : ''; ?>">
                 <label>
                     <div class="wslu-onboard-single-plugin--header">
-                        <h3>Email Customizer</h3>
+                        <h3><?php echo esc_html__('Email Customizer', 'wp-social'); ?></h3>
                     </div>
                     <?php if($emailkit['status'] !== 'activated') : ?>
                         <div class="wslu-onboard-single-plugin--checkbox-wrapper">
@@ -122,7 +122,7 @@ echo esc_html__('Take your website to the next level', 'wp-social'); ?></strong>
             <div class="wslu-onboard-single-plugin <?php echo $popupkit['status'] == 'activated' ? 'activated' : ''; ?>">
                 <label>
                     <div class="wslu-onboard-single-plugin--header">
-                        <h3>Popup Builder</h3>
+                        <h3><?php echo esc_html__('Popup Builder', 'wp-social'); ?></h3>
                     </div>
                     <?php if($popupkit['status'] !== 'activated') : ?>
                         <div class="wslu-onboard-single-plugin--checkbox-wrapper">
@@ -140,7 +140,7 @@ echo esc_html__('Take your website to the next level', 'wp-social'); ?></strong>
             <div class="wslu-onboard-single-plugin <?php echo $review['status'] == 'activated' ? 'activated' : ''; ?>">
                 <label>
                     <div class="wslu-onboard-single-plugin--header">
-                        <h3>Review Management</h3>
+                        <h3><?php echo esc_html__('Review Management', 'wp-social'); ?></h3>
                     </div>
                     <?php if($review['status'] !== 'activated') : ?>
                         <div class="wslu-onboard-single-plugin--checkbox-wrapper">
@@ -158,7 +158,7 @@ echo esc_html__('Take your website to the next level', 'wp-social'); ?></strong>
             <div class="wslu-onboard-single-plugin <?php echo $gutenkit['status'] == 'activated' ? 'activated' : ''; ?>">
                 <label>
                     <div class="wslu-onboard-single-plugin--header">
-                        <h3>Gutenberg Blocks</h3>
+                        <h3><?php echo esc_html__('Gutenberg Blocks', 'wp-social'); ?></h3>
                     </div>
                     <?php if($gutenkit['status'] !== 'activated') : ?>
                         <div class="wslu-onboard-single-plugin--checkbox-wrapper">

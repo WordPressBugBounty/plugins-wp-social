@@ -30,7 +30,8 @@ defined('ABSPATH') || exit;
                     <li data-provider="<?php echo esc_attr($val)?>">
                         <div class="xs-single-social-block <?php echo esc_attr($k); ?>">
                             <div class="xs-block-header" data-type="modal-trigger"
-                                 data-target="example-modal-<?php echo esc_attr($k); ?>">
+                                 data-target="example-modal-<?php echo esc_attr($k); ?>"
+                                 data-drag-label="<?php echo esc_attr__('Drag to Reorder', 'wp-social'); ?>">
                                 <span class="drag-icon"></span>
                                 <span class="wslu-social-icon met-social met-social-<?php echo esc_attr($k); ?>"></span>
                                 <h2 class="xs-social-icon-title"><?php echo esc_html($val, 'wp-social'); ?></h2>
@@ -104,12 +105,12 @@ defined('ABSPATH') || exit;
                                             <p><?php echo esc_html($api_ins['getting_txt']); ?> </p>
                                         </div>
                                         <div class="wslu-single-popup-item">
-                                            <h3 class="wslu-sec-title"><?php echo esc_html__('Create ' . $valueTypeAll . ' App', 'wp-social'); ?></h3>
+                                            <h3 class="wslu-sec-title"><?php echo esc_html(sprintf(__('Create %s App', 'wp-social'), $valueTypeAll)); ?></h3>
 
                                             <ol class="xs_social_ol">
 
                                                 <li>
-													<?php esc_html_e('Check how to create App/Project On ' . $valueTypeAll . ' developer account - ', 'wp-social') ?>
+													<?php echo esc_html(sprintf(__('Check how to create App/Project On %s developer account - ', 'wp-social'), $valueTypeAll)); ?>
                                                     <a href="<?php echo esc_url($api_ins['doc_url']) ?>"
                                                        target="_blank"><?php echo esc_url($api_ins['doc_url']) ?></a>
                                                 </li>

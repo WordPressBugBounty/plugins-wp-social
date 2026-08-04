@@ -18,7 +18,7 @@ class Route extends Api {
 		// Verify nonce
 		if (!wp_verify_nonce($this->request->get_header('X-WP-Nonce'), 'wp_rest') 
 			|| !current_user_can('manage_options')) {
-			return new \WP_Error('rest_forbidden', 'Access Denied', array('status' => 403));
+			return new \WP_Error('rest_forbidden', esc_html__('Access Denied', 'wp-social'), array('status' => 403));
 		}
 
 		$data = $this->request->get_params();

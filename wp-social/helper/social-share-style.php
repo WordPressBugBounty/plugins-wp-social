@@ -14,42 +14,42 @@ function wp_social_share_style_settings( $post_type, $post ){
     ?>
         <ul>
             <li>
-                <strong>Choose where to show share buttons.</strong>
+                <strong><?php esc_html_e('Choose where to show share buttons.', 'wp-social'); ?></strong>
             </li>
             <li>
-                <input type="radio" id="social_share_global" name="social_share_style" value="global" 
+                <input type="radio" id="social_share_global" name="social_share_style" value="global"
                     <?php checked( $check, 'global') ?>
                  />
-                <label for="social_share_global">Global Setting</label>
+                <label for="social_share_global"><?php esc_html_e('Global Setting', 'wp-social'); ?></label>
             </li>
 
             <li>
                 <input type="radio" id="social_share_after_content" name="social_share_style" value="after_content"
                     <?php checked( $check, 'after_content') ?>
-                    
+
                 />
-                <label for="social_share_after_content">After Content</label>
+                <label for="social_share_after_content"><?php esc_html_e('After Content', 'wp-social'); ?></label>
             </li>
 
             <li>
                 <input type="radio" id="social_share_before_content" name="social_share_style" value="before_content"
                     <?php checked( $check, 'before_content') ?>
                 />
-                <label for="social_share_before_content">Before Content</label>
+                <label for="social_share_before_content"><?php esc_html_e('Before Content', 'wp-social'); ?></label>
             </li>
 
             <li>
                 <input type="radio" id="social_share_both" name="social_share_style" value="both_content"
-                    <?php checked( $check, 'both_content') ?>  
+                    <?php checked( $check, 'both_content') ?>
                 />
-                <label for="social_share_both">Both</label>
+                <label for="social_share_both"><?php esc_html_e('Both', 'wp-social'); ?></label>
             </li>
 
             <li>
                 <input type="radio" id="social_share_disable" name="social_share_style" value="no_content"
                     <?php checked( $check, 'no_content') ?>
                 />
-                <label for="social_share_disable">Disable</label>
+                <label for="social_share_disable"><?php esc_html_e('Disable', 'wp-social'); ?></label>
             </li>
         </ul>
 

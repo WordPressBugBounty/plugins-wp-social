@@ -66,9 +66,21 @@ class Plugin {
             'root' 	  => get_rest_url(),
         ));
 
+        wp_localize_script('xs_login_custom_js1', 'xsLoginCustomI18n', array(
+            'settings'       => __('Settings', 'wp-social'),
+            'gettingStarted' => __('Getting Started', 'wp-social'),
+            'waiting'        => __('Waiting...', 'wp-social'),
+            'error'          => __('Error!!!', 'wp-social'),
+            'unexpectedError' => __('Unexpected error, please reload the page and retry', 'wp-social'),
+        ));
+
 	    wp_localize_script('wslu_admin', 'wsluAdminObj', [
 		    'resturl'    => get_rest_url(),
 		    'rest_nonce' => wp_create_nonce('wp_rest'),
+		    'i18n'       => [
+			    'search'    => __('Search...', 'wp-social'),
+			    'errorText' => __('Error:', 'wp-social'),
+		    ],
 	    ]);
     
         wp_enqueue_script( 'xs_login_custom_js1' );

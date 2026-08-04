@@ -38,7 +38,7 @@ defined('ABSPATH') || exit;
 
                     <li data-provider="<?php echo esc_attr($k)?>">
                         <div class="xs-single-social-block <?php echo esc_attr($k . ' ' . $lineapp_provider_class); ?>">
-                            <div class="xs-block-header" data-type="modal-trigger" data-target="example-modal-<?php echo esc_attr($k); ?>">
+                            <div class="xs-block-header" data-type="modal-trigger" data-target="example-modal-<?php echo esc_attr($k); ?>" data-drag-label="<?php echo esc_attr__('Drag to Reorder', 'wp-social'); ?>">
                                 <span class="drag-icon"></span>
                                 <div class="xs-social-icon">
                                     <span class="met-social met-social-<?php echo esc_attr($k); ?>"></span>
@@ -130,7 +130,7 @@ defined('ABSPATH') || exit;
                                             <div class="setting-label-wraper">
                                                 <label class="setting-label wslu-sec-title"
                                                        for="<?php echo esc_attr($k); ?>_value">
-													<?php echo esc_attr('Default ' . $label . ' Share Count', 'wp-social'); ?>
+													<?php echo esc_html(sprintf(__('Default %s Share Count', 'wp-social'), $label)); ?>
                                                 </label>
                                             </div>
 

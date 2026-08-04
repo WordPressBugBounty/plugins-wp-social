@@ -180,7 +180,7 @@ class Notice{
         $this->button = [
             'default_class' => 'button',
             'class' => 'button-secondary ', // button-primary button-secondary button-small button-large button-link
-            'text' => 'Button',
+            'text' => __('Button', 'wp-social'),
             'url' => '#',
             'icon' => ''
         ];

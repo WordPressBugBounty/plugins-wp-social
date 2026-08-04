@@ -21,7 +21,7 @@ class Providers {
 				],
 				'data'   => [
 					'value' => 0,
-					'text'  => 'Share',
+					'text'  => __('Share', 'wp-social'),
 					'label' => 'Facebook',
 				],
 			],
@@ -36,7 +36,7 @@ class Providers {
 				],
 				'data'   => [
 					'value' => 0,
-					'text'  => 'Share',
+					'text'  => __('Share', 'wp-social'),
 					'label' => 'Twitter',
 				],
 			],
@@ -53,7 +53,7 @@ class Providers {
 				],
 				'data'   => [
 					'value' => 0,
-					'text'  => 'Share',
+					'text'  => __('Share', 'wp-social'),
 					'label' => 'LinkedIn',
 				],
 			],
@@ -68,7 +68,7 @@ class Providers {
 				],
 				'data'   => [
 					'value' => 0,
-					'text'  => 'Share',
+					'text'  => __('Share', 'wp-social'),
 					'label' => 'Pinterest',
 				],
 			],
@@ -84,7 +84,7 @@ class Providers {
 				],
 				'data'   => [
 					'value' => 0,
-					'text'  => 'Share',
+					'text'  => __('Share', 'wp-social'),
 					'label' => 'Facebook Messenger',
 				],
 			],
@@ -99,7 +99,7 @@ class Providers {
 				],
 				'data'   => [
 					'value' => 0,
-					'text'  => 'Share',
+					'text'  => __('Share', 'wp-social'),
 					'label' => 'Kik',
 				],
 			],
@@ -112,7 +112,7 @@ class Providers {
 				],
 				'data'   => [
 					'value' => 0,
-					'text'  => 'Share',
+					'text'  => __('Share', 'wp-social'),
 					'label' => 'Skype',
 				],
 			],
@@ -128,7 +128,7 @@ class Providers {
 				],
 				'data'   => [
 					'value' => 0,
-					'text'  => 'Share',
+					'text'  => __('Share', 'wp-social'),
 					'label' => 'Trello',
 				],
 			],
@@ -141,7 +141,7 @@ class Providers {
 				],
 				'data'   => [
 					'value' => 0,
-					'text'  => 'Share',
+					'text'  => __('Share', 'wp-social'),
 					'label' => 'Viber',
 				],
 			],
@@ -154,7 +154,7 @@ class Providers {
 				],
 				'data'   => [
 					'value' => 0,
-					'text'  => 'Share',
+					'text'  => __('Share', 'wp-social'),
 					'label' => 'WhatsApp',
 				],
 			],
@@ -168,7 +168,7 @@ class Providers {
 				],
 				'data'   => [
 					'value' => 0,
-					'text'  => 'Share',
+					'text'  => __('Share', 'wp-social'),
 					'label' => 'Telegram',
 				],
 			],
@@ -182,7 +182,7 @@ class Providers {
 				],
 				'data'   => [
 					'value' => 0,
-					'text'  => 'Share',
+					'text'  => __('Share', 'wp-social'),
 					'label' => 'Email',
 				],
 			],
@@ -196,7 +196,7 @@ class Providers {
 				],
 				'data'   => [
 					'value' => 0,
-					'text'  => 'Share',
+					'text'  => __('Share', 'wp-social'),
 					'label' => 'Reddit',
 				],
 			],
@@ -211,7 +211,7 @@ class Providers {
 				],
 				'data'   => [
 					'value' => 0,
-					'text'  => 'Share',
+					'text'  => __('Share', 'wp-social'),
 					'label' => 'Digg',
 				],
 			],
@@ -225,7 +225,7 @@ class Providers {
 				],
 				'data'   => [
 					'value' => 0,
-					'text'  => 'Share',
+					'text'  => __('Share', 'wp-social'),
 					'label' => 'StumbleUpon',
 				],
 			],
@@ -239,7 +239,7 @@ class Providers {
 				],
 				'data'   => [
 					'value' => 0,
-					'text'  => 'Share',
+					'text'  => __('Share', 'wp-social'),
 					'label' => 'LineApp',
 				],
 			],
@@ -356,7 +356,7 @@ class Providers {
 				'label' => 'Facebook',
 				'data'  => ['text' => __('Fans', 'wp-social'), 'url' => 'http://www.facebook.com/%s'],
 				'form'  => [
-					'id' => ['type' => 'normal', 'label' => 'Page ID/Name', 'input' => 'text'],
+					'id' => ['type' => 'normal', 'label' => __('Page ID/Name', 'wp-social'), 'input' => 'text'],
 				],
 			],
 
@@ -364,7 +364,7 @@ class Providers {
 				'label' => 'Twitter',
 				'data'  => ['text' => __('Followers', 'wp-social'), 'url' => 'http://twitter.com/%s'],
 				'form'  => [
-					'id'  => ['type' => 'normal', 'label' => 'Username', 'input' => 'text'],
+					'id'  => ['type' => 'normal', 'label' => __('Username', 'wp-social'), 'input' => 'text'],
 					'api' => [
 						'type'  => 'access',
 						'label' => __('Access Token Key', 'wp-social'),
@@ -380,7 +380,7 @@ class Providers {
 				'form'  => [
 					'username' => [
 						'type'  => 'normal',
-						'label' => 'Username',
+						'label' => __('Username', 'wp-social'),
 						'input' => 'text',
 					],
 				],
@@ -405,7 +405,7 @@ class Providers {
 				'form'  => [
 					'id' => [
 						'type'  => 'normal',
-						'label' => 'Username',
+						'label' => __('Username', 'wp-social'),
 						'input' => 'text',
 					],
 				],
@@ -417,7 +417,7 @@ class Providers {
 				'form'  => [
 					'id' => [
 						'type'  => 'normal',
-						'label' => 'Username',
+						'label' => __('Username', 'wp-social'),
 						'input' => 'text',
 					],
 				],
@@ -429,12 +429,12 @@ class Providers {
 				'form'  => [
 					'type' => [
 						'type'  => 'normal',
-						'label' => 'Account Type',
+						'label' => __('Account Type', 'wp-social'),
 						'input' => 'select',
 						'data'  => ['Channel' => 'Channel', 'User' => 'User'],
 					],
-					'id'   => ['type' => 'normal', 'label' => 'Username or Channel ID', 'input' => 'text'],
-					'key'  => ['type' => 'normal', 'label' => 'YouTube API Key', 'input' => 'text'],
+					'id'   => ['type' => 'normal', 'label' => __('Username or Channel ID', 'wp-social'), 'input' => 'text'],
+					'key'  => ['type' => 'normal', 'label' => __('YouTube API Key', 'wp-social'), 'input' => 'text'],
 				],
 			],
 
@@ -442,8 +442,8 @@ class Providers {
 				'label' => 'Mailchimp',
 				'data'  => ['text' => __('Subscribers', 'wp-social')],
 				'form'  => [
-					'id'  => ['type' => 'normal', 'label' => 'List ID (Optional)', 'input' => 'text'],
-					'api' => ['type' => 'normal', 'label' => 'API Key', 'input' => 'text'],
+					'id'  => ['type' => 'normal', 'label' => __('List ID (Optional)', 'wp-social'), 'input' => 'text'],
+					'api' => ['type' => 'normal', 'label' => __('API Key', 'wp-social'), 'input' => 'text'],
 				],
 			],
 

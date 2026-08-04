@@ -228,7 +228,7 @@ if(strlen($socialType) > 0) {
 
 							xs_user_login($user_nameD, $final_redirect);
 
-							die('Most unlikely error occurred in your case.');
+							die(esc_html__('Most unlikely error occurred in your case.', 'wp-social'));
 						}
 
 						/**
@@ -318,10 +318,10 @@ if(strlen($socialType) > 0) {
 
 							xs_user_login($user_nm, $final_redirect);
 
-							die('Most most unlikely error occurred in your case. user registration done but login failed!!');
+							die(esc_html__('Most most unlikely error occurred in your case. user registration done but login failed!!', 'wp-social'));
 						}
 
-						die('New user creation failed!');
+						die(esc_html__('New user creation failed!', 'wp-social'));
 
 					} else {
 
@@ -371,15 +371,15 @@ if(strlen($socialType) > 0) {
 
 						xs_user_login($user_name, $final_redirect);
 
-						die('Most unlikely error occurred in your case.');
+						die(esc_html__('Most unlikely error occurred in your case.', 'wp-social'));
 					}
 				} else {
 					// Email not verified or not provided
-					die('Email address is not verified or not provided by the social provider.');
+					die(esc_html__('Email address is not verified or not provided by the social provider.', 'wp-social'));
 				}
 
 			} else {
-				die('System Error for Callback!');
+				die(esc_html__('System Error for Callback!', 'wp-social'));
 			}
 
 		endif;
@@ -387,7 +387,7 @@ if(strlen($socialType) > 0) {
 		$adapter->disconnect();
 
 	} catch(\Exception $e) {
-		echo esc_html('Oops, we ran into an issue!' . $e->getMessage());
+		echo esc_html__('Oops, we ran into an issue!', 'wp-social') . esc_html($e->getMessage());
 	}
 }
 
@@ -499,7 +499,7 @@ add_action('init', 'xs_login_get_user_data');
  */
 function xs_user_login($user_name, $redirect_to = '') {
 	if(strlen($user_name) == 0) {
-		die('User name is empty!');
+		die(esc_html__('User name is empty!', 'wp-social'));
 	}
 
 	$username = $user_name;
@@ -784,7 +784,7 @@ function create_line_app_user($code, $socialType) {
 	$user = $lineapp->get_user_info($code);
 
 	if (empty($user->email)) {
-		die('Please allow line app email permission');
+		die(esc_html__('Please allow line app email permission', 'wp-social'));
 	}
 
 	$login_settings_obj = new Login_Settings();
@@ -834,7 +834,7 @@ function create_line_app_user($code, $socialType) {
 
 			xs_user_login($user->email, $final_redirect);
 
-			die('Most most unlikely error occurred in your case. user registration done but login failed!!');
+			die(esc_html__('Most most unlikely error occurred in your case. user registration done but login failed!!', 'wp-social'));
 		}
 	} else {
 
@@ -867,6 +867,6 @@ function create_line_app_user($code, $socialType) {
 
 		xs_user_login($old_user->data->user_login, $final_redirect);
 
-		die('Most unlikely error occurred in your case.');
+		die(esc_html__('Most unlikely error occurred in your case.', 'wp-social'));
 	}
 }

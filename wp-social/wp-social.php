@@ -4,7 +4,7 @@
  * Plugin URI: https://wpmet.com/
  * Description: Wp Social Login / Social Sharing / Social Counter System for Facebook, Google, Twitter, Linkedin, Dribble, Pinterest, Wordpress, Instagram, GitHub, Vkontakte, Reddit and more providers.
  * Author: Wpmet
- * Version: 3.2.0
+ * Version: 3.2.1
  * Author URI: https://wpmet.com/
  * Text Domain: wp-social
  * Domain Path: /languages/
@@ -15,8 +15,8 @@
 
 defined('ABSPATH') || exit;
 
-define('WSLU_VERSION', '3.2.0');
-define('WSLU_VERSION_PREVIOUS_STABLE_VERSION', '3.1.9');
+define('WSLU_VERSION', '3.2.1');
+define('WSLU_VERSION_PREVIOUS_STABLE_VERSION', '3.2.0');
 
 define("WSLU_LOGIN_PLUGIN", plugin_dir_path(__FILE__));
 define("WSLU_LOGIN_PLUGIN_URL", plugin_dir_url(__FILE__));
@@ -228,11 +228,11 @@ if(!function_exists('wslu_social_init')) :
 							'description' => __('Enable donation system in your website', 'wp-social')
 						)
 					)
-					->set_plugin_row_meta('Documentation', 'https://help.wpmet.com/docs-cat/wp-social/', ['target' => '_blank'])
-					->set_plugin_row_meta('Facebook Community', 'https://wpmet.com/fb-group', ['target' => '_blank'])
-					->set_plugin_row_meta('Rate the plugin ★★★★★', 'https://wordpress.org/support/plugin/wp-social/reviews/#new-post', ['target' => '_blank'])
-					->set_plugin_action_link('Settings', admin_url() . 'admin.php?page=wslu_global_setting')
-					->set_plugin_action_link(($is_pro_active ? '' : 'Go Premium'), 'https://wpmet.com/plugin/wp-social/pricing/', ['target' => '_blank', 'style' => 'color: #FCB214; font-weight: bold;'])
+					->set_plugin_row_meta(esc_html__('Documentation', 'wp-social'), 'https://help.wpmet.com/docs-cat/wp-social/', ['target' => '_blank'])
+					->set_plugin_row_meta(esc_html__('Facebook Community', 'wp-social'), 'https://wpmet.com/fb-group', ['target' => '_blank'])
+					->set_plugin_row_meta(esc_html__('Rate the plugin ★★★★★', 'wp-social'), 'https://wordpress.org/support/plugin/wp-social/reviews/#new-post', ['target' => '_blank'])
+					->set_plugin_action_link(esc_html__('Settings', 'wp-social'), admin_url() . 'admin.php?page=wslu_global_setting')
+					->set_plugin_action_link(($is_pro_active ? '' : esc_html__('Go Premium', 'wp-social')), 'https://wpmet.com/plugin/wp-social/pricing/', ['target' => '_blank', 'style' => 'color: #FCB214; font-weight: bold;'])
 					->call();		
 			}
 			
@@ -244,9 +244,9 @@ if(!function_exists('wslu_social_init')) :
 			*/
 			\WP_Social\Wpmet\Libs\Plugins::instance()->init('wp-social')
 			->set_parent_menu_slug('wslu_global_setting')
-			->set_submenu_name('Our Plugins')
-			->set_section_title('Time to Get More out of Your WordPress Website!')
-			->set_section_description('Revamp your website with other top plugins from us. And guess what, they\'re absolutely free!')
+			->set_submenu_name(esc_html__('Our Plugins', 'wp-social'))
+			->set_section_title(esc_html__('Time to Get More out of Your WordPress Website!', 'wp-social'))
+			->set_section_description(esc_html__('Revamp your website with other top plugins from us. And guess what, they\'re absolutely free!', 'wp-social'))
 			->set_items_per_row(4)
 			->set_plugins(
 				[

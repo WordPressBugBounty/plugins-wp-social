@@ -311,17 +311,17 @@ defined( 'ABSPATH') || exit;
 						<div id="xs_data_tr__8" class="wslu-input-list deactive_tr  <?php echo esc_attr(isset($return_data['buddypress_page']['enable']) ? 'active_tr' : '');?>">
 							<label class="xs_label_wp_login" for="buddypress_page_data__bp_before_register_page">
 								<input class="wslu-global-radio-input" type="radio" id="buddypress_page_data__bp_before_register_page" name="xs_global[buddypress_page][data]" value="bp_before_register_page" <?php echo esc_attr((isset($return_data['buddypress_page']['data']) && $return_data['buddypress_page']['data'] == 'bp_before_register_page') ? 'checked' : 'checked'); ?>>
-								<?php echo esc_html_e('BuddyPress before register form ', 'wp-social')?>
+								<?php esc_html_e('BuddyPress before register form ', 'wp-social')?>
 							</label>
 							
 							<label class="xs_label_wp_login" for="buddypress_page_data__bp_before_account_details_fields">
 								<input class="wslu-global-radio-input" type="radio" id="buddypress_page_data__bp_before_account_details_fields" name="xs_global[buddypress_page][data]" value="bp_before_account_details_fields" <?php echo esc_attr((isset($return_data['buddypress_page']['data']) && $return_data['buddypress_page']['data'] == 'bp_before_account_details_fields') ? 'checked' : ''); ?>>
-								<?php echo esc_html_e('BuddyPress account details fields ', 'wp-social')?>
+								<?php esc_html_e('BuddyPress account details fields ', 'wp-social')?>
 							</label>
 							
 							<label class="xs_label_wp_login" for="buddypress_page_data__bp_after_register_page">
 								<input class="wslu-global-radio-input" type="radio" id="buddypress_page_data__bp_after_register_page" name="xs_global[buddypress_page][data]" value="bp_after_register_page" <?php echo esc_attr((isset($return_data['buddypress_page']['data']) && $return_data['buddypress_page']['data'] == 'bp_after_register_page') ? 'checked' : ''); ?>>
-								<?php echo esc_html_e('BuddyPress after register form ', 'wp-social')?>
+								<?php esc_html_e('BuddyPress after register form ', 'wp-social')?>
 							</label>
 						</div>
 						

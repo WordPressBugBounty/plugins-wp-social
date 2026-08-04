@@ -13,7 +13,7 @@ if(!empty($styles[$selected_share_style]['package']) && $styles[$selected_share_
 	?>
     <div class="xs_social_share_widget xs_share_url">
         <ul>
-            <li class="xs-share-li wslu-no-extra-data">Pro plugin deactivated or invalid</li>
+            <li class="xs-share-li wslu-no-extra-data"><?php esc_html_e('Pro plugin deactivated or invalid', 'wp-social'); ?></li>
         </ul>
     </div>
 	<?php
