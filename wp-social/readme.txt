@@ -2,8 +2,8 @@
 Contributors: Roxnor, Ataurr
 Tags: Social login, WordPress Social login and register, Social share,  Social counter, Social,  WooCommerce social login and register
 Requires at least: 6.0
-Tested up to: 7.0
-Stable tag: 3.2.1
+Tested up to: 7.1
+Stable tag: 3.2.2
 Requires PHP: 7.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
@@ -162,6 +162,10 @@ Visit [wpmet](https://wpmet.com) to learn more about how to get the best of Word
 
 
 == Changelog ==
+Version 3.2.2 // 2026-09-29
+Fixed: An authenticated stored XSS vulnerability via the avatar alt attribute.
+Fixed: Missing nonce and capability checks in social login provider setting.
+
 Version 3.2.1 // 2026-08-04
 Fixed: Replaced hard-coded strings with translatable text.
 

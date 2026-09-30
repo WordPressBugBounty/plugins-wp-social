@@ -37,7 +37,7 @@ class Avatar {
 
 			if(!empty($pic_url)) {
 
-				return '<img alt="' . $alt . '" src="' . $pic_url . '" class="avatar avatar-' . $size . ' photo" height="' . $size . '" width="' . $size . '" />';
+				return '<img alt="' . esc_attr($alt) . '" src="' . esc_url($pic_url) . '" class="avatar avatar-' . esc_attr($size) . ' photo" height="' . esc_attr($size) . '" width="' . esc_attr($size) . '" />';
 			}
 		}
 

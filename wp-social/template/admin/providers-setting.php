@@ -22,6 +22,7 @@ defined('ABSPATH') || exit;
 
     <form action="<?php echo esc_url(admin_url() . 'admin.php?page=wslu_global_setting&tab=wslu_providers'); ?>"
           name="xs_provider_submit_form" method="post" id="xs_provider_form">
+		<?php wp_nonce_field( 'xs_provider_settings_nonce', 'nonce' ); ?>
         <div class="xs-social-block-wraper">
             <ul class="xs-social-block" data-action="sort_providers_login" data-sort_url="<?php echo esc_url(admin_url() . 'admin-ajax.php'); ?>">
 				<?php

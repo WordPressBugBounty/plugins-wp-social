@@ -375,9 +375,26 @@ class Notice{
             return false;
         }
 
+        // Notices are only ever rendered to users who can manage_options (see is_notice_expired()),
+        // so only those users may dismiss them. This prevents lower-privileged users from writing
+        // arbitrary user meta via this endpoint.
+        if ( ! current_user_can( 'manage_options' ) ) {
+            
+            wp_send_json_error( ['message' => 'Unauthorized access'] );
+
+        }
+
 		$notice_id   = ( isset( $_POST['notice_id'] ) ) ? sanitize_text_field($_POST['notice_id']) : '';
 		$dismissible = ( isset( $_POST['dismissible'] ) ) ? sanitize_text_field($_POST['dismissible']) : '';
 		$expired_time = ( isset( $_POST['expired_time'] ) ) ? sanitize_text_field($_POST['expired_time']) : '';
+
+		// Only allow dismissal flags for real notice IDs. A legitimate dismissible notice ID is
+		// namespaced as "<text_domain>-<unique_id>" (see the $notice_id constructor above), so it
+		// always contains a hyphen. Reject keys that could target sensitive meta such as
+		// "xs_social_profile_image".
+		if ( '' !== $notice_id && false === strpos( $notice_id, '-' ) ) {
+			wp_send_json_error();
+		}
 
 		if ( ! empty( $notice_id ) ) {
 			if ( 'user' === $dismissible ) {

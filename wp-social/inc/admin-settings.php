@@ -440,6 +440,10 @@ class Admin_Settings {
 		// save prodivers data in db
 		if(isset($_POST['xs_provider_submit_form'])) {
 
+			if( !isset( $_POST['nonce'] ) || !wp_verify_nonce( $_POST['nonce'], 'xs_provider_settings_nonce' ) ) {
+				return;
+			}
+
 			$option_value = isset($_POST['xs_social']) ? self::sanitize($_POST['xs_social']) : [];
 
 			if(update_option($option_key, $option_value, 'Yes')) {
