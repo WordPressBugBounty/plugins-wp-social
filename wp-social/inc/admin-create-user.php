@@ -169,8 +169,15 @@ if(strlen($socialType) > 0) {
 			if(is_object($getProfile) && !empty($getProfile)) {
 
 				$user_email = isset($getProfile->email) ? $getProfile->email : '';
-				$emailVerified = !empty($getProfile->emailVerified); 
-				if ($emailVerified || empty($user_email)) {
+				$emailVerified = (isset($getProfile->emailVerified) && $getProfile->emailVerified === true);
+
+				$avatar_obj_pre = \WP_Social\App\Avatar::instance();
+				$s_user_key_pre = $avatar_obj_pre->get_username($getProfile, $socialType);
+				$user_info_pre  = $avatar_obj_pre->get_linked_user($s_user_key_pre, $socialType);
+				$has_linked_user = isset($user_info_pre['username']) && get_user_by('login', $user_info_pre['username']);
+
+				$email_already_exists = !empty($user_email) && email_exists($user_email);
+				if ($emailVerified || empty($user_email) || $has_linked_user || !$email_already_exists) {
 
 					/**
 					 * Variable Name : $setting_data
@@ -216,11 +223,16 @@ if(strlen($socialType) > 0) {
 						 * this user never? had registered with us
 						 *
 						 * Lets check if user's social profile email is existed in our system
-						 * If it does we just let him log in
+						 * If it does we let him log in ONLY if the provider verified the email
 						 */
 						$user_id = email_exists($user_email);
 
 						if($user_id) {
+
+							if (!$emailVerified) {
+								wp_safe_redirect(wp_login_url());
+								exit();
+							}
 
 							$user_nameD = xs_login_get_user_data_email($user_email, 'user_login');
 

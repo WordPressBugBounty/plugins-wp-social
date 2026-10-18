@@ -34,7 +34,21 @@ class Share {
 			//add_action('wp_body_open', [ $this, 'share_the_body_content_body' ] );
 
 			add_action('wp_footer', [$this, 'share_the_body_content_body']);
+
+			add_filter('body_class', [$this, 'add_share_body_classes']);
 		}
+	}
+
+
+	public function add_share_body_classes($classes) {
+
+		$style_settings = Share_Settings::instance()->get_style_settings();
+
+		if(!empty($style_settings['hide_on_mobile'])) {
+			$classes[] = 'wslu-hide-on-mobile';
+		}
+
+		return $classes;
 	}
 
 	/*
@@ -55,7 +69,7 @@ class Share {
 				$position = $inner_position;
 			}
 		}
-		
+
 		if( $position != 'no_content')  {
 
 			$get_content = $this->get_share_data('all', ['class' => $position]);
@@ -88,6 +102,17 @@ class Share {
 	public function share_the_body_content_body() {
 
 		$style = get_option('xs_style_setting_data_share', '');
+
+		if(!empty($style['disable_in_elementor'])) {
+			$is_elementor = did_action('elementor/loaded') && (
+				\Elementor\Plugin::$instance->editor->is_edit_mode() ||
+				\Elementor\Plugin::$instance->preview->is_preview_mode()
+			);
+			if($is_elementor) {
+				return;
+			}
+		}
+
 		$content_position = isset($style['login_button_content']) ? $style['login_button_content'] : '';
 
 		if(in_array($content_position, ['left_content', 'right_content', 'top_content', 'bottom_content'])) {

@@ -99,7 +99,7 @@ class Twitter extends OAuth1
         $userProfile->description = $data->get('description');
         $userProfile->firstName = $data->get('name');
         $userProfile->email = $data->get('email');
-        $userProfile->emailVerified = $data->get('email');
+        $userProfile->emailVerified = '';
         $userProfile->webSiteURL = $data->get('url');
         $userProfile->region = $data->get('location');
 

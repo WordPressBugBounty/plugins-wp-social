@@ -222,6 +222,52 @@ $share_layout_alignment = empty($return_data['layout']) ?
                         </label>
                     </div>
                 </div> <!-- ./ End Single Item -->
+
+                <!-- Hide on Mobile -->
+                <div class="wslu-single-item">
+                    <div class="wslu-left-label">
+                        <label class="wslu-sec-title" for=""><?php echo esc_html__('Hide on Mobile', 'wp-social'); ?></label>
+                    </div>
+
+                    <div class="wslu-right-content horizontial">
+                        <label class="social_radio_button_label xs_label_wp_login">
+                            <input class="social_radio_button wslu-global-radio-input" type="radio" name="xs_style[hide_on_mobile]" value="1" <?php echo esc_attr((!empty($return_data['hide_on_mobile'])) ? 'checked' : ''); ?>>
+                            <?php echo esc_html__('Yes', 'wp-social'); ?>
+                        </label>
+
+                        <label class="social_radio_button_label xs_label_wp_login">
+                            <input class="social_radio_button wslu-global-radio-input" type="radio" name="xs_style[hide_on_mobile]" value="0" <?php echo esc_attr((empty($return_data['hide_on_mobile'])) ? 'checked' : ''); ?>>
+                            <?php echo esc_html__('No', 'wp-social'); ?>
+                        </label>
+
+                        <div class="wslu-help-text">
+                            <p><?php esc_html_e('Hide social share buttons on mobile devices (screen width below 768px).', 'wp-social'); ?></p>
+                        </div>
+                    </div>
+                </div> <!-- ./ End Hide on Mobile -->
+
+                <!-- Elementor Editor Scroll -->
+                <div class="wslu-single-item">
+                    <div class="wslu-left-label">
+                        <label class="wslu-sec-title" for=""><?php echo esc_html__('Disable in Elementor Editor', 'wp-social'); ?></label>
+                    </div>
+
+                    <div class="wslu-right-content horizontial">
+                        <label class="social_radio_button_label xs_label_wp_login">
+                            <input class="social_radio_button wslu-global-radio-input" type="radio" name="xs_style[disable_in_elementor]" value="1" <?php echo esc_attr((!empty($return_data['disable_in_elementor'])) ? 'checked' : ''); ?>>
+                            <?php echo esc_html__('Yes', 'wp-social'); ?>
+                        </label>
+
+                        <label class="social_radio_button_label xs_label_wp_login">
+                            <input class="social_radio_button wslu-global-radio-input" type="radio" name="xs_style[disable_in_elementor]" value="0" <?php echo esc_attr((empty($return_data['disable_in_elementor'])) ? 'checked' : ''); ?>>
+                            <?php echo esc_html__('No', 'wp-social'); ?>
+                        </label>
+
+                        <div class="wslu-help-text">
+                            <p><?php esc_html_e('Disable fixed share buttons in Elementor editor to prevent scroll blocking.', 'wp-social'); ?></p>
+                        </div>
+                    </div>
+                </div> <!-- ./ End Elementor Editor Scroll -->
                 
                 <!--------------------------
                  Primary Content Settings
