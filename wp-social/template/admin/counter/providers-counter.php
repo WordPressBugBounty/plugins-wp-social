@@ -30,6 +30,7 @@ defined('ABSPATH') || exit;
           name="xs_provider_submit_form"
           method="post"
           id="xs_provider_form">
+		<?php wp_nonce_field( 'counter_settings_submit_form_nonce', 'nonce' ); ?>
 
         <div class="xs-social-block-wraper">
             <ul class="xs-social-block" data-action="sort_providers_counter"

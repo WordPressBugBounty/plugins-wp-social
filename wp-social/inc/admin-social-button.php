@@ -305,6 +305,26 @@ class xs_button_in_login_page {
 	}
 
 	/**
+	 * Method Name : xs_is_elementskit_hook_provider_active
+	 * Method Details : Check the plugins that fire the elementskit/{login|register}_form/render actions.
+	 *	GutenKit reuses the same actions for its login/register blocks.
+	 *                  Only the free versions are checked, both pro versions depend on them.
+	 *
+	 * @params : void
+	 * @return : bool
+	 *
+	 * @since : 4.0
+	 */
+	public static function xs_is_elementskit_hook_provider_active() {
+
+		if (!function_exists('is_plugin_active')) {
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		}
+
+		return is_plugin_active('elementskit/elementskit.php') || is_plugin_active('gutenkit-blocks-addon-pro/gutenkit-blocks-addon-pro.php');
+	}
+
+	/**
 	 * Method Name : xs_render_elementskit_social_buttons
 	 * Method Details : Render social buttons for ElementsKit forms (bypass login/logout checks)
 	 *
@@ -360,11 +380,7 @@ class xs_button_in_login_page {
 	 */
 	public static function xs_login_form_elementskit() {
 
-		if (!function_exists('is_plugin_active')) {
-			require_once ABSPATH . 'wp-admin/includes/plugin.php';
-		}
-
-		if (is_plugin_active('elementskit/elementskit.php')) {
+		if (self::xs_is_elementskit_hook_provider_active()) {
 			add_action('elementskit/login_form/render', 'xs_button_in_login_page::xs_add_elementskit_login_button', 10, 2);
 		}
 	}
@@ -380,11 +396,7 @@ class xs_button_in_login_page {
 	 */
 	public static function xs_register_form_elementskit() {
 
-		if (!function_exists('is_plugin_active')) {
-			require_once ABSPATH . 'wp-admin/includes/plugin.php';
-		}
-
-		if (is_plugin_active('elementskit/elementskit.php')) {
+		if (self::xs_is_elementskit_hook_provider_active()) {
 			add_action('elementskit/register_form/render', 'xs_button_in_login_page::xs_add_elementskit_register_button', 10, 2);
 		}
 	}

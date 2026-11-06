@@ -440,7 +440,7 @@ class Admin_Settings {
 		// save prodivers data in db
 		if(isset($_POST['xs_provider_submit_form'])) {
 
-			if( !isset( $_POST['nonce'] ) || !wp_verify_nonce( $_POST['nonce'], 'xs_provider_settings_nonce' ) ) {
+			if( !isset( $_POST['nonce'] ) || !wp_verify_nonce( sanitize_key( wp_unslash( $_POST['nonce'] ) ), 'xs_provider_settings_nonce' ) || ! current_user_can( 'manage_options' ) ) {
 				return;
 			}
 
@@ -620,6 +620,10 @@ class Admin_Settings {
 		 */
 		if(isset($_POST['counter_settings_submit_form'])) {
 
+			if( !isset( $_POST['nonce'] ) || !wp_verify_nonce( sanitize_key( wp_unslash( $_POST['nonce'] ) ), 'counter_settings_submit_form_nonce' ) || ! current_user_can( 'manage_options' ) ) {
+				return;
+			}
+
 			$option_value = isset($_POST['xs_counter']) ? self::sanitize($_POST['xs_counter']) : [];
 
 			if(update_option($option_key, $option_value, 'yes')) {
@@ -789,6 +793,10 @@ class Admin_Settings {
 		}
 
 		if(isset($_POST['share_settings_submit_form'])) {
+
+			if( !isset( $_POST['nonce'] ) || !wp_verify_nonce( sanitize_key( wp_unslash( $_POST['nonce'] ) ), 'share_settings_submit_form_nonce' ) || ! current_user_can( 'manage_options' ) ) {
+				return;
+			}
 
 			$option_value = isset($_POST['xs_share']) ? self::sanitize($_POST['xs_share']) : [];
 
